@@ -19,7 +19,8 @@ static func run(
 	intensity: String,
 	world: ClubWorld,
 	balance: Balance,
-	rules: CareerRules
+	rules: CareerRules,
+	cups: CupWorld
 ) -> Outcome:
 	var outcome := Outcome.new()
 	var career := CareerState.start("Sim", position, balance, rules.academy_club)
@@ -36,7 +37,7 @@ static func run(
 		var expected := SeasonContext.expected_performance(career, world, balance, rules)
 		var performance := SeasonPerformance.create(expected.matches_played, match_rating)
 		performance.training_share = expected.training_share
-		CareerSeason.play(career, plan, performance, world, balance, rules, errors)
+		CareerSeason.play(career, plan, performance, world, balance, rules, cups, errors)
 		outcome.peak_overall = maxi(outcome.peak_overall, career.player.overall_rating(balance))
 	outcome.final_tier = world.league_of(career.club_id).tier
 	return outcome

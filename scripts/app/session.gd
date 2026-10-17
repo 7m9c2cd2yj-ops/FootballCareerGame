@@ -9,6 +9,7 @@ var moment_tuning: MomentTuning = null
 var world: ClubWorld = null
 var rules: CareerRules = null
 var templates: TextTemplates = null
+var cups: CupWorld = null
 var career: CareerState = null
 ## The season whose key moments are being played, or null between seasons.
 var season_in_progress: SeasonInProgress = null
@@ -24,6 +25,7 @@ func _ready() -> void:
 	labels = GameLabels.load_file(GameLabels.DEFAULT_PATH, load_errors)
 	moment_tuning = MomentTuning.load_file(MomentTuning.DEFAULT_PATH, load_errors)
 	templates = TextTemplates.load_file(TextTemplates.DEFAULT_PATH, load_errors)
+	cups = CupWorld.load_files(CupWorld.NATIONS_PATH, CupWorld.CUPS_PATH, load_errors)
 	if balance != null:
 		world = ClubWorld.load_file(ClubWorld.DEFAULT_PATH, balance.positions(), load_errors)
 	if world != null:
@@ -77,13 +79,13 @@ func finish_season(errors: Array[String]) -> SeasonRecord:
 	var season := season_in_progress
 	season_in_progress = null
 	var performance := season.performance(moment_tuning)
-	return CareerSeason.play(career, season.plan, performance, world, balance, rules, errors)
+	return CareerSeason.play(career, season.plan, performance, world, balance, rules, cups, errors)
 
 
 ## Plays a season without key moments, at the expected rating.
 func sim_season(plan: TrainingPlan, errors: Array[String]) -> SeasonRecord:
 	var performance := expected_performance()
-	return CareerSeason.play(career, plan, performance, world, balance, rules, errors)
+	return CareerSeason.play(career, plan, performance, world, balance, rules, cups, errors)
 
 
 func offers() -> Array[Offer]:
@@ -99,11 +101,11 @@ func accept_offer(offer: Offer) -> String:
 
 
 func news_feed() -> Array[EventText.NewsItem]:
-	return EventText.news_feed(career, world, labels, templates)
+	return EventText.news_feed(career, _text_context())
 
 
 func agent_messages() -> Array[String]:
-	return EventText.agent_messages(career, world, labels, templates)
+	return EventText.agent_messages(career, _text_context())
 
 
 func agent_advice() -> Array[String]:
@@ -111,7 +113,7 @@ func agent_advice() -> Array[String]:
 
 
 func kickfie_feed() -> Array[EventText.KickfiePost]:
-	return EventText.kickfie_feed(career, world, labels, templates)
+	return EventText.kickfie_feed(career, _text_context())
 
 
 ## Items in `app` the player has not opened yet (`total` = items it has now).
@@ -121,6 +123,10 @@ func unread(app: String, total: int) -> int:
 
 func mark_seen(app: String, total: int) -> void:
 	phone_seen[app] = total
+
+
+func _text_context() -> EventText.Context:
+	return EventText.Context.create(world, cups, labels, templates)
 
 
 func take_trial(club: Club) -> bool:

@@ -9,6 +9,7 @@ each with an unread badge:
 | News | A headline and short story for every career event, newest first. |
 | Messages | Your agent: live advice about your situation now, then a text for past events. |
 | Kickfie | A fake social feed: fan posts reacting to your career events. |
+| Cups | Trophy cabinet, Golden Ball finishes, the latest cup brackets (`docs/CUPS.md`). |
 
 ## Everything comes from real career events
 
@@ -25,6 +26,9 @@ event holds only ids and numbers. The log is stored in the save (format version 
 | `transfer` | you join another club | from/to club, fee, wage |
 | `renewal` | you renew with your club | club, wage, years |
 | `retirement` | you retire or reach 40 | club, peak overall, score, inducted |
+| `national_call_up` | your first World Nations Cup | nation |
+| `cup_result` | a cup you played in ends | cup, team, matches won, won |
+| `golden_ball` | you finish top 3 | rank, winner |
 
 `scripts/core/news/event_text.gd` fills templates from
 `data/text_templates.json`:

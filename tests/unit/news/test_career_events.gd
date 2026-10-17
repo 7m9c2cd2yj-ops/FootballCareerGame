@@ -7,12 +7,14 @@ const CareerFixture := preload("res://tests/helpers/career_fixture.gd")
 var _balance: Balance
 var _world: ClubWorld
 var _rules: CareerRules
+var _cups: CupWorld
 
 
 func before_all() -> void:
 	_balance = BalanceFixture.shipped()
 	_world = CareerFixture.world()
 	_rules = CareerFixture.rules(_world)
+	_cups = CareerFixture.cups()
 
 
 func _types(career: CareerState) -> Array[String]:
@@ -27,7 +29,7 @@ func _play(career: CareerState, rating: float, intensity: String = TrainingPlan.
 	var plan := TrainingPlan.create("shooting", "pace", intensity)
 	var expected := SeasonContext.expected_performance(career, _world, _balance, _rules)
 	var performance := SeasonPerformance.create(expected.matches_played, rating)
-	CareerSeason.play(career, plan, performance, _world, _balance, _rules, errors)
+	CareerSeason.play(career, plan, performance, _world, _balance, _rules, _cups, errors)
 
 
 func _pro(club_id: String, age: int, rating: float) -> CareerState:

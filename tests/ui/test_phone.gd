@@ -29,7 +29,7 @@ func _labels_text(node: Node) -> String:
 func test_home_shows_the_four_apps() -> void:
 	var phone: Control = add_child_autofree(PHONE_SCENE.instantiate())
 	var text := _labels_text(phone.get_node("%Home"))
-	for title: String in ["Clubs", "News", "Messages", "Kickfie"]:
+	for title: String in ["Clubs", "News", "Messages", "Kickfie", "Cups"]:
 		assert_string_contains(text, title)
 
 
@@ -60,3 +60,14 @@ func test_clubs_app_opens_inside_the_phone_and_closes_home() -> void:
 	var clubs := host.get_child(0)
 	clubs.emit_signal("closed")
 	assert_true((phone.get_node("%Home") as Control).visible)
+
+
+func test_cups_app_shows_the_cabinet_and_brackets() -> void:
+	_sim_season()
+	var phone: Control = add_child_autofree(PHONE_SCENE.instantiate())
+	phone.call("open_app", "cups")
+	var text := _labels_text(phone.get_node("%AppHost"))
+	assert_string_contains(text, "Trophy cabinet")
+	assert_string_contains(text, "Continental Cup · season 1")
+	assert_string_contains(text, "Final")
+	assert_gt(phone.get_node("%AppHost").find_children("*", "CrestView", true, false).size(), 0)

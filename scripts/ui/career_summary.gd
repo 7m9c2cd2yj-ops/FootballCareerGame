@@ -31,6 +31,7 @@ func _describe(summary: HallOfFame.Summary) -> String:
 		"Peak overall: %d (age %d)" % [summary.peak_overall, summary.peak_age],
 		"Top-tier seasons: %d" % summary.top_tier_seasons,
 		"Key moments won: %d" % summary.key_moments_won,
+		"Trophies: %d · Golden Balls: %d" % [summary.trophies, summary.golden_balls],
 		"Clubs: %s" % ", ".join(club_names),
 		"Hall of Fame score: %d" % roundi(summary.score),
 	]

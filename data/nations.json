@@ -1,0 +1,205 @@
+{
+	"_readme": "Fictional nations for the World Nations Cup. Flags are drawn from simple shapes: pattern horizontal/vertical (three stripes), cross, diagonal or circle, with 2-3 colours. Strength 1-99 is comparable with player ratings. 'home' is the player's nation.",
+	"home": "valdoria",
+	"nations": [
+		{
+			"id": "valdoria",
+			"name": "Valdoria",
+			"strength": 72,
+			"flag": {
+				"pattern": "horizontal",
+				"colors": [
+					"#1E4D8C",
+					"#FFFFFF",
+					"#2E7D32"
+				]
+			}
+		},
+		{
+			"id": "ostrelia",
+			"name": "Ostrelia",
+			"strength": 84,
+			"flag": {
+				"pattern": "vertical",
+				"colors": [
+					"#C62828",
+					"#FFFFFF",
+					"#C62828"
+				]
+			}
+		},
+		{
+			"id": "marivelle",
+			"name": "Marivelle",
+			"strength": 82,
+			"flag": {
+				"pattern": "cross",
+				"colors": [
+					"#0D47A1",
+					"#FFD54F"
+				]
+			}
+		},
+		{
+			"id": "brannock",
+			"name": "Brannock",
+			"strength": 80,
+			"flag": {
+				"pattern": "horizontal",
+				"colors": [
+					"#000000",
+					"#E53935",
+					"#FFC107"
+				]
+			}
+		},
+		{
+			"id": "solvania",
+			"name": "Solvania",
+			"strength": 79,
+			"flag": {
+				"pattern": "diagonal",
+				"colors": [
+					"#2E7D32",
+					"#FFEB3B"
+				]
+			}
+		},
+		{
+			"id": "kestralia",
+			"name": "Kestralia",
+			"strength": 77,
+			"flag": {
+				"pattern": "circle",
+				"colors": [
+					"#FFFFFF",
+					"#C62828"
+				]
+			}
+		},
+		{
+			"id": "tamberg",
+			"name": "Tamberg",
+			"strength": 76,
+			"flag": {
+				"pattern": "vertical",
+				"colors": [
+					"#1B5E20",
+					"#FFFFFF",
+					"#E65100"
+				]
+			}
+		},
+		{
+			"id": "lunaris",
+			"name": "Lunaris",
+			"strength": 74,
+			"flag": {
+				"pattern": "circle",
+				"colors": [
+					"#283593",
+					"#FFFFFF"
+				]
+			}
+		},
+		{
+			"id": "corvana",
+			"name": "Corvana",
+			"strength": 73,
+			"flag": {
+				"pattern": "horizontal",
+				"colors": [
+					"#6A1B9A",
+					"#FFFFFF",
+					"#6A1B9A"
+				]
+			}
+		},
+		{
+			"id": "zephora",
+			"name": "Zephora",
+			"strength": 70,
+			"flag": {
+				"pattern": "diagonal",
+				"colors": [
+					"#00838F",
+					"#FFFFFF"
+				]
+			}
+		},
+		{
+			"id": "ardenne_isles",
+			"name": "Arden Isles",
+			"strength": 68,
+			"flag": {
+				"pattern": "cross",
+				"colors": [
+					"#2E7D32",
+					"#FFFFFF"
+				]
+			}
+		},
+		{
+			"id": "quintara",
+			"name": "Quintara",
+			"strength": 66,
+			"flag": {
+				"pattern": "vertical",
+				"colors": [
+					"#F9A825",
+					"#1A237E",
+					"#F9A825"
+				]
+			}
+		},
+		{
+			"id": "velmora",
+			"name": "Velmora",
+			"strength": 64,
+			"flag": {
+				"pattern": "horizontal",
+				"colors": [
+					"#AD1457",
+					"#FFFFFF",
+					"#000000"
+				]
+			}
+		},
+		{
+			"id": "norvik_reach",
+			"name": "Norvik Reach",
+			"strength": 62,
+			"flag": {
+				"pattern": "cross",
+				"colors": [
+					"#0288D1",
+					"#FFFFFF"
+				]
+			}
+		},
+		{
+			"id": "sabrecoast",
+			"name": "Sabre Coast",
+			"strength": 60,
+			"flag": {
+				"pattern": "diagonal",
+				"colors": [
+					"#4E342E",
+					"#FFCC80"
+				]
+			}
+		},
+		{
+			"id": "pellaria",
+			"name": "Pellaria",
+			"strength": 57,
+			"flag": {
+				"pattern": "circle",
+				"colors": [
+					"#558B2F",
+					"#FFEB3B"
+				]
+			}
+		}
+	]
+}

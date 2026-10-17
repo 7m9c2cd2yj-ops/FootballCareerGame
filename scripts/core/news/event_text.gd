@@ -12,6 +12,25 @@ const POSTS_PER_EVENT := 2
 const MILLION := 1000.0
 
 
+## What text generation needs to turn ids into names and pick templates.
+class Context:
+	extends RefCounted
+	var world: ClubWorld = null
+	var cups: CupWorld = null
+	var labels: GameLabels = null
+	var templates: TextTemplates = null
+
+	static func create(
+		club_world: ClubWorld, cup_world: CupWorld, game_labels: GameLabels, text: TextTemplates
+	) -> Context:
+		var context := Context.new()
+		context.world = club_world
+		context.cups = cup_world
+		context.labels = game_labels
+		context.templates = text
+		return context
+
+
 class NewsItem:
 	extends RefCounted
 	var season_number: int = 0
@@ -28,9 +47,8 @@ class KickfiePost:
 
 
 ## Newest first.
-static func news_feed(
-	career: CareerState, world: ClubWorld, labels: GameLabels, templates: TextTemplates
-) -> Array[NewsItem]:
+static func news_feed(career: CareerState, context: Context) -> Array[NewsItem]:
+	var templates := context.templates
 	var items: Array[NewsItem] = []
 	var turns := _occurrences(career, templates)
 	for index: int in range(career.events.size() - 1, -1, -1):
@@ -38,7 +56,7 @@ static func news_feed(
 		var key := variant_key(event, templates)
 		var options := templates.templates_for("news", key)
 		var chosen: Dictionary = options[turns[index] % options.size()]
-		var values := placeholders(event, career, world, labels)
+		var values := placeholders(event, career, context)
 		var item := NewsItem.new()
 		item.season_number = event.season_number
 		item.headline = str(chosen["headline"]).format(values)
@@ -48,9 +66,8 @@ static func news_feed(
 
 
 ## Agent texts about past events, newest first (not every event gets one).
-static func agent_messages(
-	career: CareerState, world: ClubWorld, labels: GameLabels, templates: TextTemplates
-) -> Array[String]:
+static func agent_messages(career: CareerState, context: Context) -> Array[String]:
+	var templates := context.templates
 	var messages: Array[String] = []
 	var turns := _occurrences(career, templates)
 	for index: int in range(career.events.size() - 1, -1, -1):
@@ -58,20 +75,19 @@ static func agent_messages(
 		var options := templates.templates_for("agent", variant_key(event, templates))
 		if not options.is_empty():
 			var text: String = options[turns[index] % options.size()]
-			messages.append(text.format(placeholders(event, career, world, labels)))
+			messages.append(text.format(placeholders(event, career, context)))
 	return messages
 
 
 ## Fan posts, newest first: up to POSTS_PER_EVENT different posts per event.
-static func kickfie_feed(
-	career: CareerState, world: ClubWorld, labels: GameLabels, templates: TextTemplates
-) -> Array[KickfiePost]:
+static func kickfie_feed(career: CareerState, context: Context) -> Array[KickfiePost]:
+	var templates := context.templates
 	var posts: Array[KickfiePost] = []
 	var turns := _occurrences(career, templates)
 	for index: int in range(career.events.size() - 1, -1, -1):
 		var event := career.events[index]
 		var options := templates.templates_for("kickfie", variant_key(event, templates))
-		var values := placeholders(event, career, world, labels)
+		var values := placeholders(event, career, context)
 		var first := turns[index] * POSTS_PER_EVENT
 		for offset: int in mini(POSTS_PER_EVENT, options.size()):
 			var post := KickfiePost.new()
@@ -99,16 +115,20 @@ static func variant_key(event: CareerEvent, templates: TextTemplates) -> String:
 		CareerEvent.RETIREMENT:
 			var inducted: bool = event.values["inducted"]
 			return "retirement.inducted" if inducted else "retirement.not_inducted"
+		CareerEvent.CUP_RESULT:
+			var won: bool = event.values["won"]
+			return "cup_result.won" if won else "cup_result.out"
+		CareerEvent.GOLDEN_BALL:
+			return "golden_ball.won" if int(event.values["rank"]) == 1 else "golden_ball.podium"
 	return event.type
 
 
 ## Display values for every placeholder the event's templates may use.
-static func placeholders(
-	event: CareerEvent, career: CareerState, world: ClubWorld, labels: GameLabels
-) -> Dictionary:
+static func placeholders(event: CareerEvent, career: CareerState, context: Context) -> Dictionary:
+	var world := context.world
 	var values := {
 		"player": career.player.display_name,
-		"position": labels.position_name(career.player.position),
+		"position": context.labels.position_name(career.player.position),
 		"age": str(event.age),
 		"season": str(event.season_number),
 	}
@@ -118,7 +138,27 @@ static func placeholders(
 	if world.has_club(club_id):
 		values["league"] = world.league_of(club_id).name
 		values["club_tag"] = world.club(club_id).name.replace(" ", "")
+	_add_cup_values(event, values, context)
 	return values
+
+
+## Cup and nation ids become names; a cup run gets a readable round.
+static func _add_cup_values(event: CareerEvent, values: Dictionary, context: Context) -> void:
+	if event.type == CareerEvent.NATIONAL_CALL_UP:
+		values["nation"] = context.cups.nation(str(event.values["nation"])).name
+	if event.type == CareerEvent.CUP_RESULT:
+		var cup_id := str(event.values["cup"])
+		values["cup"] = context.cups.cup(cup_id).name
+		values["team"] = context.cups.team_name(cup_id, str(event.values["team"]), context.world)
+		values["round"] = round_reached(int(event.values["wins"]))
+
+
+## Where a cup run ended, from matches won (4 = champions).
+static func round_reached(wins: int) -> String:
+	var rounds: Array[String] = [
+		"the round of 16", "the quarter-finals", "the semi-finals", "the final", "the trophy"
+	]
+	return rounds[clampi(wins, 0, rounds.size() - 1)]
 
 
 ## 450 -> "450k credits", 1500 -> "1.5M credits" (money is stored in thousands).

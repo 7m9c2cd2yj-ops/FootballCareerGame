@@ -33,6 +33,8 @@ const SCHEMA: Dictionary = {
 		"points_per_peak_overall",
 		"points_per_top_tier_season",
 		"points_per_key_moment_won",
+		"points_per_trophy",
+		"points_per_golden_ball",
 	],
 }
 

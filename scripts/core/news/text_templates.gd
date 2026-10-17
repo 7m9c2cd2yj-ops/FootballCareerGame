@@ -13,7 +13,11 @@ const CLUB_EXTRAS: Array[String] = ["league", "club_tag"]
 const VARIANTS: Dictionary = {
 	CareerEvent.SEASON_PLAYED: ["great", "steady", "poor"],
 	CareerEvent.RETIREMENT: ["inducted", "not_inducted"],
+	CareerEvent.CUP_RESULT: ["won", "out"],
+	CareerEvent.GOLDEN_BALL: ["won", "podium"],
 }
+## Extra placeholders some event types provide beyond their FIELDS.
+const EVENT_EXTRAS: Dictionary = {CareerEvent.CUP_RESULT: ["round"]}
 ## Advice key -> placeholders it provides (on top of COMMON).
 const ADVICE: Dictionary = {
 	"fatigue_high": ["fatigue", "threshold"],
@@ -68,6 +72,8 @@ static func allowed_placeholders(variant_key: String) -> Array[String]:
 	var fields: Array = CareerEvent.FIELDS[type]
 	if fields.has("club") or fields.has("to_club"):
 		allowed.append_array(CLUB_EXTRAS)
+	for extra: String in EVENT_EXTRAS.get(type, []):
+		allowed.append(extra)
 	return allowed
 
 

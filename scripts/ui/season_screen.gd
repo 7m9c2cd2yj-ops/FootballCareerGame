@@ -204,6 +204,7 @@ func _describe(record: SeasonRecord) -> String:
 		)
 	else:
 		lines.append("Quick sim · season rating %.1f" % record.average_rating)
+	lines.append_array(_honours(record.season_number))
 	if record.injured:
 		lines.append("Injury kept you out of half the matches.")
 	if Session.career.injured_next_season:
@@ -213,6 +214,22 @@ func _describe(record: SeasonRecord) -> String:
 		if absf(change) >= 0.05:
 			lines.append("%s %+.1f" % [Session.labels.attribute_name(attribute), change])
 	return "\n".join(lines)
+
+
+## Cup runs and the Golden Ball finish of `season_number`, as text lines.
+func _honours(season_number: int) -> Array[String]:
+	var lines: Array[String] = []
+	for run: CupRun in Session.career.cup_runs:
+		if run.season_number == season_number:
+			var cup_name := Session.cups.cup(run.cup_id).name
+			if run.won:
+				lines.append("%s: champions!" % cup_name)
+			else:
+				lines.append("%s: out in %s" % [cup_name, EventText.round_reached(run.wins)])
+	for standing: GoldenBall.Standing in Session.career.golden_balls:
+		if standing.season_number == season_number:
+			lines.append("Golden Ball: #%d (won by %s)" % [standing.rank, standing.winner])
+	return lines
 
 
 func _on_phone_pressed() -> void:

@@ -12,6 +12,8 @@ static func migrate(data: Dictionary, academy_club: String) -> Dictionary:
 		_v1_to_v2(upgraded, academy_club)
 	if _version(upgraded) == 2:
 		_v2_to_v3(upgraded)
+	if _version(upgraded) == 3:
+		_v3_to_v4(upgraded)
 	return upgraded
 
 
@@ -22,6 +24,13 @@ static func _version(data: Dictionary) -> int:
 
 ## Version 2 added clubs, contracts, fatigue, trials, retirement, transfers,
 ## training intensity and key-moment counts.
+## Version 4 added cups and the Golden Ball (nothing to rebuild from history).
+static func _v3_to_v4(data: Dictionary) -> void:
+	data["version"] = 4
+	data["cup_runs"] = []
+	data["golden_balls"] = []
+
+
 ## Version 3 added the event log. Season events are rebuilt from history so
 ## older careers still have news; other events cannot be reconstructed.
 static func _v2_to_v3(data: Dictionary) -> void:

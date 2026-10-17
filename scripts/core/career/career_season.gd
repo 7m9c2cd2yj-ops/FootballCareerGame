@@ -23,6 +23,7 @@ static func play(
 	world: ClubWorld,
 	balance: Balance,
 	rules: CareerRules,
+	cups: CupWorld,
 	errors: Array[String]
 ) -> SeasonRecord:
 	var reason := blocker(career, balance, rules)
@@ -40,6 +41,8 @@ static func play(
 	_end_of_season(career, plan, share, age, rules)
 	record.fatigue_after = career.fatigue
 	CareerEvents.record_season(career, record, world, rules)
+	var trophies := CupSeason.apply(career, record, world, rules, cups)
+	GoldenBall.apply(career, record, trophies, rules, cups)
 	if career.player.age >= balance.max_age:
 		career.retired = true
 		CareerEvents.record_retirement(career, world, rules)

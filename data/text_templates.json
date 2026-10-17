@@ -130,6 +130,44 @@
 				"headline": "{player} retires at {age}",
 				"body": "A career that peaked at {peak_overall} overall comes to an end. Thanks for the memories!"
 			}
+		],
+		"national_call_up": [
+			{
+				"headline": "{player} called up by {nation}",
+				"body": "The {position} will play for {nation} at the World Nations Cup. A proud day for the whole family."
+			}
+		],
+		"cup_result.won": [
+			{
+				"headline": "{team} win the {cup}!",
+				"body": "{player} and {team} lift the {cup}. What a season!"
+			},
+			{
+				"headline": "Champions! {cup} glory for {team}",
+				"body": "{team} are the {cup} winners, with {player} at the heart of it."
+			}
+		],
+		"cup_result.out": [
+			{
+				"headline": "{team} out of the {cup}",
+				"body": "{team}'s {cup} run ends in {round}. {player} will be back stronger."
+			},
+			{
+				"headline": "{cup}: {team} bow out",
+				"body": "The journey ended in {round} for {player} and {team}."
+			}
+		],
+		"golden_ball.won": [
+			{
+				"headline": "{player} wins the Golden Ball!",
+				"body": "The best player of the season is {player}. A dream come true."
+			}
+		],
+		"golden_ball.podium": [
+			{
+				"headline": "{player} finishes number {rank} in the Golden Ball",
+				"body": "{winner} takes the award, but {player} is among the very best."
+			}
 		]
 	},
 	"agent": {
@@ -174,6 +212,21 @@
 		],
 		"retirement.not_inducted": [
 			"What a journey. Thank you for everything."
+		],
+		"national_call_up": [
+			"{nation} called! Pack your boots for the World Nations Cup."
+		],
+		"cup_result.won": [
+			"Champions! Enjoy this, you've earned it."
+		],
+		"cup_result.out": [
+			"{round} this time. We'll get them next year."
+		],
+		"golden_ball.won": [
+			"THE GOLDEN BALL! Best player in the world. Unbelievable."
+		],
+		"golden_ball.podium": [
+			"Number {rank} in the Golden Ball. Next year it's yours."
 		]
 	},
 	"kickfie": {
@@ -222,6 +275,26 @@
 		],
 		"retirement.not_inducted": [
 			"Thank you for the memories, {player}"
+		],
+		"national_call_up": [
+			"{player} in the {nation} squad! So proud",
+			"Finally! {player} for {nation}"
+		],
+		"cup_result.won": [
+			"{cup} CHAMPIONS!!!",
+			"What a team, what a season. {team}!"
+		],
+		"cup_result.out": [
+			"Gutted, but proud of {team}",
+			"Heads up {team}, great run"
+		],
+		"golden_ball.won": [
+			"GOLDEN BALL! {player} is the best!",
+			"Told you all. {player}, best in the world"
+		],
+		"golden_ball.podium": [
+			"Robbed! {player} deserved it",
+			"Top {rank} in the world, {player}. Respect"
 		]
 	},
 	"advice": {

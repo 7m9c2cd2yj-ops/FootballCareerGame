@@ -1,0 +1,219 @@
+{
+	"_readme": "Cups and the Golden Ball. Deterministic: a team's match strength is its base strength (plus the player's contribution if the player plays for it), and computer teams add a fixed 'form' from the Variety hash. Rounds are knockouts of 16 seeded by strength. See docs/CUPS.md.",
+	"continental_cup": {
+		"name": "Continental Cup",
+		"every_seasons": 1,
+		"season_offset": 0,
+		"home_qualifiers": 4
+	},
+	"world_nations_cup": {
+		"name": "World Nations Cup",
+		"every_seasons": 4,
+		"season_offset": 3,
+		"call_up_min": 70
+	},
+	"match": {
+		"form_range": 12.0,
+		"overall_influence": 0.25,
+		"rating_influence": 1.5,
+		"rating_baseline": 6.0,
+		"min_contribution": -6.0,
+		"max_contribution": 10.0,
+		"goal_step": 6.0,
+		"max_goals": 5
+	},
+	"golden_ball": {
+		"rating_weight": 3.0,
+		"rating_baseline": 6.0,
+		"points_per_trophy": 6.0,
+		"form_range": 10.0,
+		"rivals": [
+			{
+				"name": "Zephyr Calloway",
+				"club": "Ostrel Dynamo",
+				"level": 110.0
+			},
+			{
+				"name": "Ilo Brambleworth",
+				"club": "Port Marivel FC",
+				"level": 109.0
+			},
+			{
+				"name": "Tavi Quenmore",
+				"club": "Brannock City",
+				"level": 108.0
+			},
+			{
+				"name": "Oskar Fenwhistle",
+				"club": "Solva United",
+				"level": 107.0
+			},
+			{
+				"name": "Rune Halloway",
+				"club": "Kestral Athletic",
+				"level": 106.0
+			},
+			{
+				"name": "Lio Marchbank",
+				"club": "Tamberg Rovers",
+				"level": 105.0
+			},
+			{
+				"name": "Dax Wrenfield",
+				"club": "Lunar Bay FC",
+				"level": 104.0
+			},
+			{
+				"name": "Emil Thistledown",
+				"club": "Corvana Town",
+				"level": 103.0
+			}
+		]
+	},
+	"foreign_clubs": [
+		{
+			"id": "ostrel_dynamo",
+			"name": "Ostrel Dynamo",
+			"nation": "ostrelia",
+			"strength": 90,
+			"crest": {
+				"shape": "shield",
+				"primary": "#C62828",
+				"secondary": "#FFFFFF",
+				"pattern": "stripes"
+			}
+		},
+		{
+			"id": "port_marivel",
+			"name": "Port Marivel FC",
+			"nation": "marivelle",
+			"strength": 89,
+			"crest": {
+				"shape": "circle",
+				"primary": "#0D47A1",
+				"secondary": "#FFD54F",
+				"pattern": "halves"
+			}
+		},
+		{
+			"id": "brannock_city",
+			"name": "Brannock City",
+			"nation": "brannock",
+			"strength": 87,
+			"crest": {
+				"shape": "hexagon",
+				"primary": "#000000",
+				"secondary": "#FFC107",
+				"pattern": "band"
+			}
+		},
+		{
+			"id": "solva_united",
+			"name": "Solva United",
+			"nation": "solvania",
+			"strength": 85,
+			"crest": {
+				"shape": "diamond",
+				"primary": "#2E7D32",
+				"secondary": "#FFEB3B",
+				"pattern": "chevron"
+			}
+		},
+		{
+			"id": "kestral_athletic",
+			"name": "Kestral Athletic",
+			"nation": "kestralia",
+			"strength": 83,
+			"crest": {
+				"shape": "shield",
+				"primary": "#FFFFFF",
+				"secondary": "#C62828",
+				"pattern": "stripes"
+			}
+		},
+		{
+			"id": "tamberg_rovers",
+			"name": "Tamberg Rovers",
+			"nation": "tamberg",
+			"strength": 81,
+			"crest": {
+				"shape": "circle",
+				"primary": "#1B5E20",
+				"secondary": "#E65100",
+				"pattern": "plain"
+			}
+		},
+		{
+			"id": "lunar_bay",
+			"name": "Lunar Bay FC",
+			"nation": "lunaris",
+			"strength": 79,
+			"crest": {
+				"shape": "hexagon",
+				"primary": "#283593",
+				"secondary": "#FFFFFF",
+				"pattern": "halves"
+			}
+		},
+		{
+			"id": "corvana_town",
+			"name": "Corvana Town",
+			"nation": "corvana",
+			"strength": 77,
+			"crest": {
+				"shape": "diamond",
+				"primary": "#6A1B9A",
+				"secondary": "#FFFFFF",
+				"pattern": "band"
+			}
+		},
+		{
+			"id": "zephyr_harbour",
+			"name": "Zephyr Harbour",
+			"nation": "zephora",
+			"strength": 75,
+			"crest": {
+				"shape": "shield",
+				"primary": "#00838F",
+				"secondary": "#FFFFFF",
+				"pattern": "chevron"
+			}
+		},
+		{
+			"id": "arden_wanderers",
+			"name": "Arden Wanderers",
+			"nation": "ardenne_isles",
+			"strength": 73,
+			"crest": {
+				"shape": "circle",
+				"primary": "#2E7D32",
+				"secondary": "#FFFFFF",
+				"pattern": "stripes"
+			}
+		},
+		{
+			"id": "quintar_city",
+			"name": "Quintar City",
+			"nation": "quintara",
+			"strength": 71,
+			"crest": {
+				"shape": "hexagon",
+				"primary": "#F9A825",
+				"secondary": "#1A237E",
+				"pattern": "plain"
+			}
+		},
+		{
+			"id": "velmora_athletic",
+			"name": "Velmora Athletic",
+			"nation": "velmora",
+			"strength": 69,
+			"crest": {
+				"shape": "diamond",
+				"primary": "#AD1457",
+				"secondary": "#000000",
+				"pattern": "halves"
+			}
+		}
+	]
+}

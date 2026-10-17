@@ -1,19 +1,20 @@
 extends Control
-## The in-game phone: a home screen with Clubs, News, Messages and Kickfie,
+## The in-game phone: a home screen with Clubs, News, Messages, Kickfie and Cups,
 ## unread badges, and each app opened inside the phone. Display only.
 
 const SEASON_SCENE := "res://scenes/career/season_screen.tscn"
 const CLUBS_APP := preload("res://scenes/career/clubs_app.tscn")
 const ICON_SIZE := Vector2(250, 210)
-const APPS: Array[String] = ["clubs", "news", "messages", "kickfie"]
+const APPS: Array[String] = ["clubs", "news", "messages", "kickfie", "cups"]
 const APP_TITLES: Dictionary = {
-	"clubs": "Clubs", "news": "News", "messages": "Messages", "kickfie": "Kickfie"
+	"clubs": "Clubs", "news": "News", "messages": "Messages", "kickfie": "Kickfie", "cups": "Cups"
 }
 const APP_COLORS: Dictionary = {
 	"clubs": Color(0.13, 0.45, 0.85),
 	"news": Color(0.85, 0.3, 0.2),
 	"messages": Color(0.2, 0.65, 0.35),
 	"kickfie": Color(0.75, 0.25, 0.75),
+	"cups": Color(0.85, 0.65, 0.1),
 }
 
 @onready var _status_label: Label = %StatusLabel
@@ -44,7 +45,7 @@ func show_home() -> void:
 		_home.add_child(_app_icon(app))
 
 
-## Opens `app` ("clubs", "news", "messages" or "kickfie"); also used by tests.
+## Opens `app` (one of APPS); also used by tests.
 func open_app(app: String) -> void:
 	_clear_app()
 	_home.visible = false
@@ -55,9 +56,10 @@ func open_app(app: String) -> void:
 		var clubs: Control = CLUBS_APP.instantiate()
 		clubs.connect("closed", show_home)
 		_app_host.add_child(clubs)
+	elif app == "cups":
+		_app_host.add_child(CupsView.build())
 	else:
-		var view := PhoneFeeds.build(app)
-		_app_host.add_child(view)
+		_app_host.add_child(PhoneFeeds.build(app))
 	Session.mark_seen(app, unread_total(app))
 
 
@@ -70,6 +72,8 @@ func unread_total(app: String) -> int:
 			return Session.agent_messages().size()
 		"kickfie":
 			return Session.kickfie_feed().size()
+		"cups":
+			return Session.career.cup_runs.size()
 	return Session.offers().size() + (1 if Trials.is_due(Session.career, Session.rules) else 0)
 
 

@@ -4,7 +4,7 @@ extends RefCounted
 ## season and every transfer. This is what a save slot stores.
 
 ## Bump when the dictionary layout changes and add a step to CareerMigration.
-const FORMAT_VERSION := 3
+const FORMAT_VERSION := 4
 
 var player: PlayerModel = null
 var history: Array[SeasonRecord] = []
@@ -22,6 +22,10 @@ var retired: bool = false
 var transfers: Array[TransferRecord] = []
 ## Everything newsworthy, oldest first (see CareerEvents).
 var events: Array[CareerEvent] = []
+## Cups the player took part in, oldest first.
+var cup_runs: Array[CupRun] = []
+## The player's Golden Ball rank each senior season.
+var golden_balls: Array[GoldenBall.Standing] = []
 
 
 static func start(
@@ -54,6 +58,12 @@ func to_dict() -> Dictionary:
 	var event_list: Array[Dictionary] = []
 	for event: CareerEvent in events:
 		event_list.append(event.to_dict())
+	var runs: Array[Dictionary] = []
+	for run: CupRun in cup_runs:
+		runs.append(run.to_dict())
+	var balls: Array[Dictionary] = []
+	for standing: GoldenBall.Standing in golden_balls:
+		balls.append(standing.to_dict())
 	var contract_data: Variant = null
 	if contract != null:
 		contract_data = contract.to_dict()
@@ -72,6 +82,8 @@ func to_dict() -> Dictionary:
 		"retired": retired,
 		"transfers": moves,
 		"events": event_list,
+		"cup_runs": runs,
+		"golden_balls": balls,
 	}
 
 
@@ -90,6 +102,10 @@ static func validate_dict(data: Dictionary, balance: Balance, world: ClubWorld) 
 	_validate_list(data.get("history"), "history", problems, SeasonRecord.validate_dict)
 	_validate_list(data.get("transfers"), "transfers", problems, TransferRecord.validate_dict)
 	_validate_list(data.get("events"), "events", problems, CareerEvent.validate_dict)
+	_validate_list(data.get("cup_runs"), "cup_runs", problems, CupRun.validate_dict)
+	_validate_list(
+		data.get("golden_balls"), "golden_balls", problems, GoldenBall.Standing.validate_dict
+	)
 	if typeof(data.get("club_id")) != TYPE_STRING or not world.has_club(str(data.get("club_id"))):
 		problems.append("career.club_id is not a known club")
 	if typeof(data.get("contract")) == TYPE_DICTIONARY:
@@ -114,6 +130,10 @@ static func from_dict(data: Dictionary) -> CareerState:
 		career.transfers.append(TransferRecord.from_dict(entry))
 	for entry: Dictionary in data["events"]:
 		career.events.append(CareerEvent.from_dict(entry))
+	for entry: Dictionary in data["cup_runs"]:
+		career.cup_runs.append(CupRun.from_dict(entry))
+	for entry: Dictionary in data["golden_balls"]:
+		career.golden_balls.append(GoldenBall.Standing.from_dict(entry))
 	career.club_id = data["club_id"]
 	if data["contract"] != null:
 		career.contract = Contract.from_dict(data["contract"])

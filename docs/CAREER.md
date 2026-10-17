@@ -64,10 +64,11 @@ fatigue = previous × carryover + intensity_load + match_share × match_load
 
 ```
 score = peak overall × 1 + top-tier senior seasons × 2 + key moments won × 0.5
+        + trophies × 3 + Golden Balls × 8
 inducted if peak ≥ 88 and score ≥ 130
 ```
 
-M6 adds trophies and the Golden Ball to the score.
+See `docs/CUPS.md` for trophies and the Golden Ball.
 
 ## Design checks (`tests/unit/career/test_career_simulation.gd`)
 

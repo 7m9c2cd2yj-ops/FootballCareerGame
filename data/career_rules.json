@@ -45,6 +45,8 @@
 		"induction_score": 130,
 		"points_per_peak_overall": 1.0,
 		"points_per_top_tier_season": 2.0,
-		"points_per_key_moment_won": 0.5
+		"points_per_key_moment_won": 0.5,
+		"points_per_trophy": 3.0,
+		"points_per_golden_ball": 8.0
 	}
 }

@@ -11,16 +11,18 @@ const Flow := preload("res://tests/helpers/career_flow_sim.gd")
 var _balance: Balance
 var _world: ClubWorld
 var _rules: CareerRules
+var _cups: CupWorld
 
 
 func before_all() -> void:
 	_balance = BalanceFixture.shipped()
 	_world = CareerFixture.world()
 	_rules = CareerFixture.rules(_world)
+	_cups = CareerFixture.cups()
 
 
 func _run(position: String, rating: float, intensity: String) -> Flow.Outcome:
-	return Flow.run(position, rating, intensity, _world, _balance, _rules)
+	return Flow.run(position, rating, intensity, _world, _balance, _rules, _cups)
 
 
 func test_no_career_ever_gets_stuck() -> void:
@@ -65,3 +67,20 @@ func test_careers_are_deterministic() -> void:
 		JSON.stringify(_run("MID", 8.1, TrainingPlan.NORMAL).career.to_dict()),
 		JSON.stringify(first)
 	)
+
+
+func test_elite_careers_win_trophies_and_golden_balls() -> void:
+	for position: String in _balance.positions():
+		var summary := HallOfFame.summarize(
+			_run(position, 9.7, TrainingPlan.NORMAL).career, _world, _rules
+		)
+		assert_gt(summary.trophies, 0, position)
+		assert_gt(summary.golden_balls, 0, position)
+
+
+func test_good_careers_never_win_the_golden_ball() -> void:
+	for position: String in _balance.positions():
+		var summary := HallOfFame.summarize(
+			_run(position, 7.5, TrainingPlan.NORMAL).career, _world, _rules
+		)
+		assert_eq(summary.golden_balls, 0, position)

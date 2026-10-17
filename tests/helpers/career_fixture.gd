@@ -13,6 +13,13 @@ static func world() -> ClubWorld:
 	return loaded
 
 
+static func cups() -> CupWorld:
+	var errors: Array[String] = []
+	var loaded := CupWorld.load_files(CupWorld.NATIONS_PATH, CupWorld.CUPS_PATH, errors)
+	assert(loaded != null, "\n".join(errors))
+	return loaded
+
+
 static func rules(club_world: ClubWorld) -> CareerRules:
 	var errors: Array[String] = []
 	var max_age := BalanceFixture.shipped().max_age

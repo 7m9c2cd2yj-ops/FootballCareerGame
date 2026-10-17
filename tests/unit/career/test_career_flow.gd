@@ -7,12 +7,14 @@ const CareerFixture := preload("res://tests/helpers/career_fixture.gd")
 var _balance: Balance
 var _world: ClubWorld
 var _rules: CareerRules
+var _cups: CupWorld
 
 
 func before_all() -> void:
 	_balance = BalanceFixture.shipped()
 	_world = CareerFixture.world()
 	_rules = CareerFixture.rules(_world)
+	_cups = CareerFixture.cups()
 
 
 func _academy_player(age: int, rating: float) -> CareerState:
@@ -90,7 +92,9 @@ func test_season_ticks_the_contract_and_records_the_club() -> void:
 	var errors: Array[String] = []
 	var plan := TrainingPlan.create("shooting", "pace")
 	var performance := SeasonContext.expected_performance(career, _world, _balance, _rules)
-	var record := CareerSeason.play(career, plan, performance, _world, _balance, _rules, errors)
+	var record := CareerSeason.play(
+		career, plan, performance, _world, _balance, _rules, _cups, errors
+	)
 	assert_not_null(record, "\n".join(errors))
 	assert_eq(record.club_id, "tidewell")
 	assert_eq(career.contract.years_left, 1)
@@ -141,7 +145,7 @@ func test_reaching_max_age_retires_the_player() -> void:
 	var errors: Array[String] = []
 	var plan := TrainingPlan.create("shooting", "pace")
 	var performance := SeasonContext.expected_performance(career, _world, _balance, _rules)
-	CareerSeason.play(career, plan, performance, _world, _balance, _rules, errors)
+	CareerSeason.play(career, plan, performance, _world, _balance, _rules, _cups, errors)
 	assert_true(career.retired)
 
 

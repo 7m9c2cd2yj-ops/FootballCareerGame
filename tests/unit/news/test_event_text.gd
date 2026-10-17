@@ -10,6 +10,7 @@ var _world: ClubWorld
 var _rules: CareerRules
 var _labels: GameLabels
 var _templates: TextTemplates
+var _context: EventText.Context
 
 
 func before_all() -> void:
@@ -18,6 +19,7 @@ func before_all() -> void:
 	_rules = CareerFixture.rules(_world)
 	_labels = NewsFixture.labels()
 	_templates = NewsFixture.templates()
+	_context = EventText.Context.create(_world, CareerFixture.cups(), _labels, _templates)
 
 
 func _data() -> Dictionary:
@@ -32,11 +34,11 @@ func _career_with_every_event() -> CareerState:
 
 func _all_texts(career: CareerState) -> Array[String]:
 	var texts: Array[String] = []
-	for item: EventText.NewsItem in EventText.news_feed(career, _world, _labels, _templates):
+	for item: EventText.NewsItem in EventText.news_feed(career, _context):
 		texts.append(item.headline)
 		texts.append(item.body)
-	texts.append_array(EventText.agent_messages(career, _world, _labels, _templates))
-	for post: EventText.KickfiePost in EventText.kickfie_feed(career, _world, _labels, _templates):
+	texts.append_array(EventText.agent_messages(career, _context))
+	for post: EventText.KickfiePost in EventText.kickfie_feed(career, _context):
 		texts.append(post.handle + " " + post.text)
 	return texts
 
@@ -128,8 +130,8 @@ func test_back_to_back_stories_of_the_same_kind_differ() -> void:
 	}
 	for season: int in range(1, 4):
 		career.events.append(CareerEvent.create(CareerEvent.SEASON_PLAYED, season, 20, values))
-	var news := EventText.news_feed(career, _world, _labels, _templates)
+	var news := EventText.news_feed(career, _context)
 	assert_ne(news[0].headline, news[1].headline)
 	assert_ne(news[1].headline, news[2].headline)
-	var messages := EventText.agent_messages(career, _world, _labels, _templates)
+	var messages := EventText.agent_messages(career, _context)
 	assert_ne(messages[0], messages[1])

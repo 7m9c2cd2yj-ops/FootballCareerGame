@@ -49,4 +49,15 @@ static func every_event(club_id: String, other_club_id: String) -> Array[CareerE
 	for inducted: bool in [true, false]:
 		var values := {"club": club_id, "peak_overall": 91, "score": 140, "inducted": inducted}
 		events.append(CareerEvent.create(CareerEvent.RETIREMENT, 25, 38, values))
+	events.append(CareerEvent.create(CareerEvent.NATIONAL_CALL_UP, 12, 24, {"nation": "valdoria"}))
+	for won: bool in [true, false]:
+		var run := {
+			"cup": CupDefinition.CONTINENTAL, "team": club_id, "wins": 4 if won else 2, "won": won
+		}
+		events.append(CareerEvent.create(CareerEvent.CUP_RESULT, 12, 24, run))
+	var cup := {"cup": CupDefinition.NATIONS, "team": "valdoria", "wins": 1, "won": false}
+	events.append(CareerEvent.create(CareerEvent.CUP_RESULT, 12, 24, cup))
+	for rank: int in [1, 2]:
+		var ball := {"rank": rank, "winner": "Zephyr Calloway"}
+		events.append(CareerEvent.create(CareerEvent.GOLDEN_BALL, 13, 25, ball))
 	return events

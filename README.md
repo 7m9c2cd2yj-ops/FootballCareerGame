@@ -56,8 +56,9 @@ The 3D key moments (penalty, free kick, one-on-one, save) are described in
 `docs/MOMENTS.md`, with numbers in `data/moment_tuning.json`. Clubs, trials,
 contracts, transfers, injuries and retirement are in `docs/CAREER.md`
 (data: `data/clubs.json`, `data/career_rules.json`). The phone (Clubs, News,
-agent Messages, the Kickfie feed) is in `docs/PHONE.md` (text:
-`data/text_templates.json`).
+agent Messages, the Kickfie feed, Cups) is in `docs/PHONE.md` (text:
+`data/text_templates.json`). Cups and the Golden Ball are in `docs/CUPS.md`
+(data: `data/nations.json`, `data/cups.json`).
 The same three checks run in GitHub Actions (`.github/workflows/ci.yml`).
 
 ## Project layout
@@ -73,6 +74,7 @@ scripts/core/    Pure game logic (no nodes, no scene tree): unit tested
 scripts/core/moments/  Key-moment rules: resolvers, planner, season rating
 scripts/core/career/   Clubs, offers, contracts, trials, fatigue, Hall of Fame
 scripts/core/news/     Career events, text templates, agent advice, content rules
+scripts/core/cups/     Nations, cup draws and simulation, Golden Ball
 scripts/ui/phone/      The in-game phone and its feed apps
 scripts/ui/      Scripts attached to scenes; thin layer over core
 scripts/ui/moments/    3D moment stage, HUD and touch controllers

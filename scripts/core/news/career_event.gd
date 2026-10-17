@@ -12,6 +12,9 @@ const TRIAL_FAILED := "trial_failed"
 const TRANSFER := "transfer"
 const RENEWAL := "renewal"
 const RETIREMENT := "retirement"
+const NATIONAL_CALL_UP := "national_call_up"
+const CUP_RESULT := "cup_result"
+const GOLDEN_BALL := "golden_ball"
 
 ## Event type -> the value keys it carries. Templates may use exactly these
 ## (plus the common placeholders in EventText).
@@ -26,6 +29,10 @@ const FIELDS: Dictionary = {
 	TRANSFER: ["from_club", "to_club", "fee", "wage"],
 	RENEWAL: ["club", "wage", "years"],
 	RETIREMENT: ["club", "peak_overall", "score", "inducted"],
+	NATIONAL_CALL_UP: ["nation"],
+	## `team` is a club or nation id depending on `cup`; `wins` 4 = champions.
+	CUP_RESULT: ["cup", "team", "wins", "won"],
+	GOLDEN_BALL: ["rank", "winner"],
 }
 ## Value keys that hold club ids (shown as club names).
 const CLUB_FIELDS: Array[String] = ["club", "from_club", "to_club", "academy"]

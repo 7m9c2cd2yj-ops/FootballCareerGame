@@ -51,6 +51,12 @@ static func record_retirement(career: CareerState, world: ClubWorld, rules: Care
 
 
 ## Events of a season carry that season's number and age, not the next one's.
+static func record_at_season(
+	career: CareerState, type: String, season: SeasonRecord, values: Dictionary
+) -> void:
+	_record_at(career, type, season, values)
+
+
 static func _record_at(
 	career: CareerState, type: String, season: SeasonRecord, values: Dictionary
 ) -> void:
