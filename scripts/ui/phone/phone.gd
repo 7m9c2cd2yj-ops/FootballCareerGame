@@ -69,9 +69,9 @@ func unread_total(app: String) -> int:
 		"news":
 			return Session.career.events.size()
 		"messages":
-			return Session.agent_messages().size()
+			return EventText.agent_messages(Session.career, Session.text_context()).size()
 		"kickfie":
-			return Session.kickfie_feed().size()
+			return EventText.kickfie_feed(Session.career, Session.text_context()).size()
 		"cups":
 			return Session.career.cup_runs.size()
 	return Session.offers().size() + (1 if Trials.is_due(Session.career, Session.rules) else 0)

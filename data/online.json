@@ -1,0 +1,10 @@
+{
+	"_readme": "Servers players can join for the ARENA. Must match the servers seeded in backend/supabase/migrations (checked by tests).",
+	"default_server": "europe",
+	"servers": [
+		{"id": "europe", "name": "Europe"},
+		{"id": "americas", "name": "Americas"},
+		{"id": "asia_pacific", "name": "Asia-Pacific"},
+		{"id": "africa_middle_east", "name": "Africa & Middle East"}
+	]
+}

@@ -14,6 +14,8 @@ var disclaimer: String = ""
 var privacy_policy_url: String = ""
 ## Used until onboarding (M8) lets the player pick a preset name.
 var default_player_name: String = ""
+## Career save slots without the "extra slots" purchase (M8).
+var free_save_slots: int = 0
 
 
 ## Returns a list of human-readable problems; empty means `data` is valid.
@@ -26,6 +28,8 @@ static func validate(data: Dictionary) -> Array[String]:
 			problems.append("Key '%s' must be a string" % key)
 		elif str(data[key]).strip_edges().is_empty():
 			problems.append("Key '%s' must not be empty" % key)
+	if not DataChecks.is_number(data.get("free_save_slots")) or int(data["free_save_slots"]) < 1:
+		problems.append("Key 'free_save_slots' must be a number of at least 1")
 	return problems
 
 
@@ -37,6 +41,7 @@ static func from_dictionary(data: Dictionary) -> GameConfig:
 	config.disclaimer = data["disclaimer"]
 	config.privacy_policy_url = data["privacy_policy_url"]
 	config.default_player_name = data["default_player_name"]
+	config.free_save_slots = int(data["free_save_slots"])
 	return config
 
 

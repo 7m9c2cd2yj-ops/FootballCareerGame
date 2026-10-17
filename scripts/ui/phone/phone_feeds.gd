@@ -29,7 +29,7 @@ static func build(app: String) -> Control:
 
 
 static func _fill_news(list: VBoxContainer) -> void:
-	for item: EventText.NewsItem in Session.news_feed():
+	for item: EventText.NewsItem in EventText.news_feed(Session.career, Session.text_context()):
 		var lines: Array[Control] = [
 			_text("Season %d" % item.season_number, SMALL_FONT),
 			_text(item.headline, 30),
@@ -39,14 +39,24 @@ static func _fill_news(list: VBoxContainer) -> void:
 
 
 static func _fill_messages(list: VBoxContainer) -> void:
-	for advice: String in Session.agent_advice():
+	var advice_texts := AgentAdvice.current_texts(
+		Session.career,
+		Session.world,
+		Session.balance,
+		Session.rules,
+		Session.labels,
+		Session.templates
+	)
+	for advice: String in advice_texts:
 		list.add_child(_card([_text("Agent · now", SMALL_FONT), _text(advice, 26)], AGENT_COLOR))
-	for message: String in Session.agent_messages():
+	for message: String in EventText.agent_messages(Session.career, Session.text_context()):
 		list.add_child(_card([_text("Agent", SMALL_FONT), _text(message, 26)], CARD_COLOR))
 
 
 static func _fill_kickfie(list: VBoxContainer) -> void:
-	for post: EventText.KickfiePost in Session.kickfie_feed():
+	for post: EventText.KickfiePost in EventText.kickfie_feed(
+		Session.career, Session.text_context()
+	):
 		var lines: Array[Control] = [
 			_text(post.handle, SMALL_FONT),
 			_text(post.text, 28),

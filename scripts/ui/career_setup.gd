@@ -18,5 +18,5 @@ func _ready() -> void:
 
 
 func choose_position(position_code: String) -> void:
-	Session.start_career(position_code)
+	Session.start_career(position_code, Session.pending_slot)
 	get_tree().change_scene_to_file(SEASON_SCENE)

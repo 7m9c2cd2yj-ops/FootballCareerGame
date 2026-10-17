@@ -1,0 +1,1912 @@
+{
+	"club_id": "hollowmere",
+	"contract": {
+		"club_id": "hollowmere",
+		"is_youth": false,
+		"release_clause": 1956,
+		"wage": 326,
+		"years_left": 0
+	},
+	"cup_runs": [
+		{
+			"cup_id": "world_nations_cup",
+			"season_number": 21,
+			"team": "valdoria",
+			"wins": 1,
+			"won": false
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 22,
+			"team": "thornvale",
+			"wins": 0,
+			"won": false
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 23,
+			"team": "thornvale",
+			"wins": 0,
+			"won": false
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 24,
+			"team": "thornvale",
+			"wins": 0,
+			"won": false
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 25,
+			"team": "thornvale",
+			"wins": 0,
+			"won": false
+		},
+		{
+			"cup_id": "world_nations_cup",
+			"season_number": 25,
+			"team": "valdoria",
+			"wins": 1,
+			"won": false
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 26,
+			"team": "thornvale",
+			"wins": 0,
+			"won": false
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 27,
+			"team": "thornvale",
+			"wins": 0,
+			"won": false
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 28,
+			"team": "thornvale",
+			"wins": 0,
+			"won": false
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 29,
+			"team": "thornvale",
+			"wins": 0,
+			"won": false
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 30,
+			"team": "thornvale",
+			"wins": 0,
+			"won": false
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 31,
+			"team": "thornvale",
+			"wins": 0,
+			"won": false
+		}
+	],
+	"events": [
+		{
+			"age": 8,
+			"season_number": 1,
+			"type": "season_played",
+			"values": {
+				"club": "copperlake",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 15.0,
+				"overall_before": 11.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 9,
+			"season_number": 2,
+			"type": "season_played",
+			"values": {
+				"club": "copperlake",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 18.0,
+				"overall_before": 15.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 10,
+			"season_number": 3,
+			"type": "season_played",
+			"values": {
+				"club": "copperlake",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 21.0,
+				"overall_before": 18.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 11,
+			"season_number": 4,
+			"type": "season_played",
+			"values": {
+				"club": "copperlake",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 24.0,
+				"overall_before": 21.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 12,
+			"season_number": 5,
+			"type": "season_played",
+			"values": {
+				"club": "copperlake",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 27.0,
+				"overall_before": 24.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 13,
+			"season_number": 6,
+			"type": "season_played",
+			"values": {
+				"club": "copperlake",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 31.0,
+				"overall_before": 27.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 14,
+			"season_number": 7,
+			"type": "season_played",
+			"values": {
+				"club": "copperlake",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 35.0,
+				"overall_before": 31.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 15,
+			"season_number": 8,
+			"type": "season_played",
+			"values": {
+				"club": "copperlake",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 38.0,
+				"overall_before": 35.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 16,
+			"season_number": 9,
+			"type": "trial_passed",
+			"values": {
+				"club": "brackenford"
+			}
+		},
+		{
+			"age": 16,
+			"season_number": 9,
+			"type": "season_played",
+			"values": {
+				"club": "brackenford",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 42.0,
+				"overall_before": 38.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 17,
+			"season_number": 10,
+			"type": "season_played",
+			"values": {
+				"club": "brackenford",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 45.0,
+				"overall_before": 42.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 18,
+			"season_number": 11,
+			"type": "transfer",
+			"values": {
+				"fee": 0.0,
+				"from_club": "brackenford",
+				"to_club": "brightwater",
+				"wage": 233.0
+			}
+		},
+		{
+			"age": 18,
+			"season_number": 11,
+			"type": "season_played",
+			"values": {
+				"club": "brightwater",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 48.0,
+				"overall_before": 45.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 19,
+			"season_number": 12,
+			"type": "transfer",
+			"values": {
+				"fee": 1398.0,
+				"from_club": "brightwater",
+				"to_club": "westerby",
+				"wage": 233.0
+			}
+		},
+		{
+			"age": 19,
+			"season_number": 12,
+			"type": "season_played",
+			"values": {
+				"club": "westerby",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 51.0,
+				"overall_before": 48.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 19,
+			"season_number": 12,
+			"type": "milestone",
+			"values": {
+				"club": "westerby",
+				"milestone": 50.0
+			}
+		},
+		{
+			"age": 20,
+			"season_number": 13,
+			"type": "transfer",
+			"values": {
+				"fee": 1398.0,
+				"from_club": "westerby",
+				"to_club": "hollowmere",
+				"wage": 246.0
+			}
+		},
+		{
+			"age": 20,
+			"season_number": 13,
+			"type": "season_played",
+			"values": {
+				"club": "hollowmere",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 54.0,
+				"overall_before": 51.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 21,
+			"season_number": 14,
+			"type": "season_played",
+			"values": {
+				"club": "hollowmere",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 57.0,
+				"overall_before": 54.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 22,
+			"season_number": 15,
+			"type": "transfer",
+			"values": {
+				"fee": 1476.0,
+				"from_club": "hollowmere",
+				"to_club": "silverbeck",
+				"wage": 220.0
+			}
+		},
+		{
+			"age": 22,
+			"season_number": 15,
+			"type": "season_played",
+			"values": {
+				"club": "silverbeck",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 59.0,
+				"overall_before": 57.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 23,
+			"season_number": 16,
+			"type": "transfer",
+			"values": {
+				"fee": 1320.0,
+				"from_club": "silverbeck",
+				"to_club": "oakhollow",
+				"wage": 220.0
+			}
+		},
+		{
+			"age": 23,
+			"season_number": 16,
+			"type": "season_played",
+			"values": {
+				"club": "oakhollow",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 62.0,
+				"overall_before": 59.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 23,
+			"season_number": 16,
+			"type": "milestone",
+			"values": {
+				"club": "oakhollow",
+				"milestone": 60.0
+			}
+		},
+		{
+			"age": 24,
+			"season_number": 17,
+			"type": "season_played",
+			"values": {
+				"club": "oakhollow",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 64.0,
+				"overall_before": 62.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 25,
+			"season_number": 18,
+			"type": "transfer",
+			"values": {
+				"fee": 1320.0,
+				"from_club": "oakhollow",
+				"to_club": "saltmarsh",
+				"wage": 220.0
+			}
+		},
+		{
+			"age": 25,
+			"season_number": 18,
+			"type": "season_played",
+			"values": {
+				"club": "saltmarsh",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 66.0,
+				"overall_before": 64.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 25,
+			"season_number": 18,
+			"type": "top_tier_debut",
+			"values": {
+				"club": "saltmarsh"
+			}
+		},
+		{
+			"age": 26,
+			"season_number": 19,
+			"type": "season_played",
+			"values": {
+				"club": "saltmarsh",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 68.0,
+				"overall_before": 66.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 27,
+			"season_number": 20,
+			"type": "season_played",
+			"values": {
+				"club": "saltmarsh",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 70.0,
+				"overall_before": 68.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 27,
+			"season_number": 20,
+			"type": "milestone",
+			"values": {
+				"club": "saltmarsh",
+				"milestone": 70.0
+			}
+		},
+		{
+			"age": 28,
+			"season_number": 21,
+			"type": "renewal",
+			"values": {
+				"club": "saltmarsh",
+				"wage": 260.0,
+				"years": 3.0
+			}
+		},
+		{
+			"age": 28,
+			"season_number": 21,
+			"type": "season_played",
+			"values": {
+				"club": "saltmarsh",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 72.0,
+				"overall_before": 70.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 28,
+			"season_number": 21,
+			"type": "national_call_up",
+			"values": {
+				"nation": "valdoria"
+			}
+		},
+		{
+			"age": 28,
+			"season_number": 21,
+			"type": "cup_result",
+			"values": {
+				"cup": "world_nations_cup",
+				"team": "valdoria",
+				"wins": 1.0,
+				"won": false
+			}
+		},
+		{
+			"age": 29,
+			"season_number": 22,
+			"type": "transfer",
+			"values": {
+				"fee": 1560.0,
+				"from_club": "saltmarsh",
+				"to_club": "thornvale",
+				"wage": 500.0
+			}
+		},
+		{
+			"age": 29,
+			"season_number": 22,
+			"type": "season_played",
+			"values": {
+				"club": "thornvale",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 73.0,
+				"overall_before": 72.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 29,
+			"season_number": 22,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "thornvale",
+				"wins": 0.0,
+				"won": false
+			}
+		},
+		{
+			"age": 30,
+			"season_number": 23,
+			"type": "season_played",
+			"values": {
+				"club": "thornvale",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 73.0,
+				"overall_before": 73.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 30,
+			"season_number": 23,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "thornvale",
+				"wins": 0.0,
+				"won": false
+			}
+		},
+		{
+			"age": 31,
+			"season_number": 24,
+			"type": "season_played",
+			"values": {
+				"club": "thornvale",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 72.0,
+				"overall_before": 73.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 31,
+			"season_number": 24,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "thornvale",
+				"wins": 0.0,
+				"won": false
+			}
+		},
+		{
+			"age": 32,
+			"season_number": 25,
+			"type": "renewal",
+			"values": {
+				"club": "thornvale",
+				"wage": 500.0,
+				"years": 2.0
+			}
+		},
+		{
+			"age": 32,
+			"season_number": 25,
+			"type": "season_played",
+			"values": {
+				"club": "thornvale",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 71.0,
+				"overall_before": 72.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 32,
+			"season_number": 25,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "thornvale",
+				"wins": 0.0,
+				"won": false
+			}
+		},
+		{
+			"age": 32,
+			"season_number": 25,
+			"type": "cup_result",
+			"values": {
+				"cup": "world_nations_cup",
+				"team": "valdoria",
+				"wins": 1.0,
+				"won": false
+			}
+		},
+		{
+			"age": 33,
+			"season_number": 26,
+			"type": "season_played",
+			"values": {
+				"club": "thornvale",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 70.0,
+				"overall_before": 71.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 33,
+			"season_number": 26,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "thornvale",
+				"wins": 0.0,
+				"won": false
+			}
+		},
+		{
+			"age": 34,
+			"season_number": 27,
+			"type": "renewal",
+			"values": {
+				"club": "thornvale",
+				"wage": 500.0,
+				"years": 1.0
+			}
+		},
+		{
+			"age": 34,
+			"season_number": 27,
+			"type": "season_played",
+			"values": {
+				"club": "thornvale",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 67.0,
+				"overall_before": 70.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 34,
+			"season_number": 27,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "thornvale",
+				"wins": 0.0,
+				"won": false
+			}
+		},
+		{
+			"age": 35,
+			"season_number": 28,
+			"type": "renewal",
+			"values": {
+				"club": "thornvale",
+				"wage": 500.0,
+				"years": 1.0
+			}
+		},
+		{
+			"age": 35,
+			"season_number": 28,
+			"type": "season_played",
+			"values": {
+				"club": "thornvale",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 65.0,
+				"overall_before": 67.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 35,
+			"season_number": 28,
+			"type": "injury",
+			"values": {
+				"club": "thornvale"
+			}
+		},
+		{
+			"age": 35,
+			"season_number": 28,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "thornvale",
+				"wins": 0.0,
+				"won": false
+			}
+		},
+		{
+			"age": 36,
+			"season_number": 29,
+			"type": "renewal",
+			"values": {
+				"club": "thornvale",
+				"wage": 500.0,
+				"years": 1.0
+			}
+		},
+		{
+			"age": 36,
+			"season_number": 29,
+			"type": "season_played",
+			"values": {
+				"club": "thornvale",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 62.0,
+				"overall_before": 65.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 36,
+			"season_number": 29,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "thornvale",
+				"wins": 0.0,
+				"won": false
+			}
+		},
+		{
+			"age": 37,
+			"season_number": 30,
+			"type": "renewal",
+			"values": {
+				"club": "thornvale",
+				"wage": 500.0,
+				"years": 1.0
+			}
+		},
+		{
+			"age": 37,
+			"season_number": 30,
+			"type": "season_played",
+			"values": {
+				"club": "thornvale",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 60.0,
+				"overall_before": 62.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 37,
+			"season_number": 30,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "thornvale",
+				"wins": 0.0,
+				"won": false
+			}
+		},
+		{
+			"age": 38,
+			"season_number": 31,
+			"type": "renewal",
+			"values": {
+				"club": "thornvale",
+				"wage": 500.0,
+				"years": 1.0
+			}
+		},
+		{
+			"age": 38,
+			"season_number": 31,
+			"type": "season_played",
+			"values": {
+				"club": "thornvale",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 57.0,
+				"overall_before": 60.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 38,
+			"season_number": 31,
+			"type": "injury",
+			"values": {
+				"club": "thornvale"
+			}
+		},
+		{
+			"age": 38,
+			"season_number": 31,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "thornvale",
+				"wins": 0.0,
+				"won": false
+			}
+		},
+		{
+			"age": 39,
+			"season_number": 32,
+			"type": "transfer",
+			"values": {
+				"fee": 0.0,
+				"from_club": "thornvale",
+				"to_club": "hollowmere",
+				"wage": 326.0
+			}
+		},
+		{
+			"age": 39,
+			"season_number": 32,
+			"type": "season_played",
+			"values": {
+				"club": "hollowmere",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 56.0,
+				"overall_before": 57.0,
+				"rating": 6.5
+			}
+		},
+		{
+			"age": 40,
+			"season_number": 33,
+			"type": "retirement",
+			"values": {
+				"club": "hollowmere",
+				"inducted": false,
+				"peak_overall": 73.0,
+				"score": 101.0
+			}
+		}
+	],
+	"fatigue": 64.5,
+	"golden_balls": [
+		{
+			"rank": 9,
+			"season_number": 11,
+			"winner": "Zephyr Calloway"
+		},
+		{
+			"rank": 9,
+			"season_number": 12,
+			"winner": "Tavi Quenmore"
+		},
+		{
+			"rank": 9,
+			"season_number": 13,
+			"winner": "Zephyr Calloway"
+		},
+		{
+			"rank": 9,
+			"season_number": 14,
+			"winner": "Zephyr Calloway"
+		},
+		{
+			"rank": 9,
+			"season_number": 15,
+			"winner": "Oskar Fenwhistle"
+		},
+		{
+			"rank": 9,
+			"season_number": 16,
+			"winner": "Zephyr Calloway"
+		},
+		{
+			"rank": 9,
+			"season_number": 17,
+			"winner": "Oskar Fenwhistle"
+		},
+		{
+			"rank": 9,
+			"season_number": 18,
+			"winner": "Ilo Brambleworth"
+		},
+		{
+			"rank": 9,
+			"season_number": 19,
+			"winner": "Tavi Quenmore"
+		},
+		{
+			"rank": 9,
+			"season_number": 20,
+			"winner": "Zephyr Calloway"
+		},
+		{
+			"rank": 9,
+			"season_number": 21,
+			"winner": "Zephyr Calloway"
+		},
+		{
+			"rank": 9,
+			"season_number": 22,
+			"winner": "Zephyr Calloway"
+		},
+		{
+			"rank": 9,
+			"season_number": 23,
+			"winner": "Tavi Quenmore"
+		},
+		{
+			"rank": 9,
+			"season_number": 24,
+			"winner": "Zephyr Calloway"
+		},
+		{
+			"rank": 9,
+			"season_number": 25,
+			"winner": "Oskar Fenwhistle"
+		},
+		{
+			"rank": 9,
+			"season_number": 26,
+			"winner": "Ilo Brambleworth"
+		},
+		{
+			"rank": 9,
+			"season_number": 27,
+			"winner": "Zephyr Calloway"
+		},
+		{
+			"rank": 9,
+			"season_number": 28,
+			"winner": "Zephyr Calloway"
+		},
+		{
+			"rank": 9,
+			"season_number": 29,
+			"winner": "Ilo Brambleworth"
+		},
+		{
+			"rank": 9,
+			"season_number": 30,
+			"winner": "Zephyr Calloway"
+		},
+		{
+			"rank": 9,
+			"season_number": 31,
+			"winner": "Ilo Brambleworth"
+		},
+		{
+			"rank": 9,
+			"season_number": 32,
+			"winner": "Zephyr Calloway"
+		}
+	],
+	"history": [
+		{
+			"age": 8,
+			"attribute_changes": {
+				"defending": 1.8,
+				"dribbling": 1.18,
+				"goalkeeping": 4.46,
+				"pace": 1.81,
+				"passing": 1.81,
+				"physical": 2.96,
+				"shooting": 1.19
+			},
+			"average_rating": 6.5,
+			"club_id": "copperlake",
+			"fatigue_after": 35.0,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 20,
+			"overall_after": 15,
+			"overall_before": 11,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 1,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 9,
+			"attribute_changes": {
+				"defending": 1.79,
+				"dribbling": 1.18,
+				"goalkeeping": 4.38,
+				"pace": 1.8,
+				"passing": 1.8,
+				"physical": 2.93,
+				"shooting": 1.18
+			},
+			"average_rating": 6.5,
+			"club_id": "copperlake",
+			"fatigue_after": 52.5,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 20,
+			"overall_after": 18,
+			"overall_before": 15,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 2,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 10,
+			"attribute_changes": {
+				"defending": 1.78,
+				"dribbling": 1.17,
+				"goalkeeping": 4.31,
+				"pace": 1.79,
+				"passing": 1.79,
+				"physical": 2.9,
+				"shooting": 1.18
+			},
+			"average_rating": 6.5,
+			"club_id": "copperlake",
+			"fatigue_after": 61.25,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 20,
+			"overall_after": 21,
+			"overall_before": 18,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 3,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 11,
+			"attribute_changes": {
+				"defending": 1.77,
+				"dribbling": 1.17,
+				"goalkeeping": 4.24,
+				"pace": 1.78,
+				"passing": 1.78,
+				"physical": 2.87,
+				"shooting": 1.17
+			},
+			"average_rating": 6.5,
+			"club_id": "copperlake",
+			"fatigue_after": 65.62,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 20,
+			"overall_after": 24,
+			"overall_before": 21,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 4,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 12,
+			"attribute_changes": {
+				"defending": 1.76,
+				"dribbling": 1.16,
+				"goalkeeping": 4.16,
+				"pace": 1.77,
+				"passing": 1.77,
+				"physical": 2.84,
+				"shooting": 1.17
+			},
+			"average_rating": 6.5,
+			"club_id": "copperlake",
+			"fatigue_after": 67.81,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 20,
+			"overall_after": 27,
+			"overall_before": 24,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 5,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 13,
+			"attribute_changes": {
+				"defending": 2.03,
+				"dribbling": 1.45,
+				"goalkeeping": 4.96,
+				"pace": 2.04,
+				"passing": 2.04,
+				"physical": 3.36,
+				"shooting": 1.45
+			},
+			"average_rating": 6.5,
+			"club_id": "copperlake",
+			"fatigue_after": 68.91,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 26,
+			"overall_after": 31,
+			"overall_before": 27,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 6,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 14,
+			"attribute_changes": {
+				"defending": 2.02,
+				"dribbling": 1.44,
+				"goalkeeping": 4.84,
+				"pace": 2.02,
+				"passing": 2.02,
+				"physical": 3.32,
+				"shooting": 1.45
+			},
+			"average_rating": 6.5,
+			"club_id": "copperlake",
+			"fatigue_after": 69.45,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 26,
+			"overall_after": 35,
+			"overall_before": 31,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 7,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 15,
+			"attribute_changes": {
+				"defending": 2.0,
+				"dribbling": 1.43,
+				"goalkeeping": 4.72,
+				"pace": 2.01,
+				"passing": 2.01,
+				"physical": 3.27,
+				"shooting": 1.44
+			},
+			"average_rating": 6.5,
+			"club_id": "copperlake",
+			"fatigue_after": 69.72,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 26,
+			"overall_after": 38,
+			"overall_before": 35,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 8,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 16,
+			"attribute_changes": {
+				"defending": 1.98,
+				"dribbling": 1.43,
+				"goalkeeping": 4.59,
+				"pace": 1.99,
+				"passing": 1.99,
+				"physical": 3.22,
+				"shooting": 1.43
+			},
+			"average_rating": 6.5,
+			"club_id": "brackenford",
+			"fatigue_after": 69.86,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 26,
+			"overall_after": 42,
+			"overall_before": 38,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 9,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 17,
+			"attribute_changes": {
+				"defending": 1.97,
+				"dribbling": 1.42,
+				"goalkeeping": 4.45,
+				"pace": 1.98,
+				"passing": 1.98,
+				"physical": 3.17,
+				"shooting": 1.42
+			},
+			"average_rating": 6.5,
+			"club_id": "brackenford",
+			"fatigue_after": 69.93,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 34,
+			"overall_after": 45,
+			"overall_before": 42,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 10,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 18,
+			"attribute_changes": {
+				"defending": 1.71,
+				"dribbling": 1.41,
+				"goalkeeping": 4.11,
+				"pace": 1.72,
+				"passing": 1.72,
+				"physical": 2.89,
+				"shooting": 1.42
+			},
+			"average_rating": 6.5,
+			"club_id": "brightwater",
+			"fatigue_after": 63.97,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 20,
+			"overall_after": 48,
+			"overall_before": 45,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 11,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 19,
+			"attribute_changes": {
+				"defending": 1.7,
+				"dribbling": 1.4,
+				"goalkeeping": 3.98,
+				"pace": 1.7,
+				"passing": 1.7,
+				"physical": 2.85,
+				"shooting": 1.41
+			},
+			"average_rating": 6.5,
+			"club_id": "westerby",
+			"fatigue_after": 60.98,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 20,
+			"overall_after": 51,
+			"overall_before": 48,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 12,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 20,
+			"attribute_changes": {
+				"defending": 1.68,
+				"dribbling": 1.4,
+				"goalkeeping": 3.84,
+				"pace": 1.69,
+				"passing": 1.69,
+				"physical": 2.8,
+				"shooting": 1.4
+			},
+			"average_rating": 6.5,
+			"club_id": "hollowmere",
+			"fatigue_after": 59.49,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 20,
+			"overall_after": 54,
+			"overall_before": 51,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 13,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 21,
+			"attribute_changes": {
+				"defending": 1.78,
+				"dribbling": 1.25,
+				"goalkeeping": 3.54,
+				"pace": 1.78,
+				"passing": 1.78,
+				"physical": 2.73,
+				"shooting": 1.25
+			},
+			"average_rating": 6.5,
+			"club_id": "hollowmere",
+			"fatigue_after": 64.75,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 34,
+			"overall_after": 57,
+			"overall_before": 54,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 14,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 22,
+			"attribute_changes": {
+				"defending": 1.53,
+				"dribbling": 1.24,
+				"goalkeeping": 3.22,
+				"pace": 1.53,
+				"passing": 1.53,
+				"physical": 2.47,
+				"shooting": 1.25
+			},
+			"average_rating": 6.5,
+			"club_id": "silverbeck",
+			"fatigue_after": 61.38,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 20,
+			"overall_after": 59,
+			"overall_before": 57,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 15,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 23,
+			"attribute_changes": {
+				"defending": 1.52,
+				"dribbling": 1.24,
+				"goalkeeping": 3.08,
+				"pace": 1.52,
+				"passing": 1.52,
+				"physical": 2.43,
+				"shooting": 1.24
+			},
+			"average_rating": 6.5,
+			"club_id": "oakhollow",
+			"fatigue_after": 59.69,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 20,
+			"overall_after": 62,
+			"overall_before": 59,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 16,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 24,
+			"attribute_changes": {
+				"defending": 1.74,
+				"dribbling": 1.23,
+				"goalkeeping": 3.1,
+				"pace": 1.74,
+				"passing": 1.74,
+				"physical": 2.6,
+				"shooting": 1.24
+			},
+			"average_rating": 6.5,
+			"club_id": "oakhollow",
+			"fatigue_after": 64.84,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 34,
+			"overall_after": 64,
+			"overall_before": 62,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 17,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 25,
+			"attribute_changes": {
+				"defending": 1.23,
+				"dribbling": 0.95,
+				"goalkeeping": 2.21,
+				"pace": 1.24,
+				"passing": 1.24,
+				"physical": 1.89,
+				"shooting": 0.96
+			},
+			"average_rating": 6.5,
+			"club_id": "saltmarsh",
+			"fatigue_after": 61.42,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 20,
+			"overall_after": 66,
+			"overall_before": 64,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 18,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 26,
+			"attribute_changes": {
+				"defending": 1.23,
+				"dribbling": 0.95,
+				"goalkeeping": 2.11,
+				"pace": 1.23,
+				"passing": 1.23,
+				"physical": 1.86,
+				"shooting": 0.95
+			},
+			"average_rating": 6.5,
+			"club_id": "saltmarsh",
+			"fatigue_after": 59.71,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 20,
+			"overall_after": 68,
+			"overall_before": 66,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 19,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 27,
+			"attribute_changes": {
+				"defending": 1.44,
+				"dribbling": 0.94,
+				"goalkeeping": 2.14,
+				"pace": 1.45,
+				"passing": 1.45,
+				"physical": 2.03,
+				"shooting": 0.95
+			},
+			"average_rating": 6.5,
+			"club_id": "saltmarsh",
+			"fatigue_after": 64.86,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 34,
+			"overall_after": 70,
+			"overall_before": 68,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 20,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 28,
+			"attribute_changes": {
+				"defending": 1.43,
+				"dribbling": 0.94,
+				"goalkeeping": 2.0,
+				"pace": 1.44,
+				"passing": 1.44,
+				"physical": 1.99,
+				"shooting": 0.94
+			},
+			"average_rating": 6.5,
+			"club_id": "saltmarsh",
+			"fatigue_after": 67.43,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 34,
+			"overall_after": 72,
+			"overall_before": 70,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 21,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 29,
+			"attribute_changes": {
+				"defending": 0.7,
+				"dribbling": 0.4,
+				"goalkeeping": 0.84,
+				"pace": 0.7,
+				"passing": 0.7,
+				"physical": 0.91,
+				"shooting": 0.4
+			},
+			"average_rating": 6.5,
+			"club_id": "thornvale",
+			"fatigue_after": 62.72,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 20,
+			"overall_after": 73,
+			"overall_before": 72,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 22,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 30,
+			"attribute_changes": {
+				"defending": 0.69,
+				"dribbling": 0.4,
+				"goalkeeping": 0.8,
+				"pace": 0.7,
+				"passing": 0.7,
+				"physical": 0.91,
+				"shooting": 0.4
+			},
+			"average_rating": 6.5,
+			"club_id": "thornvale",
+			"fatigue_after": 60.36,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 20,
+			"overall_after": 73,
+			"overall_before": 73,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 23,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 31,
+			"attribute_changes": {
+				"defending": -1.18,
+				"dribbling": -2.25,
+				"goalkeeping": -0.47,
+				"pace": -3.43,
+				"passing": -0.43,
+				"physical": -2.01,
+				"shooting": -1.5
+			},
+			"average_rating": 6.5,
+			"club_id": "thornvale",
+			"fatigue_after": 62.18,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 20,
+			"overall_after": 72,
+			"overall_before": 73,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 24,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 32,
+			"attribute_changes": {
+				"defending": -1.18,
+				"dribbling": -2.25,
+				"goalkeeping": -0.46,
+				"pace": -3.43,
+				"passing": -0.43,
+				"physical": -2.0,
+				"shooting": -1.5
+			},
+			"average_rating": 6.5,
+			"club_id": "thornvale",
+			"fatigue_after": 66.09,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 20,
+			"overall_after": 71,
+			"overall_before": 72,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 25,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 33,
+			"attribute_changes": {
+				"defending": -1.18,
+				"dribbling": -2.25,
+				"goalkeeping": -0.46,
+				"pace": -3.42,
+				"passing": -0.43,
+				"physical": -2.0,
+				"shooting": -1.5
+			},
+			"average_rating": 6.5,
+			"club_id": "thornvale",
+			"fatigue_after": 71.05,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 20,
+			"overall_after": 70,
+			"overall_before": 71,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 26,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 34,
+			"attribute_changes": {
+				"defending": -2.38,
+				"dribbling": -4.05,
+				"goalkeeping": -0.96,
+				"pace": -6.41,
+				"passing": -1.03,
+				"physical": -3.81,
+				"shooting": -2.7
+			},
+			"average_rating": 6.5,
+			"club_id": "thornvale",
+			"fatigue_after": 76.53,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 20,
+			"overall_after": 67,
+			"overall_before": 70,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 27,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 35,
+			"attribute_changes": {
+				"defending": -2.37,
+				"dribbling": -4.05,
+				"goalkeeping": -0.95,
+				"pace": -6.4,
+				"passing": -1.03,
+				"physical": -3.8,
+				"shooting": -2.7
+			},
+			"average_rating": 6.5,
+			"club_id": "thornvale",
+			"fatigue_after": 20.0,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 20,
+			"overall_after": 65,
+			"overall_before": 67,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 28,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 36,
+			"attribute_changes": {
+				"defending": -2.62,
+				"dribbling": -4.05,
+				"goalkeeping": -1.08,
+				"pace": -6.66,
+				"passing": -1.27,
+				"physical": -4.02,
+				"shooting": -2.7
+			},
+			"average_rating": 6.5,
+			"club_id": "thornvale",
+			"fatigue_after": 50.25,
+			"injured": true,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 5,
+			"overall_after": 62,
+			"overall_before": 65,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 29,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 37,
+			"attribute_changes": {
+				"defending": -2.53,
+				"dribbling": -4.05,
+				"goalkeeping": -1.03,
+				"pace": -6.57,
+				"passing": -1.19,
+				"physical": -3.94,
+				"shooting": -2.7
+			},
+			"average_rating": 6.5,
+			"club_id": "thornvale",
+			"fatigue_after": 70.62,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 10,
+			"overall_after": 60,
+			"overall_before": 62,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 30,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 38,
+			"attribute_changes": {
+				"defending": -2.53,
+				"dribbling": -4.05,
+				"goalkeeping": -1.03,
+				"pace": -6.56,
+				"passing": -1.19,
+				"physical": -3.94,
+				"shooting": -2.7
+			},
+			"average_rating": 6.5,
+			"club_id": "thornvale",
+			"fatigue_after": 20.0,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 10,
+			"overall_after": 57,
+			"overall_before": 60,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 31,
+			"secondary_focus": "physical"
+		},
+		{
+			"age": 39,
+			"attribute_changes": {
+				"defending": -2.41,
+				"dribbling": -4.05,
+				"goalkeeping": -0.95,
+				"pace": -1.55,
+				"passing": -1.07,
+				"physical": -3.82,
+				"shooting": -2.7
+			},
+			"average_rating": 6.5,
+			"club_id": "hollowmere",
+			"fatigue_after": 64.5,
+			"injured": true,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 17,
+			"overall_after": 56,
+			"overall_before": 57,
+			"position": "GK",
+			"primary_focus": "goalkeeping",
+			"season_number": 32,
+			"secondary_focus": "physical"
+		}
+	],
+	"injured_next_season": false,
+	"player": {
+		"age": 40,
+		"attributes": {
+			"defending": 27.9,
+			"dribbling": 1.73,
+			"goalkeeping": 86.69,
+			"pace": 1.0,
+			"passing": 37.36,
+			"physical": 39.86,
+			"shooting": 11.19
+		},
+		"display_name": "Sim",
+		"position": "GK"
+	},
+	"retired": true,
+	"transfers": [
+		{
+			"fee": 0,
+			"from_club": "copperlake",
+			"season_number": 9,
+			"to_club": "brackenford",
+			"wage": 40
+		},
+		{
+			"fee": 0,
+			"from_club": "brackenford",
+			"season_number": 11,
+			"to_club": "brightwater",
+			"wage": 233
+		},
+		{
+			"fee": 1398,
+			"from_club": "brightwater",
+			"season_number": 12,
+			"to_club": "westerby",
+			"wage": 233
+		},
+		{
+			"fee": 1398,
+			"from_club": "westerby",
+			"season_number": 13,
+			"to_club": "hollowmere",
+			"wage": 246
+		},
+		{
+			"fee": 1476,
+			"from_club": "hollowmere",
+			"season_number": 15,
+			"to_club": "silverbeck",
+			"wage": 220
+		},
+		{
+			"fee": 1320,
+			"from_club": "silverbeck",
+			"season_number": 16,
+			"to_club": "oakhollow",
+			"wage": 220
+		},
+		{
+			"fee": 1320,
+			"from_club": "oakhollow",
+			"season_number": 18,
+			"to_club": "saltmarsh",
+			"wage": 220
+		},
+		{
+			"fee": 1560,
+			"from_club": "saltmarsh",
+			"season_number": 22,
+			"to_club": "thornvale",
+			"wage": 500
+		},
+		{
+			"fee": 0,
+			"from_club": "thornvale",
+			"season_number": 32,
+			"to_club": "hollowmere",
+			"wage": 326
+		}
+	],
+	"trial_used": true,
+	"version": 4
+}

@@ -25,3 +25,25 @@ jobs:
         run: ./tools/run_tests.sh
       - name: Compile all scripts and boot the project headless
         run: ./tools/check_project.sh
+
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Cache Godot binary
+        uses: actions/cache@v4
+        with:
+          path: .tools
+          key: godot-${{ hashFiles('tools/env.sh') }}
+      - name: Install Godot and gdtoolkit
+        run: ./tools/install_tools.sh
+      - name: Edge function tests and SQL migrations + row-level security (local Postgres)
+        run: ./tools/test_backend.sh
+      - name: Online client end to end against the mock backend
+        run: ./tools/test_online.sh

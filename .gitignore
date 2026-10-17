@@ -10,6 +10,8 @@ android/
 *.ipa
 # Secrets: never commit. See .env.example.
 .env
+# Generated from env vars by tools/write_backend_config.sh.
+config/backend.local.json
 *.keystore
 *.jks
 *.p12

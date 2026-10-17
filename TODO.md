@@ -9,13 +9,13 @@ _None._
 
 ## Planned work not yet started
 
-- [ ] M7: Persist phone "seen" counts with the save (badges reset each session now).
-- [ ] M7: Loading a save must run `CareerMigration.migrate` before
-      `CareerState.validate_dict`.
-- [ ] M7: Local saves (one career per slot, backup copy), Supabase schema and
-      RLS migrations, ranking-validation edge function, sync, ARENA.
-- [ ] M7: Decide how the Supabase URL and anon key reach the exported build
-      (env vars do not exist on device; bake them in at export time).
+- [ ] M8: Export presets must include `config/backend.local.json` and the
+      `data/*.json` files (non-resource files need an include filter).
+- [ ] M8: Extra save slots (convenience purchase) raise `free_save_slots`.
+- [ ] M8: Onboarding picks the preset online name (Settings has it for now).
+- [ ] Later: CAPTCHA on anonymous sign-up (Supabase Attack Protection) once
+      the client sends a captcha token; community-room servers players can join.
+- [ ] Later: Persist phone "seen" counts with the save (badges reset each session).
 - [ ] M8: Android (AAB) and iOS export presets, with secrets read from env vars.
 - [ ] M8: Onboarding with a preset/filtered name list (currently every career
       uses `default_player_name` from data/game_config.json).

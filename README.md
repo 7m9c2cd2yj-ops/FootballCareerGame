@@ -31,7 +31,7 @@ git clone <this repo> && cd FootballCareerGame
 # macOS/Windows: install Godot 4.7.2 yourself, then point the scripts at it:
 #   export GODOT_BIN="/Applications/Godot.app/Contents/MacOS/Godot"
 #   python3 -m pip install "gdtoolkit==4.5.0"
-cp .env.example .env   # only needed from M7 (backend)
+cp .env.example .env   # only for online features (docs/SUPABASE_SETUP.md)
 ```
 
 Open the project in the editor with `godot -e` (or via the Godot project
@@ -44,6 +44,16 @@ manager). Press F5 to run. On desktop, mouse clicks emulate touch.
 ./tools/run_tests.sh       # all GUT tests headless; exit code 0 = pass
 ./tools/check_project.sh   # compiles every script, boots the game headless
 ```
+
+Backend and online checks (Node 22+, local Postgres 15+):
+
+```bash
+./tools/test_backend.sh    # edge function tests + SQL migrations and row-level security
+./tools/test_online.sh     # the game's online client against tools/mock_supabase.py
+```
+
+Online features are optional; see `docs/SUPABASE_SETUP.md` to turn them on
+and `docs/ONLINE.md` for saves, sync, rankings and the ARENA.
 
 `run_tests.sh` and `check_project.sh` also fail on GDScript warnings and on
 script errors outside tests, and never wait for keyboard input, so CI cannot
@@ -65,7 +75,7 @@ The same three checks run in GitHub Actions (`.github/workflows/ci.yml`).
 
 ```
 addons/gut/      Vendored GUT test framework (MIT, do not edit)
-backend/         Supabase SQL migrations and edge functions (M7)
+backend/         Supabase SQL migrations, edge function, SQL tests
 data/            JSON data: config, clubs, nations, balance, text templates
 docs/            Architecture, performance budget, privacy policy, checklists
 scenes/          .tscn scenes: display and input only
@@ -75,6 +85,8 @@ scripts/core/moments/  Key-moment rules: resolvers, planner, season rating
 scripts/core/career/   Clubs, offers, contracts, trials, fatigue, Hall of Fame
 scripts/core/news/     Career events, text templates, agent advice, content rules
 scripts/core/cups/     Nations, cup draws and simulation, Golden Ball
+scripts/core/save/     Save slots (current + backup, checksums), career envelopes
+scripts/core/online/   Supabase requests, sessions, backend config, sync policy
 scripts/ui/phone/      The in-game phone and its feed apps
 scripts/ui/      Scripts attached to scenes; thin layer over core
 scripts/ui/moments/    3D moment stage, HUD and touch controllers

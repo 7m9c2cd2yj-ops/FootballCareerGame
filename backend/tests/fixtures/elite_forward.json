@@ -1,0 +1,2212 @@
+{
+	"club_id": "brackenford",
+	"contract": {
+		"club_id": "brackenford",
+		"is_youth": false,
+		"release_clause": 7992,
+		"wage": 1332,
+		"years_left": 0
+	},
+	"cup_runs": [
+		{
+			"cup_id": "continental_cup",
+			"season_number": 11,
+			"team": "brackenford",
+			"wins": 2,
+			"won": false
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 12,
+			"team": "brackenford",
+			"wins": 2,
+			"won": false
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 13,
+			"team": "brackenford",
+			"wins": 1,
+			"won": false
+		},
+		{
+			"cup_id": "world_nations_cup",
+			"season_number": 13,
+			"team": "valdoria",
+			"wins": 1,
+			"won": false
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 14,
+			"team": "brackenford",
+			"wins": 3,
+			"won": false
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 15,
+			"team": "brackenford",
+			"wins": 4,
+			"won": true
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 16,
+			"team": "brackenford",
+			"wins": 4,
+			"won": true
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 17,
+			"team": "brackenford",
+			"wins": 2,
+			"won": false
+		},
+		{
+			"cup_id": "world_nations_cup",
+			"season_number": 17,
+			"team": "valdoria",
+			"wins": 2,
+			"won": false
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 18,
+			"team": "brackenford",
+			"wins": 1,
+			"won": false
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 19,
+			"team": "brackenford",
+			"wins": 2,
+			"won": false
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 20,
+			"team": "brackenford",
+			"wins": 3,
+			"won": false
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 21,
+			"team": "brackenford",
+			"wins": 4,
+			"won": true
+		},
+		{
+			"cup_id": "world_nations_cup",
+			"season_number": 21,
+			"team": "valdoria",
+			"wins": 4,
+			"won": true
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 22,
+			"team": "brackenford",
+			"wins": 3,
+			"won": false
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 23,
+			"team": "brackenford",
+			"wins": 4,
+			"won": true
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 24,
+			"team": "brackenford",
+			"wins": 2,
+			"won": false
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 25,
+			"team": "brackenford",
+			"wins": 3,
+			"won": false
+		},
+		{
+			"cup_id": "world_nations_cup",
+			"season_number": 25,
+			"team": "valdoria",
+			"wins": 1,
+			"won": false
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 26,
+			"team": "brackenford",
+			"wins": 4,
+			"won": true
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 27,
+			"team": "brackenford",
+			"wins": 1,
+			"won": false
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 28,
+			"team": "brackenford",
+			"wins": 3,
+			"won": false
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 29,
+			"team": "brackenford",
+			"wins": 2,
+			"won": false
+		},
+		{
+			"cup_id": "world_nations_cup",
+			"season_number": 29,
+			"team": "valdoria",
+			"wins": 2,
+			"won": false
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 30,
+			"team": "brackenford",
+			"wins": 1,
+			"won": false
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 31,
+			"team": "brackenford",
+			"wins": 1,
+			"won": false
+		},
+		{
+			"cup_id": "continental_cup",
+			"season_number": 32,
+			"team": "brackenford",
+			"wins": 2,
+			"won": false
+		}
+	],
+	"events": [
+		{
+			"age": 8,
+			"season_number": 1,
+			"type": "season_played",
+			"values": {
+				"club": "copperlake",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 20.0,
+				"overall_before": 12.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 9,
+			"season_number": 2,
+			"type": "season_played",
+			"values": {
+				"club": "copperlake",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 27.0,
+				"overall_before": 20.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 10,
+			"season_number": 3,
+			"type": "season_played",
+			"values": {
+				"club": "copperlake",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 33.0,
+				"overall_before": 27.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 11,
+			"season_number": 4,
+			"type": "season_played",
+			"values": {
+				"club": "copperlake",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 40.0,
+				"overall_before": 33.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 12,
+			"season_number": 5,
+			"type": "season_played",
+			"values": {
+				"club": "copperlake",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 46.0,
+				"overall_before": 40.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 13,
+			"season_number": 6,
+			"type": "season_played",
+			"values": {
+				"club": "copperlake",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 53.0,
+				"overall_before": 46.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 13,
+			"season_number": 6,
+			"type": "milestone",
+			"values": {
+				"club": "copperlake",
+				"milestone": 50.0
+			}
+		},
+		{
+			"age": 14,
+			"season_number": 7,
+			"type": "season_played",
+			"values": {
+				"club": "copperlake",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 59.0,
+				"overall_before": 53.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 15,
+			"season_number": 8,
+			"type": "season_played",
+			"values": {
+				"club": "copperlake",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 65.0,
+				"overall_before": 59.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 15,
+			"season_number": 8,
+			"type": "milestone",
+			"values": {
+				"club": "copperlake",
+				"milestone": 60.0
+			}
+		},
+		{
+			"age": 16,
+			"season_number": 9,
+			"type": "trial_passed",
+			"values": {
+				"club": "brackenford"
+			}
+		},
+		{
+			"age": 16,
+			"season_number": 9,
+			"type": "season_played",
+			"values": {
+				"club": "brackenford",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 71.0,
+				"overall_before": 65.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 16,
+			"season_number": 9,
+			"type": "milestone",
+			"values": {
+				"club": "brackenford",
+				"milestone": 70.0
+			}
+		},
+		{
+			"age": 17,
+			"season_number": 10,
+			"type": "season_played",
+			"values": {
+				"club": "brackenford",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 76.0,
+				"overall_before": 71.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 18,
+			"season_number": 11,
+			"type": "renewal",
+			"values": {
+				"club": "brackenford",
+				"wage": 900.0,
+				"years": 4.0
+			}
+		},
+		{
+			"age": 18,
+			"season_number": 11,
+			"type": "season_played",
+			"values": {
+				"club": "brackenford",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 80.0,
+				"overall_before": 76.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 18,
+			"season_number": 11,
+			"type": "milestone",
+			"values": {
+				"club": "brackenford",
+				"milestone": 80.0
+			}
+		},
+		{
+			"age": 18,
+			"season_number": 11,
+			"type": "top_tier_debut",
+			"values": {
+				"club": "brackenford"
+			}
+		},
+		{
+			"age": 18,
+			"season_number": 11,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "brackenford",
+				"wins": 2.0,
+				"won": false
+			}
+		},
+		{
+			"age": 19,
+			"season_number": 12,
+			"type": "season_played",
+			"values": {
+				"club": "brackenford",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 83.0,
+				"overall_before": 80.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 19,
+			"season_number": 12,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "brackenford",
+				"wins": 2.0,
+				"won": false
+			}
+		},
+		{
+			"age": 20,
+			"season_number": 13,
+			"type": "season_played",
+			"values": {
+				"club": "brackenford",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 87.0,
+				"overall_before": 83.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 20,
+			"season_number": 13,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "brackenford",
+				"wins": 1.0,
+				"won": false
+			}
+		},
+		{
+			"age": 20,
+			"season_number": 13,
+			"type": "national_call_up",
+			"values": {
+				"nation": "valdoria"
+			}
+		},
+		{
+			"age": 20,
+			"season_number": 13,
+			"type": "cup_result",
+			"values": {
+				"cup": "world_nations_cup",
+				"team": "valdoria",
+				"wins": 1.0,
+				"won": false
+			}
+		},
+		{
+			"age": 21,
+			"season_number": 14,
+			"type": "season_played",
+			"values": {
+				"club": "brackenford",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 90.0,
+				"overall_before": 87.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 21,
+			"season_number": 14,
+			"type": "milestone",
+			"values": {
+				"club": "brackenford",
+				"milestone": 90.0
+			}
+		},
+		{
+			"age": 21,
+			"season_number": 14,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "brackenford",
+				"wins": 3.0,
+				"won": false
+			}
+		},
+		{
+			"age": 22,
+			"season_number": 15,
+			"type": "renewal",
+			"values": {
+				"club": "brackenford",
+				"wage": 1332.0,
+				"years": 4.0
+			}
+		},
+		{
+			"age": 22,
+			"season_number": 15,
+			"type": "season_played",
+			"values": {
+				"club": "brackenford",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 92.0,
+				"overall_before": 90.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 22,
+			"season_number": 15,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "brackenford",
+				"wins": 4.0,
+				"won": true
+			}
+		},
+		{
+			"age": 22,
+			"season_number": 15,
+			"type": "golden_ball",
+			"values": {
+				"rank": 3.0,
+				"winner": "Oskar Fenwhistle"
+			}
+		},
+		{
+			"age": 23,
+			"season_number": 16,
+			"type": "season_played",
+			"values": {
+				"club": "brackenford",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 94.0,
+				"overall_before": 92.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 23,
+			"season_number": 16,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "brackenford",
+				"wins": 4.0,
+				"won": true
+			}
+		},
+		{
+			"age": 23,
+			"season_number": 16,
+			"type": "golden_ball",
+			"values": {
+				"rank": 1.0,
+				"winner": "Sim"
+			}
+		},
+		{
+			"age": 24,
+			"season_number": 17,
+			"type": "season_played",
+			"values": {
+				"club": "brackenford",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 96.0,
+				"overall_before": 94.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 24,
+			"season_number": 17,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "brackenford",
+				"wins": 2.0,
+				"won": false
+			}
+		},
+		{
+			"age": 24,
+			"season_number": 17,
+			"type": "cup_result",
+			"values": {
+				"cup": "world_nations_cup",
+				"team": "valdoria",
+				"wins": 2.0,
+				"won": false
+			}
+		},
+		{
+			"age": 25,
+			"season_number": 18,
+			"type": "season_played",
+			"values": {
+				"club": "brackenford",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 97.0,
+				"overall_before": 96.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 25,
+			"season_number": 18,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "brackenford",
+				"wins": 1.0,
+				"won": false
+			}
+		},
+		{
+			"age": 25,
+			"season_number": 18,
+			"type": "golden_ball",
+			"values": {
+				"rank": 3.0,
+				"winner": "Ilo Brambleworth"
+			}
+		},
+		{
+			"age": 26,
+			"season_number": 19,
+			"type": "renewal",
+			"values": {
+				"club": "brackenford",
+				"wage": 1710.0,
+				"years": 3.0
+			}
+		},
+		{
+			"age": 26,
+			"season_number": 19,
+			"type": "season_played",
+			"values": {
+				"club": "brackenford",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 98.0,
+				"overall_before": 97.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 26,
+			"season_number": 19,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "brackenford",
+				"wins": 2.0,
+				"won": false
+			}
+		},
+		{
+			"age": 26,
+			"season_number": 19,
+			"type": "golden_ball",
+			"values": {
+				"rank": 2.0,
+				"winner": "Tavi Quenmore"
+			}
+		},
+		{
+			"age": 27,
+			"season_number": 20,
+			"type": "season_played",
+			"values": {
+				"club": "brackenford",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 99.0,
+				"overall_before": 98.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 27,
+			"season_number": 20,
+			"type": "milestone",
+			"values": {
+				"club": "brackenford",
+				"milestone": 99.0
+			}
+		},
+		{
+			"age": 27,
+			"season_number": 20,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "brackenford",
+				"wins": 3.0,
+				"won": false
+			}
+		},
+		{
+			"age": 27,
+			"season_number": 20,
+			"type": "golden_ball",
+			"values": {
+				"rank": 3.0,
+				"winner": "Zephyr Calloway"
+			}
+		},
+		{
+			"age": 28,
+			"season_number": 21,
+			"type": "season_played",
+			"values": {
+				"club": "brackenford",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 99.0,
+				"overall_before": 99.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 28,
+			"season_number": 21,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "brackenford",
+				"wins": 4.0,
+				"won": true
+			}
+		},
+		{
+			"age": 28,
+			"season_number": 21,
+			"type": "cup_result",
+			"values": {
+				"cup": "world_nations_cup",
+				"team": "valdoria",
+				"wins": 4.0,
+				"won": true
+			}
+		},
+		{
+			"age": 28,
+			"season_number": 21,
+			"type": "golden_ball",
+			"values": {
+				"rank": 1.0,
+				"winner": "Sim"
+			}
+		},
+		{
+			"age": 29,
+			"season_number": 22,
+			"type": "renewal",
+			"values": {
+				"club": "brackenford",
+				"wage": 1818.0,
+				"years": 3.0
+			}
+		},
+		{
+			"age": 29,
+			"season_number": 22,
+			"type": "season_played",
+			"values": {
+				"club": "brackenford",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 99.0,
+				"overall_before": 99.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 29,
+			"season_number": 22,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "brackenford",
+				"wins": 3.0,
+				"won": false
+			}
+		},
+		{
+			"age": 29,
+			"season_number": 22,
+			"type": "golden_ball",
+			"values": {
+				"rank": 1.0,
+				"winner": "Sim"
+			}
+		},
+		{
+			"age": 30,
+			"season_number": 23,
+			"type": "season_played",
+			"values": {
+				"club": "brackenford",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 99.0,
+				"overall_before": 99.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 30,
+			"season_number": 23,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "brackenford",
+				"wins": 4.0,
+				"won": true
+			}
+		},
+		{
+			"age": 30,
+			"season_number": 23,
+			"type": "golden_ball",
+			"values": {
+				"rank": 1.0,
+				"winner": "Sim"
+			}
+		},
+		{
+			"age": 31,
+			"season_number": 24,
+			"type": "season_played",
+			"values": {
+				"club": "brackenford",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 98.0,
+				"overall_before": 99.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 31,
+			"season_number": 24,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "brackenford",
+				"wins": 2.0,
+				"won": false
+			}
+		},
+		{
+			"age": 31,
+			"season_number": 24,
+			"type": "golden_ball",
+			"values": {
+				"rank": 3.0,
+				"winner": "Zephyr Calloway"
+			}
+		},
+		{
+			"age": 32,
+			"season_number": 25,
+			"type": "renewal",
+			"values": {
+				"club": "brackenford",
+				"wage": 1764.0,
+				"years": 2.0
+			}
+		},
+		{
+			"age": 32,
+			"season_number": 25,
+			"type": "season_played",
+			"values": {
+				"club": "brackenford",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 98.0,
+				"overall_before": 98.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 32,
+			"season_number": 25,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "brackenford",
+				"wins": 3.0,
+				"won": false
+			}
+		},
+		{
+			"age": 32,
+			"season_number": 25,
+			"type": "cup_result",
+			"values": {
+				"cup": "world_nations_cup",
+				"team": "valdoria",
+				"wins": 1.0,
+				"won": false
+			}
+		},
+		{
+			"age": 32,
+			"season_number": 25,
+			"type": "golden_ball",
+			"values": {
+				"rank": 1.0,
+				"winner": "Sim"
+			}
+		},
+		{
+			"age": 33,
+			"season_number": 26,
+			"type": "season_played",
+			"values": {
+				"club": "brackenford",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 97.0,
+				"overall_before": 98.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 33,
+			"season_number": 26,
+			"type": "injury",
+			"values": {
+				"club": "brackenford"
+			}
+		},
+		{
+			"age": 33,
+			"season_number": 26,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "brackenford",
+				"wins": 4.0,
+				"won": true
+			}
+		},
+		{
+			"age": 33,
+			"season_number": 26,
+			"type": "golden_ball",
+			"values": {
+				"rank": 1.0,
+				"winner": "Sim"
+			}
+		},
+		{
+			"age": 34,
+			"season_number": 27,
+			"type": "renewal",
+			"values": {
+				"club": "brackenford",
+				"wage": 1710.0,
+				"years": 1.0
+			}
+		},
+		{
+			"age": 34,
+			"season_number": 27,
+			"type": "season_played",
+			"values": {
+				"club": "brackenford",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 95.0,
+				"overall_before": 97.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 34,
+			"season_number": 27,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "brackenford",
+				"wins": 1.0,
+				"won": false
+			}
+		},
+		{
+			"age": 35,
+			"season_number": 28,
+			"type": "renewal",
+			"values": {
+				"club": "brackenford",
+				"wage": 1602.0,
+				"years": 1.0
+			}
+		},
+		{
+			"age": 35,
+			"season_number": 28,
+			"type": "season_played",
+			"values": {
+				"club": "brackenford",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 94.0,
+				"overall_before": 95.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 35,
+			"season_number": 28,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "brackenford",
+				"wins": 3.0,
+				"won": false
+			}
+		},
+		{
+			"age": 36,
+			"season_number": 29,
+			"type": "renewal",
+			"values": {
+				"club": "brackenford",
+				"wage": 1548.0,
+				"years": 1.0
+			}
+		},
+		{
+			"age": 36,
+			"season_number": 29,
+			"type": "season_played",
+			"values": {
+				"club": "brackenford",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 93.0,
+				"overall_before": 94.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 36,
+			"season_number": 29,
+			"type": "injury",
+			"values": {
+				"club": "brackenford"
+			}
+		},
+		{
+			"age": 36,
+			"season_number": 29,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "brackenford",
+				"wins": 2.0,
+				"won": false
+			}
+		},
+		{
+			"age": 36,
+			"season_number": 29,
+			"type": "cup_result",
+			"values": {
+				"cup": "world_nations_cup",
+				"team": "valdoria",
+				"wins": 2.0,
+				"won": false
+			}
+		},
+		{
+			"age": 37,
+			"season_number": 30,
+			"type": "renewal",
+			"values": {
+				"club": "brackenford",
+				"wage": 1494.0,
+				"years": 1.0
+			}
+		},
+		{
+			"age": 37,
+			"season_number": 30,
+			"type": "season_played",
+			"values": {
+				"club": "brackenford",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 91.0,
+				"overall_before": 93.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 37,
+			"season_number": 30,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "brackenford",
+				"wins": 1.0,
+				"won": false
+			}
+		},
+		{
+			"age": 38,
+			"season_number": 31,
+			"type": "renewal",
+			"values": {
+				"club": "brackenford",
+				"wage": 1386.0,
+				"years": 1.0
+			}
+		},
+		{
+			"age": 38,
+			"season_number": 31,
+			"type": "season_played",
+			"values": {
+				"club": "brackenford",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 90.0,
+				"overall_before": 91.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 38,
+			"season_number": 31,
+			"type": "injury",
+			"values": {
+				"club": "brackenford"
+			}
+		},
+		{
+			"age": 38,
+			"season_number": 31,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "brackenford",
+				"wins": 1.0,
+				"won": false
+			}
+		},
+		{
+			"age": 39,
+			"season_number": 32,
+			"type": "renewal",
+			"values": {
+				"club": "brackenford",
+				"wage": 1332.0,
+				"years": 1.0
+			}
+		},
+		{
+			"age": 39,
+			"season_number": 32,
+			"type": "season_played",
+			"values": {
+				"club": "brackenford",
+				"moments_played": 0.0,
+				"moments_won": 0.0,
+				"overall_after": 88.0,
+				"overall_before": 90.0,
+				"rating": 9.7
+			}
+		},
+		{
+			"age": 39,
+			"season_number": 32,
+			"type": "cup_result",
+			"values": {
+				"cup": "continental_cup",
+				"team": "brackenford",
+				"wins": 2.0,
+				"won": false
+			}
+		},
+		{
+			"age": 40,
+			"season_number": 33,
+			"type": "retirement",
+			"values": {
+				"club": "brackenford",
+				"inducted": true,
+				"peak_overall": 99.0,
+				"score": 209.0
+			}
+		}
+	],
+	"fatigue": 64.5,
+	"golden_balls": [
+		{
+			"rank": 9,
+			"season_number": 11,
+			"winner": "Zephyr Calloway"
+		},
+		{
+			"rank": 9,
+			"season_number": 12,
+			"winner": "Tavi Quenmore"
+		},
+		{
+			"rank": 9,
+			"season_number": 13,
+			"winner": "Zephyr Calloway"
+		},
+		{
+			"rank": 9,
+			"season_number": 14,
+			"winner": "Zephyr Calloway"
+		},
+		{
+			"rank": 3,
+			"season_number": 15,
+			"winner": "Oskar Fenwhistle"
+		},
+		{
+			"rank": 1,
+			"season_number": 16,
+			"winner": "Sim"
+		},
+		{
+			"rank": 4,
+			"season_number": 17,
+			"winner": "Oskar Fenwhistle"
+		},
+		{
+			"rank": 3,
+			"season_number": 18,
+			"winner": "Ilo Brambleworth"
+		},
+		{
+			"rank": 2,
+			"season_number": 19,
+			"winner": "Tavi Quenmore"
+		},
+		{
+			"rank": 3,
+			"season_number": 20,
+			"winner": "Zephyr Calloway"
+		},
+		{
+			"rank": 1,
+			"season_number": 21,
+			"winner": "Sim"
+		},
+		{
+			"rank": 1,
+			"season_number": 22,
+			"winner": "Sim"
+		},
+		{
+			"rank": 1,
+			"season_number": 23,
+			"winner": "Sim"
+		},
+		{
+			"rank": 3,
+			"season_number": 24,
+			"winner": "Zephyr Calloway"
+		},
+		{
+			"rank": 1,
+			"season_number": 25,
+			"winner": "Sim"
+		},
+		{
+			"rank": 1,
+			"season_number": 26,
+			"winner": "Sim"
+		},
+		{
+			"rank": 6,
+			"season_number": 27,
+			"winner": "Zephyr Calloway"
+		},
+		{
+			"rank": 4,
+			"season_number": 28,
+			"winner": "Zephyr Calloway"
+		},
+		{
+			"rank": 7,
+			"season_number": 29,
+			"winner": "Ilo Brambleworth"
+		},
+		{
+			"rank": 8,
+			"season_number": 30,
+			"winner": "Zephyr Calloway"
+		},
+		{
+			"rank": 9,
+			"season_number": 31,
+			"winner": "Ilo Brambleworth"
+		},
+		{
+			"rank": 9,
+			"season_number": 32,
+			"winner": "Zephyr Calloway"
+		}
+	],
+	"history": [
+		{
+			"age": 8,
+			"attribute_changes": {
+				"defending": 1.18,
+				"dribbling": 6.96,
+				"goalkeeping": 1.19,
+				"pace": 5.78,
+				"passing": 5.86,
+				"physical": 5.84,
+				"shooting": 8.44
+			},
+			"average_rating": 9.7,
+			"club_id": "copperlake",
+			"fatigue_after": 35.0,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 20,
+			"overall_after": 20,
+			"overall_before": 12,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 1,
+			"secondary_focus": "dribbling"
+		},
+		{
+			"age": 9,
+			"attribute_changes": {
+				"defending": 1.18,
+				"dribbling": 5.66,
+				"goalkeeping": 1.19,
+				"pace": 6.79,
+				"passing": 5.74,
+				"physical": 5.72,
+				"shooting": 8.18
+			},
+			"average_rating": 9.7,
+			"club_id": "copperlake",
+			"fatigue_after": 52.5,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 20,
+			"overall_after": 27,
+			"overall_before": 20,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 2,
+			"secondary_focus": "pace"
+		},
+		{
+			"age": 10,
+			"attribute_changes": {
+				"defending": 1.17,
+				"dribbling": 6.64,
+				"goalkeeping": 1.18,
+				"pace": 5.51,
+				"passing": 5.62,
+				"physical": 5.6,
+				"shooting": 7.91
+			},
+			"average_rating": 9.7,
+			"club_id": "copperlake",
+			"fatigue_after": 61.25,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 20,
+			"overall_after": 33,
+			"overall_before": 27,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 3,
+			"secondary_focus": "dribbling"
+		},
+		{
+			"age": 11,
+			"attribute_changes": {
+				"defending": 1.17,
+				"dribbling": 5.38,
+				"goalkeeping": 1.18,
+				"pace": 6.46,
+				"passing": 5.5,
+				"physical": 5.48,
+				"shooting": 7.62
+			},
+			"average_rating": 9.7,
+			"club_id": "copperlake",
+			"fatigue_after": 65.62,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 20,
+			"overall_after": 40,
+			"overall_before": 33,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 4,
+			"secondary_focus": "pace"
+		},
+		{
+			"age": 12,
+			"attribute_changes": {
+				"defending": 1.16,
+				"dribbling": 6.3,
+				"goalkeeping": 1.17,
+				"pace": 5.22,
+				"passing": 5.37,
+				"physical": 5.35,
+				"shooting": 7.32
+			},
+			"average_rating": 9.7,
+			"club_id": "copperlake",
+			"fatigue_after": 67.81,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 20,
+			"overall_after": 46,
+			"overall_before": 40,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 5,
+			"secondary_focus": "dribbling"
+		},
+		{
+			"age": 13,
+			"attribute_changes": {
+				"defending": 1.45,
+				"dribbling": 5.34,
+				"goalkeeping": 1.46,
+				"pace": 6.61,
+				"passing": 5.5,
+				"physical": 5.47,
+				"shooting": 7.79
+			},
+			"average_rating": 9.7,
+			"club_id": "copperlake",
+			"fatigue_after": 68.91,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 26,
+			"overall_after": 53,
+			"overall_before": 46,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 6,
+			"secondary_focus": "pace"
+		},
+		{
+			"age": 14,
+			"attribute_changes": {
+				"defending": 1.44,
+				"dribbling": 6.41,
+				"goalkeeping": 1.46,
+				"pace": 5.14,
+				"passing": 5.35,
+				"physical": 5.32,
+				"shooting": 7.37
+			},
+			"average_rating": 9.7,
+			"club_id": "copperlake",
+			"fatigue_after": 69.45,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 26,
+			"overall_after": 59,
+			"overall_before": 53,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 7,
+			"secondary_focus": "dribbling"
+		},
+		{
+			"age": 15,
+			"attribute_changes": {
+				"defending": 1.43,
+				"dribbling": 4.97,
+				"goalkeeping": 1.45,
+				"pace": 6.16,
+				"passing": 5.19,
+				"physical": 5.16,
+				"shooting": 6.9
+			},
+			"average_rating": 9.7,
+			"club_id": "copperlake",
+			"fatigue_after": 69.72,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 26,
+			"overall_after": 65,
+			"overall_before": 59,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 8,
+			"secondary_focus": "pace"
+		},
+		{
+			"age": 16,
+			"attribute_changes": {
+				"defending": 1.43,
+				"dribbling": 5.94,
+				"goalkeeping": 1.44,
+				"pace": 4.76,
+				"passing": 5.02,
+				"physical": 5.0,
+				"shooting": 6.39
+			},
+			"average_rating": 9.7,
+			"club_id": "brackenford",
+			"fatigue_after": 69.86,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 26,
+			"overall_after": 71,
+			"overall_before": 65,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 9,
+			"secondary_focus": "dribbling"
+		},
+		{
+			"age": 17,
+			"attribute_changes": {
+				"defending": 1.42,
+				"dribbling": 4.57,
+				"goalkeeping": 1.43,
+				"pace": 5.66,
+				"passing": 4.85,
+				"physical": 4.82,
+				"shooting": 5.81
+			},
+			"average_rating": 9.7,
+			"club_id": "brackenford",
+			"fatigue_after": 69.93,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 34,
+			"overall_after": 76,
+			"overall_before": 71,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 10,
+			"secondary_focus": "pace"
+		},
+		{
+			"age": 18,
+			"attribute_changes": {
+				"defending": 1.41,
+				"dribbling": 4.04,
+				"goalkeeping": 1.43,
+				"pace": 2.97,
+				"passing": 3.21,
+				"physical": 3.19,
+				"shooting": 4.09
+			},
+			"average_rating": 9.7,
+			"club_id": "brackenford",
+			"fatigue_after": 63.97,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 20,
+			"overall_after": 80,
+			"overall_before": 76,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 11,
+			"secondary_focus": "dribbling"
+		},
+		{
+			"age": 19,
+			"attribute_changes": {
+				"defending": 1.4,
+				"dribbling": 2.87,
+				"goalkeeping": 1.42,
+				"pace": 3.87,
+				"passing": 3.12,
+				"physical": 3.1,
+				"shooting": 3.57
+			},
+			"average_rating": 9.7,
+			"club_id": "brackenford",
+			"fatigue_after": 60.98,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 20,
+			"overall_after": 83,
+			"overall_before": 80,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 12,
+			"secondary_focus": "pace"
+		},
+		{
+			"age": 20,
+			"attribute_changes": {
+				"defending": 1.4,
+				"dribbling": 4.98,
+				"goalkeeping": 1.41,
+				"pace": 3.98,
+				"passing": 4.41,
+				"physical": 4.38,
+				"shooting": 3.61
+			},
+			"average_rating": 9.7,
+			"club_id": "brackenford",
+			"fatigue_after": 65.49,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 34,
+			"overall_after": 87,
+			"overall_before": 83,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 13,
+			"secondary_focus": "dribbling"
+		},
+		{
+			"age": 21,
+			"attribute_changes": {
+				"defending": 1.25,
+				"dribbling": 3.64,
+				"goalkeeping": 1.26,
+				"pace": 4.45,
+				"passing": 4.1,
+				"physical": 4.07,
+				"shooting": 0.0
+			},
+			"average_rating": 9.7,
+			"club_id": "brackenford",
+			"fatigue_after": 67.75,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 34,
+			"overall_after": 90,
+			"overall_before": 87,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 14,
+			"secondary_focus": "pace"
+		},
+		{
+			"age": 22,
+			"attribute_changes": {
+				"defending": 1.24,
+				"dribbling": 4.13,
+				"goalkeeping": 1.26,
+				"pace": 3.33,
+				"passing": 3.89,
+				"physical": 3.85,
+				"shooting": 0.0
+			},
+			"average_rating": 9.7,
+			"club_id": "brackenford",
+			"fatigue_after": 68.88,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 34,
+			"overall_after": 92,
+			"overall_before": 90,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 15,
+			"secondary_focus": "dribbling"
+		},
+		{
+			"age": 23,
+			"attribute_changes": {
+				"defending": 1.24,
+				"dribbling": 3.03,
+				"goalkeeping": 1.25,
+				"pace": 3.71,
+				"passing": 3.66,
+				"physical": 3.62,
+				"shooting": 0.0
+			},
+			"average_rating": 9.7,
+			"club_id": "brackenford",
+			"fatigue_after": 69.44,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 34,
+			"overall_after": 94,
+			"overall_before": 92,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 16,
+			"secondary_focus": "pace"
+		},
+		{
+			"age": 24,
+			"attribute_changes": {
+				"defending": 1.23,
+				"dribbling": 3.27,
+				"goalkeeping": 1.25,
+				"pace": 2.61,
+				"passing": 3.41,
+				"physical": 3.36,
+				"shooting": 0.0
+			},
+			"average_rating": 9.7,
+			"club_id": "brackenford",
+			"fatigue_after": 69.72,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 34,
+			"overall_after": 96,
+			"overall_before": 94,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 17,
+			"secondary_focus": "dribbling"
+		},
+		{
+			"age": 25,
+			"attribute_changes": {
+				"defending": 0.95,
+				"dribbling": 2.03,
+				"goalkeeping": 0.96,
+				"pace": 2.43,
+				"passing": 2.97,
+				"physical": 2.93,
+				"shooting": 0.0
+			},
+			"average_rating": 9.7,
+			"club_id": "brackenford",
+			"fatigue_after": 69.86,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 34,
+			"overall_after": 97,
+			"overall_before": 96,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 18,
+			"secondary_focus": "pace"
+		},
+		{
+			"age": 26,
+			"attribute_changes": {
+				"defending": 0.95,
+				"dribbling": 0.84,
+				"goalkeeping": 0.96,
+				"pace": 0.56,
+				"passing": 2.68,
+				"physical": 2.62,
+				"shooting": 0.0
+			},
+			"average_rating": 9.7,
+			"club_id": "brackenford",
+			"fatigue_after": 69.93,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 34,
+			"overall_after": 98,
+			"overall_before": 97,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 19,
+			"secondary_focus": "pace"
+		},
+		{
+			"age": 27,
+			"attribute_changes": {
+				"defending": 0.94,
+				"dribbling": 0.0,
+				"goalkeeping": 0.96,
+				"pace": 0.0,
+				"passing": 2.33,
+				"physical": 2.26,
+				"shooting": 0.0
+			},
+			"average_rating": 9.7,
+			"club_id": "brackenford",
+			"fatigue_after": 69.97,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 34,
+			"overall_after": 99,
+			"overall_before": 98,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 20,
+			"secondary_focus": "pace"
+		},
+		{
+			"age": 28,
+			"attribute_changes": {
+				"defending": 0.94,
+				"dribbling": 0.0,
+				"goalkeeping": 0.95,
+				"pace": 0.0,
+				"passing": 1.88,
+				"physical": 1.78,
+				"shooting": 0.0
+			},
+			"average_rating": 9.7,
+			"club_id": "brackenford",
+			"fatigue_after": 69.98,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 34,
+			"overall_after": 99,
+			"overall_before": 99,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 21,
+			"secondary_focus": "pace"
+		},
+		{
+			"age": 29,
+			"attribute_changes": {
+				"defending": 0.4,
+				"dribbling": 0.0,
+				"goalkeeping": 0.41,
+				"pace": 0.0,
+				"passing": 0.34,
+				"physical": 0.08,
+				"shooting": 0.0
+			},
+			"average_rating": 9.7,
+			"club_id": "brackenford",
+			"fatigue_after": 69.99,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 34,
+			"overall_after": 99,
+			"overall_before": 99,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 22,
+			"secondary_focus": "pace"
+		},
+		{
+			"age": 30,
+			"attribute_changes": {
+				"defending": 0.4,
+				"dribbling": 0.0,
+				"goalkeeping": 0.41,
+				"pace": 0.0,
+				"passing": 0.0,
+				"physical": 0.0,
+				"shooting": 0.0
+			},
+			"average_rating": 9.7,
+			"club_id": "brackenford",
+			"fatigue_after": 70.0,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 34,
+			"overall_after": 99,
+			"overall_before": 99,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 23,
+			"secondary_focus": "pace"
+		},
+		{
+			"age": 31,
+			"attribute_changes": {
+				"defending": -1.5,
+				"dribbling": -0.81,
+				"goalkeeping": -1.25,
+				"pace": -1.18,
+				"passing": 0.0,
+				"physical": -1.81,
+				"shooting": 0.0
+			},
+			"average_rating": 9.7,
+			"club_id": "brackenford",
+			"fatigue_after": 73.0,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 34,
+			"overall_after": 98,
+			"overall_before": 99,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 24,
+			"secondary_focus": "pace"
+		},
+		{
+			"age": 32,
+			"attribute_changes": {
+				"defending": -1.5,
+				"dribbling": -0.81,
+				"goalkeeping": -1.25,
+				"pace": -1.18,
+				"passing": 0.0,
+				"physical": -1.8,
+				"shooting": 0.0
+			},
+			"average_rating": 9.7,
+			"club_id": "brackenford",
+			"fatigue_after": 77.5,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 34,
+			"overall_after": 98,
+			"overall_before": 98,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 25,
+			"secondary_focus": "pace"
+		},
+		{
+			"age": 33,
+			"attribute_changes": {
+				"defending": -1.5,
+				"dribbling": -0.81,
+				"goalkeeping": -1.25,
+				"pace": -1.05,
+				"passing": 0.0,
+				"physical": -1.46,
+				"shooting": 0.0
+			},
+			"average_rating": 9.7,
+			"club_id": "brackenford",
+			"fatigue_after": 20.0,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 34,
+			"overall_after": 97,
+			"overall_before": 98,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 26,
+			"secondary_focus": "pace"
+		},
+		{
+			"age": 34,
+			"attribute_changes": {
+				"defending": -2.7,
+				"dribbling": -3.26,
+				"goalkeeping": -2.25,
+				"pace": -3.85,
+				"passing": -0.63,
+				"physical": -4.86,
+				"shooting": -0.63
+			},
+			"average_rating": 9.7,
+			"club_id": "brackenford",
+			"fatigue_after": 49.5,
+			"injured": true,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 17,
+			"overall_after": 95,
+			"overall_before": 97,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 27,
+			"secondary_focus": "pace"
+		},
+		{
+			"age": 35,
+			"attribute_changes": {
+				"defending": -2.7,
+				"dribbling": -2.0,
+				"goalkeeping": -2.25,
+				"pace": -2.52,
+				"passing": 0.09,
+				"physical": -3.43,
+				"shooting": 0.09
+			},
+			"average_rating": 9.7,
+			"club_id": "brackenford",
+			"fatigue_after": 74.75,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 34,
+			"overall_after": 94,
+			"overall_before": 95,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 28,
+			"secondary_focus": "pace"
+		},
+		{
+			"age": 36,
+			"attribute_changes": {
+				"defending": -2.7,
+				"dribbling": -1.81,
+				"goalkeeping": -2.25,
+				"pace": -2.32,
+				"passing": 0.09,
+				"physical": -3.2,
+				"shooting": 0.09
+			},
+			"average_rating": 9.7,
+			"club_id": "brackenford",
+			"fatigue_after": 20.0,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 34,
+			"overall_after": 93,
+			"overall_before": 94,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 29,
+			"secondary_focus": "pace"
+		},
+		{
+			"age": 37,
+			"attribute_changes": {
+				"defending": -2.7,
+				"dribbling": -2.86,
+				"goalkeeping": -2.25,
+				"pace": -3.44,
+				"passing": -0.63,
+				"physical": -4.44,
+				"shooting": -0.63
+			},
+			"average_rating": 9.7,
+			"club_id": "brackenford",
+			"fatigue_after": 58.5,
+			"injured": true,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 17,
+			"overall_after": 91,
+			"overall_before": 93,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 30,
+			"secondary_focus": "pace"
+		},
+		{
+			"age": 38,
+			"attribute_changes": {
+				"defending": -2.7,
+				"dribbling": -1.47,
+				"goalkeeping": -2.25,
+				"pace": -1.96,
+				"passing": 0.09,
+				"physical": -2.82,
+				"shooting": 0.09
+			},
+			"average_rating": 9.7,
+			"club_id": "brackenford",
+			"fatigue_after": 20.0,
+			"injured": false,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 34,
+			"overall_after": 90,
+			"overall_before": 91,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 31,
+			"secondary_focus": "pace"
+		},
+		{
+			"age": 39,
+			"attribute_changes": {
+				"defending": -2.7,
+				"dribbling": -2.71,
+				"goalkeeping": -2.25,
+				"pace": -3.29,
+				"passing": -0.63,
+				"physical": -4.28,
+				"shooting": -0.63
+			},
+			"average_rating": 9.7,
+			"club_id": "brackenford",
+			"fatigue_after": 64.5,
+			"injured": true,
+			"intensity": "normal",
+			"key_moments_played": 0,
+			"key_moments_won": 0,
+			"matches_played": 17,
+			"overall_after": 88,
+			"overall_before": 90,
+			"position": "FWD",
+			"primary_focus": "shooting",
+			"season_number": 32,
+			"secondary_focus": "pace"
+		}
+	],
+	"injured_next_season": false,
+	"player": {
+		"age": 40,
+		"attributes": {
+			"defending": 12.08,
+			"dribbling": 82.46,
+			"goalkeeping": 12.83,
+			"pace": 78.21,
+			"passing": 97.38,
+			"physical": 70.9,
+			"shooting": 97.38
+		},
+		"display_name": "Sim",
+		"position": "FWD"
+	},
+	"retired": true,
+	"transfers": [
+		{
+			"fee": 0,
+			"from_club": "copperlake",
+			"season_number": 9,
+			"to_club": "brackenford",
+			"wage": 40
+		}
+	],
+	"trial_used": true,
+	"version": 4
+}

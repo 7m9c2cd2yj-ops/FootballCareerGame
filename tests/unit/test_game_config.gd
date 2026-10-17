@@ -9,6 +9,7 @@ func _valid_data() -> Dictionary:
 		"disclaimer": "Unofficial fan game.",
 		"privacy_policy_url": "https://example.com/privacy",
 		"default_player_name": "Rookie",
+		"free_save_slots": 3,
 	}
 
 

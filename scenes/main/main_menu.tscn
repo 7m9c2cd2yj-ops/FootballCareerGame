@@ -58,7 +58,19 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 112)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "New career"
+text = "Play"
+
+[node name="ArenaButton" type="Button" parent="Margin/Layout"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+text = "ARENA"
+
+[node name="SettingsButton" type="Button" parent="Margin/Layout"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+text = "Online & settings"
 
 [node name="BottomSpacer" type="Control" parent="Margin/Layout"]
 layout_mode = 2

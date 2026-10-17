@@ -2,6 +2,8 @@ extends Node
 ## Autoload "Session": data and the active career shared between screens.
 ## Holds state and forwards to scripts/core; it adds no game rules itself.
 
+const SAVE_ROOT := "user://saves"
+
 var config: GameConfig = null
 var balance: Balance = null
 var labels: GameLabels = null
@@ -11,6 +13,11 @@ var rules: CareerRules = null
 var templates: TextTemplates = null
 var cups: CupWorld = null
 var career: CareerState = null
+## Save slot of the active career (1-based), or 0 if none.
+var slot: int = 0
+## Slot chosen on the Careers screen for the next new career.
+var pending_slot: int = 1
+var saves: SaveSlots = SaveSlots.new(SAVE_ROOT)
 ## The season whose key moments are being played, or null between seasons.
 var season_in_progress: SeasonInProgress = null
 ## Phone app -> how many of its items the player has already seen (this session).
@@ -38,10 +45,44 @@ func is_ready() -> bool:
 	return load_errors.is_empty()
 
 
-func start_career(position: String) -> void:
+## Starts a new career in `career_slot` and saves it at once.
+func start_career(position: String, career_slot: int = 1) -> void:
 	career = CareerState.start(config.default_player_name, position, balance, rules.academy_club)
+	slot = career_slot
 	season_in_progress = null
 	phone_seen.clear()
+	save_career()
+
+
+## Loads the newest valid save of `career_slot`; returns "" or why it failed.
+func load_career(career_slot: int) -> String:
+	var loaded := saves.load_slot(
+		career_slot, CareerSaves.migrator(rules), CareerSaves.validator(balance, world)
+	)
+	if loaded.envelope == null:
+		return "No valid save in this slot. %s" % "; ".join(loaded.errors)
+	career = CareerState.from_dict(loaded.envelope.career)
+	slot = career_slot
+	season_in_progress = null
+	phone_seen.clear()
+	return ""
+
+
+## Writes the active career to its slot (autosave); returns "" or the error.
+func save_career() -> String:
+	if career == null or slot <= 0:
+		return ""
+	var now := int(Time.get_unix_time_from_system())
+	var envelope := CareerSaves.envelope_for(
+		career, balance, world, saves.latest_revision(slot), now
+	)
+	var error := saves.write(slot, envelope)
+	if not error.is_empty():
+		push_warning("Save failed: %s" % error)
+	else:
+		var migrate := CareerSaves.migrator(rules)
+		Backend.background_sync(slot, saves, migrate, CareerSaves.validator(balance, world))
+	return error
 
 
 ## Why the next season cannot be played yet, or "" if it can.
@@ -79,13 +120,22 @@ func finish_season(errors: Array[String]) -> SeasonRecord:
 	var season := season_in_progress
 	season_in_progress = null
 	var performance := season.performance(moment_tuning)
-	return CareerSeason.play(career, season.plan, performance, world, balance, rules, cups, errors)
+	return _saved(
+		CareerSeason.play(career, season.plan, performance, world, balance, rules, cups, errors)
+	)
 
 
 ## Plays a season without key moments, at the expected rating.
 func sim_season(plan: TrainingPlan, errors: Array[String]) -> SeasonRecord:
 	var performance := expected_performance()
-	return CareerSeason.play(career, plan, performance, world, balance, rules, cups, errors)
+	return _saved(CareerSeason.play(career, plan, performance, world, balance, rules, cups, errors))
+
+
+## Autosaves after a season that was played; passes the record through.
+func _saved(record: SeasonRecord) -> SeasonRecord:
+	if record != null:
+		save_career()
+	return record
 
 
 func offers() -> Array[Offer]:
@@ -97,23 +147,8 @@ func accept_offer(offer: Offer) -> String:
 	var reason := OfferEngine.refusal_reason(career, offer, world, rules)
 	if reason.is_empty():
 		OfferEngine.accept(career, offer)
+		save_career()
 	return reason
-
-
-func news_feed() -> Array[EventText.NewsItem]:
-	return EventText.news_feed(career, _text_context())
-
-
-func agent_messages() -> Array[String]:
-	return EventText.agent_messages(career, _text_context())
-
-
-func agent_advice() -> Array[String]:
-	return AgentAdvice.current_texts(career, world, balance, rules, labels, templates)
-
-
-func kickfie_feed() -> Array[EventText.KickfiePost]:
-	return EventText.kickfie_feed(career, _text_context())
 
 
 ## Items in `app` the player has not opened yet (`total` = items it has now).
@@ -125,13 +160,19 @@ func mark_seen(app: String, total: int) -> void:
 	phone_seen[app] = total
 
 
-func _text_context() -> EventText.Context:
+## Names and templates for turning the career's events into text.
+func text_context() -> EventText.Context:
 	return EventText.Context.create(world, cups, labels, templates)
 
 
 func take_trial(club: Club) -> bool:
-	return Trials.take(career, club, world, balance, rules)
+	var passed := Trials.take(career, club, world, balance, rules)
+	save_career()
+	return passed
 
 
 func retire() -> bool:
-	return CareerSeason.retire(career, world, rules)
+	var retired := CareerSeason.retire(career, world, rules)
+	if retired:
+		save_career()
+	return retired
