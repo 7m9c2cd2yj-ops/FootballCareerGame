@@ -6,11 +6,12 @@ secrets. Option names were checked against the Godot 4.7.2 export plugins.
 | Preset | Output | Notes |
 |--------|--------|-------|
 | Android | `build/android/kickoff_legacy.aab` | Gradle build, AAB, permissions INTERNET (online features) and VIBRATE (haptics). Backup of user data off. |
+| Web | `build/web/index.html` | Browser version for quick play; see `docs/WEB.md` |
 | iOS | `build/ios/KickoffLegacy.ipa` (Xcode project) | App Store export method, tracking off. Team ID left empty on purpose. |
 
 Both presets include `data/*.json` and `config/backend.local.json`. Neither
 is a Godot resource, so each needs the include filter. Both exclude
-`tests/`, `tools/`, `addons/gut/`, `backend/` and `docs/`.
+`tests/`, `tools/`, `addons/gut/`, `backend/`, `docs/` and `build/`.
 `./tools/check_export.sh` (also in CI) exports the data pack for both presets
 and checks this. It needs no export templates or SDKs.
 

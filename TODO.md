@@ -22,6 +22,8 @@ _None._
 
 ## Later
 
+- [ ] Web version: lay out the main menu for landscape (it is cramped there),
+      and add a web purchase/online-save story if the web version is kept.
 - [ ] Moment polish: player models and animations instead of capsules, sound
       effects.
 - [ ] Optional 3D resolution scale for weak devices, if device tests need it.

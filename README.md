@@ -70,6 +70,8 @@ contracts, transfers, injuries and retirement are in `docs/CAREER.md`
 agent Messages, the Kickfie feed, Cups) is in `docs/PHONE.md` (text:
 `data/text_templates.json`). Cups and the Golden Ball are in `docs/CUPS.md`
 (data: `data/nations.json`, `data/cups.json`).
+The browser version (playable on an iPhone in Safari, built by
+`tools/build_web.sh` and published by CI) is in `docs/WEB.md`.
 Accessibility settings, onboarding and the safe area are in
 `docs/ACCESSIBILITY.md`. The cosmetics store, parental gate and purchase rules
 are in `docs/STORE.md`. Building and signing are in `docs/RELEASE.md`. The

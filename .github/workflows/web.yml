@@ -1,0 +1,51 @@
+name: Web build
+
+# Builds the browser version and publishes it to the gh-pages branch.
+# One-time setup in the repository: Settings -> Pages -> Source: "Deploy from
+# a branch", Branch: gh-pages, folder: / (root). See docs/WEB.md.
+on:
+  push:
+    branches: [claude/football-career-game-m1-3xrppu]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: web-build
+  cancel-in-progress: true
+
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Cache Godot binary
+        uses: actions/cache@v6
+        with:
+          path: .tools
+          key: godot-${{ hashFiles('tools/env.sh') }}
+      - name: Cache web export templates
+        uses: actions/cache@v6
+        with:
+          path: ~/.local/share/godot/export_templates
+          key: godot-web-templates-${{ hashFiles('tools/env.sh') }}
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Install Godot and gdtoolkit
+        run: ./tools/install_tools.sh
+      - name: Build the web version
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: ./tools/build_web.sh
+      - name: Publish to gh-pages
+        run: |
+          cd build/web
+          git init -q -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Web build from ${GITHUB_SHA}"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" gh-pages

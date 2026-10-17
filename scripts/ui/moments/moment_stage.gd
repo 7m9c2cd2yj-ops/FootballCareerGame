@@ -27,10 +27,13 @@ const SHOT_CAMERA_BACK := 2.5
 const SHOT_CAMERA_HEIGHT := 1.6
 const SHOT_CAMERA_FOV_AT_PENALTY := 52.0
 const MIN_CAMERA_FOV := 28.0
+const MAX_CAMERA_FOV := 120.0
 ## One-on-ones: further back and wider, so the attacker and ball stay in view.
 const RUN_CAMERA_BACK := 5.5
 const RUN_CAMERA_HEIGHT := 2.4
 const RUN_CAMERA_FOV := 50.0
+## Aspect ratio the camera angles are designed for (landscape phone).
+const DESIGN_ASPECT := 16.0 / 9.0
 
 
 ## Colours (from the accessibility palette) and the player's equipped cosmetics.
@@ -49,6 +52,8 @@ var _look: Look = null
 var _tuning: MomentTuning = null
 var _spec: MomentSpec = null
 var _camera: Camera3D = null
+## Vertical field of view at the design (landscape) aspect.
+var _design_fov: float = 52.0
 var _ball: MeshInstance3D = null
 var _keeper: MeshInstance3D = null
 var _shooter: MeshInstance3D = null
@@ -303,20 +308,35 @@ func _add_camera() -> void:
 	add_child(_camera)
 	if _spec.is_save():
 		# Behind the keeper, under the crossbar, facing the shooter.
-		_camera.fov = 70
+		_design_fov = 70.0
 		_camera.position = Vector3(0, 2.2, -3.2)
 		_camera.look_at(Vector3(0, 0.9, _spec.distance))
 	elif _spec.moment_type == MomentSpec.ONE_ON_ONE:
-		_camera.fov = RUN_CAMERA_FOV
+		_design_fov = RUN_CAMERA_FOV
 		_camera.position = Vector3(0, RUN_CAMERA_HEIGHT, _spec.distance + RUN_CAMERA_BACK)
 		_camera.look_at(Vector3(0, 0.3, 0))
 	else:
 		var penalty_view := _tuning.value("penalty", "distance") + SHOT_CAMERA_BACK
 		var fov := SHOT_CAMERA_FOV_AT_PENALTY * penalty_view / (_spec.distance + SHOT_CAMERA_BACK)
-		_camera.fov = maxf(fov, MIN_CAMERA_FOV)
+		_design_fov = maxf(fov, MIN_CAMERA_FOV)
 		_camera.position = Vector3(0, SHOT_CAMERA_HEIGHT, _spec.distance + SHOT_CAMERA_BACK)
 		_camera.look_at(Vector3(0, 0.3, 0))
 	_camera.current = true
+	get_window().size_changed.connect(_fit_camera)
+	_fit_camera()
+
+
+## Landscape keeps the designed height. Portrait (a phone held upright, or a
+## browser) keeps the designed width instead, so the goal is never cropped.
+func _fit_camera() -> void:
+	var size := get_viewport().get_visible_rect().size
+	if size.x >= size.y:
+		_camera.keep_aspect = Camera3D.KEEP_HEIGHT
+		_camera.fov = _design_fov
+		return
+	var half := tan(deg_to_rad(_design_fov) / 2.0) * DESIGN_ASPECT
+	_camera.keep_aspect = Camera3D.KEEP_WIDTH
+	_camera.fov = minf(rad_to_deg(2.0 * atan(half)), MAX_CAMERA_FOV)
 
 
 func _add_mesh(mesh: Mesh, color: Color, at: Vector3) -> MeshInstance3D:
