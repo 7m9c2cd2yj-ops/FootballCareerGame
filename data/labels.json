@@ -1,0 +1,17 @@
+{
+	"attributes": {
+		"pace": "Pace",
+		"shooting": "Shooting",
+		"passing": "Passing",
+		"dribbling": "Dribbling",
+		"defending": "Defending",
+		"physical": "Physical",
+		"goalkeeping": "Goalkeeping"
+	},
+	"positions": {
+		"GK": "Goalkeeper",
+		"DEF": "Defender",
+		"MID": "Midfielder",
+		"FWD": "Forward"
+	}
+}

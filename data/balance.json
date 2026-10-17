@@ -1,0 +1,52 @@
+{
+	"_readme": "Progression tuning. Every number here is deterministic: no randomness anywhere. Formula: see scripts/core/progression.gd. After changing values run ./tools/balance_report.sh to see whole-career curves, then ./tools/run_tests.sh: tests/unit/test_balance_tuning.gd checks the design targets in docs/BALANCE.md. Age tables must cover every age from start_age to max_age with no gaps.",
+	"start_age": 8,
+	"max_age": 40,
+	"attribute_min": 1,
+	"attribute_max": 99,
+	"start_attributes": {
+		"GK": {"pace": 8, "shooting": 5, "passing": 8, "dribbling": 6, "defending": 9, "physical": 10, "goalkeeping": 14},
+		"DEF": {"pace": 10, "shooting": 7, "passing": 9, "dribbling": 8, "defending": 14, "physical": 12, "goalkeeping": 3},
+		"MID": {"pace": 10, "shooting": 9, "passing": 14, "dribbling": 12, "defending": 9, "physical": 10, "goalkeeping": 3},
+		"FWD": {"pace": 13, "shooting": 14, "passing": 9, "dribbling": 12, "defending": 6, "physical": 10, "goalkeeping": 3}
+	},
+	"position_weights": {
+		"GK": {"pace": 0.1, "shooting": 0.0, "passing": 0.1, "dribbling": 0.0, "defending": 0.1, "physical": 0.25, "goalkeeping": 0.45},
+		"DEF": {"pace": 0.15, "shooting": 0.0, "passing": 0.15, "dribbling": 0.05, "defending": 0.45, "physical": 0.2, "goalkeeping": 0.0},
+		"MID": {"pace": 0.1, "shooting": 0.15, "passing": 0.35, "dribbling": 0.2, "defending": 0.1, "physical": 0.1, "goalkeeping": 0.0},
+		"FWD": {"pace": 0.2, "shooting": 0.4, "passing": 0.1, "dribbling": 0.2, "defending": 0.0, "physical": 0.1, "goalkeeping": 0.0}
+	},
+	"age_curve": [
+		{"from_age": 8, "to_age": 12, "base_gain": 4.0},
+		{"from_age": 13, "to_age": 16, "base_gain": 5.0},
+		{"from_age": 17, "to_age": 20, "base_gain": 5.0},
+		{"from_age": 21, "to_age": 24, "base_gain": 4.5},
+		{"from_age": 25, "to_age": 28, "base_gain": 3.5},
+		{"from_age": 29, "to_age": 30, "base_gain": 1.5},
+		{"from_age": 31, "to_age": 33, "base_gain": -2.5},
+		{"from_age": 34, "to_age": 40, "base_gain": -4.5}
+	],
+	"decline_weights": {"pace": 1.5, "shooting": 0.6, "passing": 0.3, "dribbling": 0.9, "defending": 0.6, "physical": 1.3, "goalkeeping": 0.5},
+	"training": {
+		"primary_multiplier": 1.0,
+		"secondary_multiplier": 0.6,
+		"other_multiplier": 0.3,
+		"primary_decline_protection": 0.5,
+		"secondary_decline_protection": 0.3
+	},
+	"headroom": {"exponent": 0.3, "floor": 0.3},
+	"performance": {"baseline_rating": 6.0, "gain_per_point": 1.3},
+	"expected_rating": {"neutral": 6.0, "per_overall_point": 0.05, "min": 4.0, "max": 8.0},
+	"competition_strength": [
+		{"from_age": 8, "to_age": 12, "value": 12},
+		{"from_age": 13, "to_age": 15, "value": 25},
+		{"from_age": 16, "to_age": 17, "value": 40},
+		{"from_age": 18, "to_age": 20, "value": 55},
+		{"from_age": 21, "to_age": 40, "value": 68}
+	],
+	"matches_per_season": [
+		{"from_age": 8, "to_age": 12, "value": 20},
+		{"from_age": 13, "to_age": 16, "value": 26},
+		{"from_age": 17, "to_age": 40, "value": 34}
+	]
+}

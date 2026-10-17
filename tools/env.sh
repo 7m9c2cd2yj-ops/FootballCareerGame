@@ -15,4 +15,4 @@ else
 fi
 
 # Folders containing our own GDScript (addons/ is vendored and not linted).
-GD_SOURCE_DIRS=(scripts tests)
+GD_SOURCE_DIRS=(scripts tests tools)

@@ -47,6 +47,9 @@ manager). Press F5 to run. On desktop, mouse clicks emulate touch.
 
 `run_tests.sh` passes extra arguments to GUT, e.g.
 `./tools/run_tests.sh -gselect=test_game_config.gd`.
+
+To tune progression, edit `data/balance.json` and run
+`./tools/balance_report.sh` to see whole-career rating curves. See `docs/BALANCE.md`.
 The same three checks run in GitHub Actions (`.github/workflows/ci.yml`).
 
 ## Project layout
@@ -57,15 +60,19 @@ backend/         Supabase SQL migrations and edge functions (M7)
 data/            JSON data: config, clubs, nations, balance, text templates
 docs/            Architecture, performance budget, privacy policy, checklists
 scenes/          .tscn scenes: display and input only
+scripts/app/     Autoloads (Session: loaded data + active career)
 scripts/core/    Pure game logic (no nodes, no scene tree): unit tested
 scripts/ui/      Scripts attached to scenes; thin layer over core
-tests/unit/      GUT tests (files named test_*.gd)
-tools/           Shell scripts for setup, lint, tests, project check
+tests/unit/      GUT tests for core logic (files named test_*.gd)
+tests/ui/        GUT smoke tests that instance scenes
+tests/helpers/   Shared test code (career simulator, balance fixture)
+tools/           Setup, lint, tests, project check, balance report
 ```
 
 See `docs/ARCHITECTURE.md` for the rules that keep logic testable.
 Static typing is enforced: `project.godot` treats untyped declarations as
-errors, and `check_project.sh` compiles every script to catch them.
+errors, and `check_project.sh` compiles every script (`tools/compile_all.gd`)
+to catch them.
 
 ## Roadmap
 

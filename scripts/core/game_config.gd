@@ -4,12 +4,16 @@ extends RefCounted
 ## legal disclaimer). Change the working title there, not in code.
 
 const DEFAULT_PATH := "res://data/game_config.json"
-const REQUIRED_TEXT_KEYS: Array[String] = ["title", "version", "disclaimer", "privacy_policy_url"]
+const REQUIRED_TEXT_KEYS: Array[String] = [
+	"title", "version", "disclaimer", "privacy_policy_url", "default_player_name"
+]
 
 var title: String = ""
 var version: String = ""
 var disclaimer: String = ""
 var privacy_policy_url: String = ""
+## Used until onboarding (M8) lets the player pick a preset name.
+var default_player_name: String = ""
 
 
 ## Returns a list of human-readable problems; empty means `data` is valid.
@@ -32,6 +36,7 @@ static func from_dictionary(data: Dictionary) -> GameConfig:
 	config.version = data["version"]
 	config.disclaimer = data["disclaimer"]
 	config.privacy_policy_url = data["privacy_policy_url"]
+	config.default_player_name = data["default_player_name"]
 	return config
 
 

@@ -6,6 +6,7 @@
 |-------|--------|---------|--------------|
 | Data | `data/` | JSON only | Logic |
 | Core logic | `scripts/core/` | `RefCounted`/`Resource`, `FileAccess`, `JSON`, math | `Node`, scene tree, `Input`, autoload singletons |
+| App state | `scripts/app/` | Autoload `Session`: loaded data and the active career | Game rules |
 | UI and 3D | `scenes/`, `scripts/ui/` | Everything; calls into core | Game rules (no balance numbers or formulas) |
 | Backend | `backend/` | Supabase SQL and edge functions | Trusting anything the client sends |
 
@@ -23,6 +24,10 @@ finds any.
 - **Data over code.** Tunable numbers live in `data/*.json` and are loaded
   through `JsonLoader`. Loading code validates the data and reports readable
   errors.
+- **Exact saves.** Floats that get stored are rounded with
+  `Progression.round_value`, so a career survives a JSON round trip exactly.
+- **Untrusted input.** Data loaded from disk (and later the network) goes
+  through `validate_dict` before `from_dict`, which assumes valid data.
 - **Static typing.** Every variable, parameter and return value is typed.
   `untyped_declaration` is an error in `project.godot`.
 - **Thin scenes.** A scene script reads input, calls core logic and displays
