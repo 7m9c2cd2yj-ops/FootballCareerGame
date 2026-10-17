@@ -11,6 +11,8 @@ against them.
   email, contacts, location, advertising ID or free text.
 - **Shown to other players:** a preset or filter-approved display name and
   career statistics only. There is no chat.
+- **In-game social feed (Kickfie):** fictional, generated on the device from
+  preset templates and preset fan names. Nothing is posted or received.
 - **Third parties:** Supabase (hosting and database). No ads or analytics SDKs
   in the first version.
 - **Deletion:** account deletion inside the app removes the profile, careers

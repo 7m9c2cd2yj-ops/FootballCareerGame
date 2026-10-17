@@ -4,7 +4,7 @@ extends RefCounted
 ## season and every transfer. This is what a save slot stores.
 
 ## Bump when the dictionary layout changes and add a step to CareerMigration.
-const FORMAT_VERSION := 2
+const FORMAT_VERSION := 3
 
 var player: PlayerModel = null
 var history: Array[SeasonRecord] = []
@@ -20,6 +20,8 @@ var injured_next_season: bool = false
 var trial_used: bool = false
 var retired: bool = false
 var transfers: Array[TransferRecord] = []
+## Everything newsworthy, oldest first (see CareerEvents).
+var events: Array[CareerEvent] = []
 
 
 static func start(
@@ -49,6 +51,9 @@ func to_dict() -> Dictionary:
 	var seasons: Array[Dictionary] = []
 	for record: SeasonRecord in history:
 		seasons.append(record.to_dict())
+	var event_list: Array[Dictionary] = []
+	for event: CareerEvent in events:
+		event_list.append(event.to_dict())
 	var contract_data: Variant = null
 	if contract != null:
 		contract_data = contract.to_dict()
@@ -66,6 +71,7 @@ func to_dict() -> Dictionary:
 		"trial_used": trial_used,
 		"retired": retired,
 		"transfers": moves,
+		"events": event_list,
 	}
 
 
@@ -83,6 +89,7 @@ static func validate_dict(data: Dictionary, balance: Balance, world: ClubWorld) 
 		problems.append_array(PlayerModel.validate_dict(data["player"], balance))
 	_validate_list(data.get("history"), "history", problems, SeasonRecord.validate_dict)
 	_validate_list(data.get("transfers"), "transfers", problems, TransferRecord.validate_dict)
+	_validate_list(data.get("events"), "events", problems, CareerEvent.validate_dict)
 	if typeof(data.get("club_id")) != TYPE_STRING or not world.has_club(str(data.get("club_id"))):
 		problems.append("career.club_id is not a known club")
 	if typeof(data.get("contract")) == TYPE_DICTIONARY:
@@ -105,6 +112,8 @@ static func from_dict(data: Dictionary) -> CareerState:
 		career.history.append(SeasonRecord.from_dict(entry))
 	for entry: Dictionary in data["transfers"]:
 		career.transfers.append(TransferRecord.from_dict(entry))
+	for entry: Dictionary in data["events"]:
+		career.events.append(CareerEvent.from_dict(entry))
 	career.club_id = data["club_id"]
 	if data["contract"] != null:
 		career.contract = Contract.from_dict(data["contract"])

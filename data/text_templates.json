@@ -1,0 +1,250 @@
+{
+	"_readme": "Text for the in-game phone: News, agent Messages and the Kickfie feed. Every text is tied to a real career event (see scripts/core/news/career_event.gd for event types and their {placeholders}). Common placeholders: {player}, {position}, {age}, {season}; events with a club also get {league}. Variants: season_played.great/steady/poor (by season rating, see thresholds), retirement.inducted/not_inducted. Texts for the same event variant are used in rotation, so the same career always reads the same and stories do not repeat back to back. Keep it kind: this game is for young players. No links, no real names.",
+	"thresholds": {
+		"great_rating": 8.0,
+		"poor_rating": 5.5
+	},
+	"fan_handles": [
+		"@TerraceTales",
+		"@SundayBootsFan",
+		"@MuddyKneesFC",
+		"@TopBinsTina",
+		"@NutmegNed",
+		"@HalfTimeOranges",
+		"@WhistleWatcher",
+		"@CornerFlagCarl",
+		"@ScarfAndFlask",
+		"@GoalLineGrace",
+		"@PitchsidePia",
+		"@FiveASideFinn",
+		"@KitBagKai",
+		"@BootRoomBea",
+		"@StopperSam",
+		"@ChantLeaderLuz",
+		"@AwayDaysAmir",
+		"@OffsideOlly",
+		"@VolleyVal",
+		"@HeaderHarper"
+	],
+	"news": {
+		"season_played.great": [
+			{
+				"headline": "{player} shines in a superb season",
+				"body": "A season rating of {rating} took {player} from {overall_before} to {overall_after} at {club}."
+			},
+			{
+				"headline": "Nobody can stop {player}",
+				"body": "{club} fans watched their {position} hit a {rating} rating this season. The overall is now {overall_after}."
+			},
+			{
+				"headline": "Another masterclass from {player}",
+				"body": "At {age}, {player} is the talk of the {league} after a {rating}-rated season with {club}."
+			}
+		],
+		"season_played.steady": [
+			{
+				"headline": "Solid season for {player}",
+				"body": "{player} ({age}) put in a steady campaign for {club}, finishing with a {rating} rating and an overall of {overall_after}."
+			},
+			{
+				"headline": "{player} keeps building",
+				"body": "Another season of progress at {club}: overall {overall_before} to {overall_after}."
+			},
+			{
+				"headline": "Quiet progress for {player}",
+				"body": "No fireworks, just steady work: {player} ends the season on {overall_after} at {club}."
+			}
+		],
+		"season_played.poor": [
+			{
+				"headline": "Tough season for {player}",
+				"body": "It was not {player}'s year at {club}: a {rating} rating. Coaches say the work ethic is still there."
+			},
+			{
+				"headline": "{player} will bounce back, says {club}",
+				"body": "A difficult campaign ended with an overall of {overall_after}. The club believes better days are ahead."
+			}
+		],
+		"milestone": [
+			{
+				"headline": "{player} reaches {milestone}!",
+				"body": "The {club} {position} has hit an overall rating of {milestone}, a new career high."
+			},
+			{
+				"headline": "Milestone: {milestone} for {player}",
+				"body": "Hard work pays off. {player} is now rated {milestone} overall."
+			}
+		],
+		"injury": [
+			{
+				"headline": "{player} injured after heavy season",
+				"body": "{club} confirm their {position} will miss part of next season. Rest and recovery come first."
+			}
+		],
+		"top_tier_debut": [
+			{
+				"headline": "{player} makes it to the {league}",
+				"body": "A first season in the top league with {club}: the dream is coming true."
+			}
+		],
+		"trial_passed": [
+			{
+				"headline": "Trial success for {player}",
+				"body": "{club} have signed {player} to their youth team after an impressive trial."
+			},
+			{
+				"headline": "{club} snap up young {player}",
+				"body": "The {position} passed the trial and signs a youth contract."
+			}
+		],
+		"trial_failed": [
+			{
+				"headline": "{player} stays at {academy}",
+				"body": "The trial at {club} did not work out, but {academy} have offered a youth contract."
+			}
+		],
+		"transfer": [
+			{
+				"headline": "{player} joins {to_club}",
+				"body": "{player} moves from {from_club} to {to_club} in the {league}. Fee: {fee}. Wage: {wage}."
+			},
+			{
+				"headline": "Big move: {player} to {to_club}",
+				"body": "{to_club} complete the signing of {player} from {from_club} for {fee}."
+			}
+		],
+		"renewal": [
+			{
+				"headline": "{player} extends with {club}",
+				"body": "A new {years}-year deal worth {wage} keeps {player} at {club}."
+			}
+		],
+		"retirement.inducted": [
+			{
+				"headline": "Legend {player} retires and enters the Hall of Fame",
+				"body": "With a peak overall of {peak_overall}, {player} hangs up the boots at {age}. Hall of Fame score: {score}."
+			}
+		],
+		"retirement.not_inducted": [
+			{
+				"headline": "{player} retires at {age}",
+				"body": "A career that peaked at {peak_overall} overall comes to an end. Thanks for the memories!"
+			}
+		]
+	},
+	"agent": {
+		"season_played.great": [
+			"What a season! Clubs are noticing you.",
+			"Rating {rating}? Keep this up and the big clubs will call.",
+			"Scouts keep asking about you. Stay humble and keep working."
+		],
+		"season_played.steady": [
+			"Good, steady season. Keep training smart.",
+			"Nice work this year. Let's aim higher next season.",
+			"Steady is good. The big moments are where you can shine."
+		],
+		"season_played.poor": [
+			"Tough year, but we go again. Focus on your key moments.",
+			"Don't worry about one season. Keep your head up."
+		],
+		"milestone": [
+			"{milestone} overall! I'm proud of you."
+		],
+		"injury": [
+			"Your body needs rest. Go lighter in training next season."
+		],
+		"top_tier_debut": [
+			"Welcome to the {league}. This is where legends are made."
+		],
+		"trial_passed": [
+			"You did it! {club} want you. Enjoy the moment."
+		],
+		"trial_failed": [
+			"{club} said no this time. {academy} believe in you, and so do I."
+		],
+		"transfer": [
+			"Deal done: you're a {to_club} player now!",
+			"Signed and sealed with {to_club}. Let's show them why."
+		],
+		"renewal": [
+			"{club} want to keep you: {years} more years."
+		],
+		"retirement.inducted": [
+			"Hall of Fame! It has been an honour being your agent."
+		],
+		"retirement.not_inducted": [
+			"What a journey. Thank you for everything."
+		]
+	},
+	"kickfie": {
+		"season_played.great": [
+			"{player} is on fire this season! #{club_tag}",
+			"Rating {rating}?! Give {player} all the awards",
+			"Best player I've seen at {club} in years"
+		],
+		"season_played.steady": [
+			"Solid from {player} again",
+			"Good season, {player}. Onwards!"
+		],
+		"season_played.poor": [
+			"Keep going {player}, we believe in you!",
+			"Everyone has a tough year. Next season!"
+		],
+		"milestone": [
+			"{milestone} overall!! {player} is the real deal",
+			"Called it. {player} to {milestone}"
+		],
+		"injury": [
+			"Get well soon {player}!",
+			"Rest up {player}, we need you back"
+		],
+		"top_tier_debut": [
+			"{player} in the {league}! Proud day",
+			"From the academy to the {league}. What a story"
+		],
+		"trial_passed": [
+			"Remember the name: {player}",
+			"{club} just signed a gem"
+		],
+		"trial_failed": [
+			"{academy} fans are happy {player} is staying!"
+		],
+		"transfer": [
+			"Welcome to {to_club}, {player}!",
+			"Gutted to see {player} leave {from_club}, good luck!"
+		],
+		"renewal": [
+			"{player} staying at {club}! Brilliant news"
+		],
+		"retirement.inducted": [
+			"A true legend. Thank you {player}",
+			"Hall of Famer {player}!"
+		],
+		"retirement.not_inducted": [
+			"Thank you for the memories, {player}"
+		]
+	},
+	"advice": {
+		"fatigue_high": [
+			"Fatigue is at {fatigue} of {threshold}. One more heavy season and you'll get injured. Train lighter."
+		],
+		"contract_final_year": [
+			"Last year of your deal at {club}. Play well and offers will come."
+		],
+		"contract_ended": [
+			"Your contract has ended. Check the Clubs app and pick your next club."
+		],
+		"clubs_interested": [
+			"{count} clubs have open needs that fit you right now. Have a look in the Clubs app."
+		],
+		"trials_due": [
+			"Trial time! You get one chance. Pick your club in the Clubs app."
+		],
+		"retirement_option": [
+			"At {age} you can retire whenever you like. Your call."
+		],
+		"all_quiet": [
+			"All good here. Focus on training and your key moments."
+		]
+	}
+}

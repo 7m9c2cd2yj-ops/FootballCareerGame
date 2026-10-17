@@ -4,54 +4,6 @@ extends GutTest
 const BalanceFixture := preload("res://tests/helpers/balance_fixture.gd")
 const CareerFixture := preload("res://tests/helpers/career_fixture.gd")
 
-## Real organisations and clubs the data must never name (case-insensitive).
-## Not exhaustive: a guard against obvious slips, not a legal review.
-const REAL_NAMES: Array[String] = [
-	"fifa",
-	"uefa",
-	"conmebol",
-	"premier league",
-	"la liga",
-	"laliga",
-	"serie a",
-	"bundesliga",
-	"ligue 1",
-	"eredivisie",
-	"champions league",
-	"europa league",
-	"world cup",
-	"ballon",
-	"real madrid",
-	"barcelona",
-	"atletico",
-	"manchester",
-	"liverpool",
-	"chelsea",
-	"arsenal",
-	"tottenham",
-	"bayern",
-	"dortmund",
-	"juventus",
-	"inter milan",
-	"ac milan",
-	"napoli",
-	"paris saint",
-	"psg",
-	"ajax",
-	"benfica",
-	"porto",
-	"celtic",
-	"rangers fc",
-	"boca",
-	"river plate",
-	"santos",
-	"flamengo",
-	"galaxy",
-	"albion",
-	"hotspur",
-	"olympique",
-]
-
 var _world: ClubWorld
 
 
@@ -74,8 +26,7 @@ func test_names_are_original() -> void:
 	for club: Club in _world.clubs:
 		names.append(club.name)
 	for title: String in names:
-		for real: String in REAL_NAMES:
-			assert_false(title.to_lower().contains(real), "%s contains '%s'" % [title, real])
+		assert_eq(ContentRules.problem_in(title), "", title)
 
 
 func test_leagues_have_distinct_tiers_and_falling_strength() -> void:

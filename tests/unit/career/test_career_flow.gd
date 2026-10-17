@@ -128,9 +128,9 @@ func test_injury_costs_half_a_season_then_fatigue_resets() -> void:
 
 func test_retirement_rules() -> void:
 	var career := CareerFixture.career_at("FWD", 32, 70.0, "tidewell", _balance)
-	assert_false(CareerSeason.retire(career, _rules))
+	assert_false(CareerSeason.retire(career, _world, _rules))
 	career.player.age = int(_rules.value("retirement", "min_age"))
-	assert_true(CareerSeason.retire(career, _rules))
+	assert_true(CareerSeason.retire(career, _world, _rules))
 	assert_true(career.is_finished(_balance))
 	assert_string_contains(CareerSeason.blocker(career, _balance, _rules), "over")
 

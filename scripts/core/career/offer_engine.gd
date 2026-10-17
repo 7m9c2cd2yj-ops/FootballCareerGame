@@ -96,8 +96,12 @@ static func refusal_reason(
 	return ""
 
 
-## Signs `offer`, recording a transfer if the club changes.
+## Signs `offer`, recording a transfer if the club changes. Trials record
+## their own event, so youth signings are not reported as transfers.
 static func accept(career: CareerState, offer: Offer) -> void:
+	if offer.club_id == career.club_id and offer.is_renewal:
+		var values := {"club": offer.club_id, "wage": offer.wage, "years": offer.years}
+		CareerEvents.record(career, CareerEvent.RENEWAL, values)
 	if offer.club_id != career.club_id:
 		var transfer := TransferRecord.new()
 		transfer.season_number = career.next_season_number()
@@ -106,6 +110,14 @@ static func accept(career: CareerState, offer: Offer) -> void:
 		transfer.fee = career.contract.release_clause if career.has_active_contract() else 0
 		transfer.wage = offer.wage
 		career.transfers.append(transfer)
+		if not offer.is_youth:
+			var values := {
+				"from_club": transfer.from_club,
+				"to_club": transfer.to_club,
+				"fee": transfer.fee,
+				"wage": transfer.wage,
+			}
+			CareerEvents.record(career, CareerEvent.TRANSFER, values)
 	career.club_id = offer.club_id
 	career.contract = offer.to_contract()
 

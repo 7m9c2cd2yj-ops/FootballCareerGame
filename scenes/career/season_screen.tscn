@@ -118,11 +118,11 @@ custom_minimum_size = Vector2(0, 88)
 layout_mode = 2
 text = "Quick sim (no key moments)"
 
-[node name="ClubsButton" type="Button" parent="Scroll/Margin/Layout"]
+[node name="PhoneButton" type="Button" parent="Scroll/Margin/Layout"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 88)
 layout_mode = 2
-text = "Clubs app"
+text = "Phone"
 
 [node name="RetireButton" type="Button" parent="Scroll/Margin/Layout"]
 unique_name_in_owner = true

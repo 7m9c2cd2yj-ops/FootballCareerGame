@@ -9,11 +9,10 @@ _None._
 
 ## Planned work not yet started
 
-- [ ] M5: Phone UI, news, agent texts, Kickfie feed from templates (events:
-      trials, transfers with fees, renewals, injuries, retirement, Hall of Fame).
-- [ ] M5: Move the Clubs app inside the phone UI shell.
 - [ ] M6: World Nations Cup and Continental Cup simulation.
 - [ ] M6: Add trophies and the Golden Ball to the Hall of Fame score.
+- [ ] M6: Record cup and award events (with news, agent and Kickfie templates).
+- [ ] M7: Persist phone "seen" counts with the save (badges reset each session now).
 - [ ] M7: Loading a save must run `CareerMigration.migrate` before
       `CareerState.validate_dict`.
 - [ ] M7: Local saves (one career per slot, backup copy), Supabase schema and

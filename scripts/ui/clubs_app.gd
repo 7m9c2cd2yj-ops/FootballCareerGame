@@ -1,9 +1,10 @@
 extends Control
-## The Clubs app: your club and contract, trials (once, at the trial age),
-## offers in the transfer window, and what every club wants this window.
+## The Clubs app (inside the phone): your club and contract, trials (once, at
+## the trial age), offers in the transfer window, and what every club wants.
 ## Display and buttons only; all decisions come from scripts/core/career.
 
-const SEASON_SCENE := "res://scenes/career/season_screen.tscn"
+signal closed
+
 const CREST_SIZE := Vector2(80, 80)
 const BUTTON_SIZE := Vector2(170, 80)
 const MATCH_MARK := "✓ "
@@ -13,10 +14,7 @@ const MATCH_MARK := "✓ "
 
 
 func _ready() -> void:
-	(%BackButton as Button).pressed.connect(_on_back_pressed)
-	if Session.career == null:
-		get_tree().change_scene_to_file.call_deferred(SEASON_SCENE)
-		return
+	(%BackButton as Button).pressed.connect(closed.emit)
 	refresh()
 
 
@@ -195,7 +193,3 @@ func _add_note(text: String) -> void:
 	note.add_theme_font_size_override("font_size", 22)
 	note.modulate = Color(1, 1, 1, 0.8)
 	_content.add_child(note)
-
-
-func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file(SEASON_SCENE)

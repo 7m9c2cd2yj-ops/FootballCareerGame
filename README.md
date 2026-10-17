@@ -55,7 +55,9 @@ To tune progression, edit `data/balance.json` and run
 The 3D key moments (penalty, free kick, one-on-one, save) are described in
 `docs/MOMENTS.md`, with numbers in `data/moment_tuning.json`. Clubs, trials,
 contracts, transfers, injuries and retirement are in `docs/CAREER.md`
-(data: `data/clubs.json`, `data/career_rules.json`).
+(data: `data/clubs.json`, `data/career_rules.json`). The phone (Clubs, News,
+agent Messages, the Kickfie feed) is in `docs/PHONE.md` (text:
+`data/text_templates.json`).
 The same three checks run in GitHub Actions (`.github/workflows/ci.yml`).
 
 ## Project layout
@@ -70,6 +72,8 @@ scripts/app/     Autoloads (Session: data + active career; ScreenFit: UI scale)
 scripts/core/    Pure game logic (no nodes, no scene tree): unit tested
 scripts/core/moments/  Key-moment rules: resolvers, planner, season rating
 scripts/core/career/   Clubs, offers, contracts, trials, fatigue, Hall of Fame
+scripts/core/news/     Career events, text templates, agent advice, content rules
+scripts/ui/phone/      The in-game phone and its feed apps
 scripts/ui/      Scripts attached to scenes; thin layer over core
 scripts/ui/moments/    3D moment stage, HUD and touch controllers
 tests/unit/      GUT tests for core logic (files named test_*.gd)

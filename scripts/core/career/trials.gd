@@ -52,6 +52,11 @@ static func take(
 	var offer := youth_offer(signing, rules)
 	career.trial_used = true
 	OfferEngine.accept(career, offer)
+	if passed:
+		CareerEvents.record(career, CareerEvent.TRIAL_PASSED, {"club": club.id})
+	else:
+		var values := {"club": club.id, "academy": rules.academy_club}
+		CareerEvents.record(career, CareerEvent.TRIAL_FAILED, values)
 	return passed
 
 

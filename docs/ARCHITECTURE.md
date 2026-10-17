@@ -27,6 +27,9 @@ finds any.
 - **Input in, verdict out.** A 3D moment's controller only turns touches into
   numbers (aim point, power, timing). The resolver in `scripts/core/moments/`
   decides the result and the stage animates it.
+- **Events are the truth for text.** News, agent texts and the Kickfie feed
+  are generated from `CareerEvent`s that the career rules record as things
+  happen. Screens never invent career facts.
 - **Data over code.** Tunable numbers live in `data/*.json` and are loaded
   through `JsonLoader`. Loading code validates the data and reports readable
   errors.

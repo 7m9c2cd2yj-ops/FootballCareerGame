@@ -8,9 +8,12 @@ var labels: GameLabels = null
 var moment_tuning: MomentTuning = null
 var world: ClubWorld = null
 var rules: CareerRules = null
+var templates: TextTemplates = null
 var career: CareerState = null
 ## The season whose key moments are being played, or null between seasons.
 var season_in_progress: SeasonInProgress = null
+## Phone app -> how many of its items the player has already seen (this session).
+var phone_seen: Dictionary[String, int] = {}
 ## Problems found while loading data files; screens show these instead of crashing.
 var load_errors: Array[String] = []
 
@@ -20,6 +23,7 @@ func _ready() -> void:
 	balance = Balance.load_file(Balance.DEFAULT_PATH, load_errors)
 	labels = GameLabels.load_file(GameLabels.DEFAULT_PATH, load_errors)
 	moment_tuning = MomentTuning.load_file(MomentTuning.DEFAULT_PATH, load_errors)
+	templates = TextTemplates.load_file(TextTemplates.DEFAULT_PATH, load_errors)
 	if balance != null:
 		world = ClubWorld.load_file(ClubWorld.DEFAULT_PATH, balance.positions(), load_errors)
 	if world != null:
@@ -35,6 +39,7 @@ func is_ready() -> bool:
 func start_career(position: String) -> void:
 	career = CareerState.start(config.default_player_name, position, balance, rules.academy_club)
 	season_in_progress = null
+	phone_seen.clear()
 
 
 ## Why the next season cannot be played yet, or "" if it can.
@@ -93,9 +98,34 @@ func accept_offer(offer: Offer) -> String:
 	return reason
 
 
+func news_feed() -> Array[EventText.NewsItem]:
+	return EventText.news_feed(career, world, labels, templates)
+
+
+func agent_messages() -> Array[String]:
+	return EventText.agent_messages(career, world, labels, templates)
+
+
+func agent_advice() -> Array[String]:
+	return AgentAdvice.current_texts(career, world, balance, rules, labels, templates)
+
+
+func kickfie_feed() -> Array[EventText.KickfiePost]:
+	return EventText.kickfie_feed(career, world, labels, templates)
+
+
+## Items in `app` the player has not opened yet (`total` = items it has now).
+func unread(app: String, total: int) -> int:
+	return maxi(0, total - phone_seen.get(app, 0))
+
+
+func mark_seen(app: String, total: int) -> void:
+	phone_seen[app] = total
+
+
 func take_trial(club: Club) -> bool:
 	return Trials.take(career, club, world, balance, rules)
 
 
 func retire() -> bool:
-	return CareerSeason.retire(career, rules)
+	return CareerSeason.retire(career, world, rules)

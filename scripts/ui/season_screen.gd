@@ -5,7 +5,7 @@ extends Control
 
 const MAIN_MENU_SCENE := "res://scenes/main/main_menu.tscn"
 const MOMENT_SCENE := "res://scenes/moments/moment_scene.tscn"
-const CLUBS_SCENE := "res://scenes/career/clubs_app.tscn"
+const PHONE_SCENE := "res://scenes/phone/phone.tscn"
 const SUMMARY_SCENE := "res://scenes/career/career_summary.tscn"
 
 var _confirming_retirement: bool = false
@@ -21,7 +21,7 @@ var _confirming_retirement: bool = false
 @onready var _season_info_label: Label = %SeasonInfoLabel
 @onready var _play_button: Button = %PlayButton
 @onready var _sim_button: Button = %SimButton
-@onready var _clubs_button: Button = %ClubsButton
+@onready var _phone_button: Button = %PhoneButton
 @onready var _retire_button: Button = %RetireButton
 @onready var _result_label: Label = %ResultLabel
 
@@ -33,7 +33,7 @@ func _ready() -> void:
 	_fill_options()
 	_play_button.pressed.connect(play_key_moments)
 	_sim_button.pressed.connect(sim_season)
-	_clubs_button.pressed.connect(_on_clubs_pressed)
+	_phone_button.pressed.connect(_on_phone_pressed)
 	_retire_button.pressed.connect(press_retire)
 	_select_recommended_plan()
 	if Session.has_finished_moments():
@@ -127,6 +127,8 @@ func _refresh() -> void:
 	var moments := MomentPlanner.moment_count(player, Session.moment_tuning)
 	_play_button.text = "Play season · %d key moments" % moments
 	_retire_button.visible = CareerSeason.can_retire(career, Session.rules)
+	var news := Session.unread("news", career.events.size())
+	_phone_button.text = "Phone · %d new" % news if news > 0 else "Phone"
 	if not blocker.is_empty():
 		_season_info_label.text = blocker
 	elif not plan_problems.is_empty():
@@ -213,8 +215,8 @@ func _describe(record: SeasonRecord) -> String:
 	return "\n".join(lines)
 
 
-func _on_clubs_pressed() -> void:
-	get_tree().change_scene_to_file(CLUBS_SCENE)
+func _on_phone_pressed() -> void:
+	get_tree().change_scene_to_file(PHONE_SCENE)
 
 
 func _show_summary() -> void:
