@@ -24,7 +24,14 @@ func test_every_moment_type_has_a_label() -> void:
 
 
 func test_missing_attribute_label_is_reported() -> void:
-	var data := {"attributes": {"pace": "Pace"}, "positions": {}, "moments": {}, "outcomes": {}}
+	var data := {
+		"attributes": {"pace": "Pace"},
+		"positions": {},
+		"moments": {},
+		"outcomes": {},
+		"roles": {},
+		"intensities": {},
+	}
 	var problems := GameLabels.validate(data)
 	assert_string_contains("\n".join(problems), "shooting")
 

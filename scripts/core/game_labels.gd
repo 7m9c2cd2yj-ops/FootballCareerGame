@@ -4,11 +4,16 @@ extends RefCounted
 ## Kept out of code so text can be changed (or localized) without touching logic.
 
 const DEFAULT_PATH := "res://data/labels.json"
+const SECTIONS: Array[String] = [
+	"attributes", "positions", "moments", "outcomes", "roles", "intensities"
+]
 
 var _attributes: Dictionary[String, String] = {}
 var _positions: Dictionary[String, String] = {}
 var _moments: Dictionary[String, String] = {}
 var _outcomes: Dictionary[String, String] = {}
+var _roles: Dictionary[String, String] = {}
+var _intensities: Dictionary[String, String] = {}
 
 
 ## Loads and validates `path`. Returns null and appends to `errors` on failure.
@@ -27,13 +32,15 @@ static func load_file(path: String, errors: Array[String]) -> GameLabels:
 	labels._positions.assign(loaded.data["positions"])
 	labels._moments.assign(loaded.data["moments"])
 	labels._outcomes.assign(loaded.data["outcomes"])
+	labels._roles.assign(loaded.data["roles"])
+	labels._intensities.assign(loaded.data["intensities"])
 	return labels
 
 
 ## Every attribute needs a name; positions must be an object of strings.
 static func validate(data: Dictionary) -> Array[String]:
 	var problems: Array[String] = []
-	for section: String in ["attributes", "positions", "moments", "outcomes"]:
+	for section: String in SECTIONS:
 		if typeof(data.get(section)) != TYPE_DICTIONARY:
 			problems.append("%s must be an object" % section)
 			continue
@@ -64,6 +71,14 @@ func moment_name(moment_type: String) -> String:
 
 func outcome_name(outcome: String) -> String:
 	return _outcomes.get(outcome, outcome)
+
+
+func role_name(role: String) -> String:
+	return _roles.get(role, role)
+
+
+func intensity_name(intensity: String) -> String:
+	return _intensities.get(intensity, intensity)
 
 
 func has_moment(moment_type: String) -> bool:

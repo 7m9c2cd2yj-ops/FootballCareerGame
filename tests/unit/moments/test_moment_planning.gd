@@ -133,11 +133,11 @@ func test_season_rating_rises_with_good_moments() -> void:
 func test_season_in_progress_walks_through_moments() -> void:
 	var career := CareerState.start("Test", "FWD", _balance)
 	var plan := TrainingPlan.create("shooting", "pace")
-	var season := SeasonInProgress.start(career, plan, _balance, _tuning)
+	var expected := SeasonPerformance.expected_for(career.player, _balance)
+	var season := SeasonInProgress.start(career, plan, expected, 30.0, _balance, _tuning)
 	assert_eq(season.moments.size(), MomentPlanner.moment_count(career.player, _tuning))
 	while not season.is_complete():
 		var spec := season.current_moment()
 		season.record(MomentResult.create(spec, MomentResult.GOAL, 1.0, Vector2.ZERO, Vector2.ZERO))
 	assert_null(season.current_moment())
-	var rating := season.performance(career.player, _balance, _tuning).average_rating
-	assert_gt(rating, SeasonPerformance.expected_for(career.player, _balance).average_rating)
+	assert_gt(season.performance(_tuning).average_rating, expected.average_rating)

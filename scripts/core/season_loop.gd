@@ -31,6 +31,7 @@ static func play_season(
 	record.position = player.position
 	record.primary_focus = plan.primary
 	record.secondary_focus = plan.secondary
+	record.intensity = plan.intensity
 	record.matches_played = performance.matches_played
 	record.average_rating = Progression.round_value(performance.average_rating)
 	record.key_moments_played = performance.key_moments_played

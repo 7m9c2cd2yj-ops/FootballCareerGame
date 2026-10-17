@@ -1,0 +1,698 @@
+{
+	"_readme": "Fictional leagues and clubs. All names and crests are original; never use real club, league or federation names (tests/unit/career/test_club_world.gd rejects known real names). Crest shapes: shield, circle, hexagon, diamond. Patterns: plain, stripes, halves, band, chevron. Club needs say which positions a club wants and the minimum overall rating (optional max_age). Which needs are open in a given season is decided deterministically (see docs/CAREER.md).",
+	"nation": "Valdoria",
+	"leagues": [
+		{
+			"id": "crown",
+			"name": "Valdorian Crown League",
+			"tier": 1,
+			"strength": 74
+		},
+		{
+			"id": "shield",
+			"name": "Valdorian Shield League",
+			"tier": 2,
+			"strength": 62
+		},
+		{
+			"id": "anchor",
+			"name": "Valdorian Anchor League",
+			"tier": 3,
+			"strength": 50
+		},
+		{
+			"id": "community",
+			"name": "Valdorian Community League",
+			"tier": 4,
+			"strength": 35
+		}
+	],
+	"clubs": [
+		{
+			"id": "brackenford",
+			"name": "Brackenford Town",
+			"league": "crown",
+			"strength": 82,
+			"budget": "high",
+			"youth_intake_min": 34,
+			"crest": {
+				"shape": "shield",
+				"primary": "#1E4D8C",
+				"secondary": "#F2C94C",
+				"pattern": "stripes"
+			},
+			"needs": [
+				{
+					"position": "FWD",
+					"min_rating": 80
+				},
+				{
+					"position": "MID",
+					"min_rating": 79
+				},
+				{
+					"position": "GK",
+					"min_rating": 78
+				}
+			]
+		},
+		{
+			"id": "mistral_city",
+			"name": "Mistral City",
+			"league": "crown",
+			"strength": 80,
+			"budget": "high",
+			"youth_intake_min": 33,
+			"crest": {
+				"shape": "circle",
+				"primary": "#7FC8F8",
+				"secondary": "#FFFFFF",
+				"pattern": "halves"
+			},
+			"needs": [
+				{
+					"position": "DEF",
+					"min_rating": 78
+				},
+				{
+					"position": "FWD",
+					"min_rating": 78,
+					"max_age": 31
+				},
+				{
+					"position": "MID",
+					"min_rating": 77
+				}
+			]
+		},
+		{
+			"id": "copperlake",
+			"name": "Copperlake Athletic",
+			"league": "crown",
+			"strength": 76,
+			"budget": "medium",
+			"youth_intake_min": 30,
+			"crest": {
+				"shape": "hexagon",
+				"primary": "#B4562C",
+				"secondary": "#2B2B2B",
+				"pattern": "chevron"
+			},
+			"needs": [
+				{
+					"position": "MID",
+					"min_rating": 74
+				},
+				{
+					"position": "DEF",
+					"min_rating": 73
+				},
+				{
+					"position": "FWD",
+					"min_rating": 75
+				}
+			]
+		},
+		{
+			"id": "thornvale",
+			"name": "Thornvale Rovers",
+			"league": "crown",
+			"strength": 75,
+			"budget": "medium",
+			"youth_intake_min": 30,
+			"crest": {
+				"shape": "shield",
+				"primary": "#2E7D32",
+				"secondary": "#F5F5F5",
+				"pattern": "band"
+			},
+			"needs": [
+				{
+					"position": "GK",
+					"min_rating": 72
+				},
+				{
+					"position": "FWD",
+					"min_rating": 74,
+					"max_age": 30
+				},
+				{
+					"position": "DEF",
+					"min_rating": 72
+				}
+			]
+		},
+		{
+			"id": "stormhaven",
+			"name": "Stormhaven United",
+			"league": "crown",
+			"strength": 73,
+			"budget": "medium",
+			"youth_intake_min": 29,
+			"crest": {
+				"shape": "diamond",
+				"primary": "#37474F",
+				"secondary": "#FFC107",
+				"pattern": "stripes"
+			},
+			"needs": [
+				{
+					"position": "MID",
+					"min_rating": 71
+				},
+				{
+					"position": "FWD",
+					"min_rating": 72
+				},
+				{
+					"position": "DEF",
+					"min_rating": 70
+				}
+			]
+		},
+		{
+			"id": "glimmerton",
+			"name": "Glimmerton FC",
+			"league": "crown",
+			"strength": 71,
+			"budget": "medium",
+			"youth_intake_min": 28,
+			"crest": {
+				"shape": "circle",
+				"primary": "#6A1B9A",
+				"secondary": "#E1BEE7",
+				"pattern": "plain"
+			},
+			"needs": [
+				{
+					"position": "DEF",
+					"min_rating": 69
+				},
+				{
+					"position": "MID",
+					"min_rating": 69
+				},
+				{
+					"position": "GK",
+					"min_rating": 68
+				}
+			]
+		},
+		{
+			"id": "ravenmoor",
+			"name": "Ravenmoor Wanderers",
+			"league": "crown",
+			"strength": 69,
+			"budget": "low",
+			"youth_intake_min": 27,
+			"crest": {
+				"shape": "shield",
+				"primary": "#212121",
+				"secondary": "#E53935",
+				"pattern": "halves"
+			},
+			"needs": [
+				{
+					"position": "FWD",
+					"min_rating": 67
+				},
+				{
+					"position": "DEF",
+					"min_rating": 66
+				}
+			]
+		},
+		{
+			"id": "saltmarsh",
+			"name": "Saltmarsh Mariners",
+			"league": "crown",
+			"strength": 67,
+			"budget": "low",
+			"youth_intake_min": 26,
+			"crest": {
+				"shape": "hexagon",
+				"primary": "#00838F",
+				"secondary": "#FFFFFF",
+				"pattern": "band"
+			},
+			"needs": [
+				{
+					"position": "MID",
+					"min_rating": 65
+				},
+				{
+					"position": "GK",
+					"min_rating": 64
+				},
+				{
+					"position": "FWD",
+					"min_rating": 65
+				}
+			]
+		},
+		{
+			"id": "amberford",
+			"name": "Amberford City",
+			"league": "shield",
+			"strength": 66,
+			"budget": "low",
+			"youth_intake_min": 25,
+			"crest": {
+				"shape": "circle",
+				"primary": "#FFB300",
+				"secondary": "#3E2723",
+				"pattern": "stripes"
+			},
+			"needs": [
+				{
+					"position": "FWD",
+					"min_rating": 64
+				},
+				{
+					"position": "MID",
+					"min_rating": 63
+				}
+			]
+		},
+		{
+			"id": "duncliffe",
+			"name": "Duncliffe Town",
+			"league": "shield",
+			"strength": 64,
+			"budget": "low",
+			"youth_intake_min": 24,
+			"crest": {
+				"shape": "shield",
+				"primary": "#C62828",
+				"secondary": "#FFFFFF",
+				"pattern": "chevron"
+			},
+			"needs": [
+				{
+					"position": "DEF",
+					"min_rating": 62
+				},
+				{
+					"position": "GK",
+					"min_rating": 61
+				},
+				{
+					"position": "MID",
+					"min_rating": 62
+				}
+			]
+		},
+		{
+			"id": "larkspur",
+			"name": "Larkspur Athletic",
+			"league": "shield",
+			"strength": 63,
+			"budget": "low",
+			"youth_intake_min": 23,
+			"crest": {
+				"shape": "diamond",
+				"primary": "#5C6BC0",
+				"secondary": "#FFFFFF",
+				"pattern": "plain"
+			},
+			"needs": [
+				{
+					"position": "MID",
+					"min_rating": 61
+				},
+				{
+					"position": "FWD",
+					"min_rating": 61
+				}
+			]
+		},
+		{
+			"id": "oakhollow",
+			"name": "Oakhollow Rangers",
+			"league": "shield",
+			"strength": 62,
+			"budget": "low",
+			"youth_intake_min": 23,
+			"crest": {
+				"shape": "hexagon",
+				"primary": "#558B2F",
+				"secondary": "#FFEB3B",
+				"pattern": "halves"
+			},
+			"needs": [
+				{
+					"position": "DEF",
+					"min_rating": 60
+				},
+				{
+					"position": "FWD",
+					"min_rating": 60
+				},
+				{
+					"position": "GK",
+					"min_rating": 59
+				}
+			]
+		},
+		{
+			"id": "quillbridge",
+			"name": "Quillbridge United",
+			"league": "shield",
+			"strength": 61,
+			"budget": "low",
+			"youth_intake_min": 22,
+			"crest": {
+				"shape": "shield",
+				"primary": "#0D47A1",
+				"secondary": "#90CAF9",
+				"pattern": "band"
+			},
+			"needs": [
+				{
+					"position": "MID",
+					"min_rating": 59
+				},
+				{
+					"position": "DEF",
+					"min_rating": 58
+				}
+			]
+		},
+		{
+			"id": "silverbeck",
+			"name": "Silverbeck FC",
+			"league": "shield",
+			"strength": 60,
+			"budget": "low",
+			"youth_intake_min": 22,
+			"crest": {
+				"shape": "circle",
+				"primary": "#9E9E9E",
+				"secondary": "#1A237E",
+				"pattern": "stripes"
+			},
+			"needs": [
+				{
+					"position": "FWD",
+					"min_rating": 58
+				},
+				{
+					"position": "GK",
+					"min_rating": 57
+				}
+			]
+		},
+		{
+			"id": "marrowgate",
+			"name": "Marrowgate Rovers",
+			"league": "shield",
+			"strength": 58,
+			"budget": "low",
+			"youth_intake_min": 21,
+			"crest": {
+				"shape": "diamond",
+				"primary": "#AD1457",
+				"secondary": "#FCE4EC",
+				"pattern": "chevron"
+			},
+			"needs": [
+				{
+					"position": "DEF",
+					"min_rating": 56
+				},
+				{
+					"position": "MID",
+					"min_rating": 56
+				},
+				{
+					"position": "FWD",
+					"min_rating": 57
+				}
+			]
+		},
+		{
+			"id": "cinderfield",
+			"name": "Cinderfield Town",
+			"league": "shield",
+			"strength": 57,
+			"budget": "low",
+			"youth_intake_min": 20,
+			"crest": {
+				"shape": "shield",
+				"primary": "#E65100",
+				"secondary": "#000000",
+				"pattern": "plain"
+			},
+			"needs": [
+				{
+					"position": "GK",
+					"min_rating": 55
+				},
+				{
+					"position": "DEF",
+					"min_rating": 55
+				}
+			]
+		},
+		{
+			"id": "pebblecombe",
+			"name": "Pebblecombe United",
+			"league": "anchor",
+			"strength": 54,
+			"budget": "low",
+			"youth_intake_min": 19,
+			"crest": {
+				"shape": "circle",
+				"primary": "#4E342E",
+				"secondary": "#FFCC80",
+				"pattern": "halves"
+			},
+			"needs": [
+				{
+					"position": "FWD",
+					"min_rating": 51
+				},
+				{
+					"position": "MID",
+					"min_rating": 50
+				},
+				{
+					"position": "DEF",
+					"min_rating": 50
+				}
+			]
+		},
+		{
+			"id": "hollowmere",
+			"name": "Hollowmere Athletic",
+			"league": "anchor",
+			"strength": 52,
+			"budget": "low",
+			"youth_intake_min": 18,
+			"crest": {
+				"shape": "hexagon",
+				"primary": "#1B5E20",
+				"secondary": "#A5D6A7",
+				"pattern": "stripes"
+			},
+			"needs": [
+				{
+					"position": "GK",
+					"min_rating": 49
+				},
+				{
+					"position": "FWD",
+					"min_rating": 50
+				}
+			]
+		},
+		{
+			"id": "westerby",
+			"name": "Westerby Town",
+			"league": "anchor",
+			"strength": 51,
+			"budget": "low",
+			"youth_intake_min": 18,
+			"crest": {
+				"shape": "shield",
+				"primary": "#283593",
+				"secondary": "#FFFFFF",
+				"pattern": "band"
+			},
+			"needs": [
+				{
+					"position": "MID",
+					"min_rating": 48
+				},
+				{
+					"position": "DEF",
+					"min_rating": 48
+				},
+				{
+					"position": "GK",
+					"min_rating": 47
+				}
+			]
+		},
+		{
+			"id": "tidewell",
+			"name": "Tidewell FC",
+			"league": "anchor",
+			"strength": 50,
+			"budget": "low",
+			"youth_intake_min": 17,
+			"crest": {
+				"shape": "diamond",
+				"primary": "#006064",
+				"secondary": "#FFEB3B",
+				"pattern": "plain"
+			},
+			"needs": [
+				{
+					"position": "FWD",
+					"min_rating": 47
+				},
+				{
+					"position": "DEF",
+					"min_rating": 47
+				}
+			]
+		},
+		{
+			"id": "goldcrest",
+			"name": "Goldcrest Harbour",
+			"league": "anchor",
+			"strength": 49,
+			"budget": "low",
+			"youth_intake_min": 17,
+			"crest": {
+				"shape": "circle",
+				"primary": "#F9A825",
+				"secondary": "#263238",
+				"pattern": "chevron"
+			},
+			"needs": [
+				{
+					"position": "MID",
+					"min_rating": 46
+				},
+				{
+					"position": "FWD",
+					"min_rating": 46
+				},
+				{
+					"position": "GK",
+					"min_rating": 45
+				}
+			]
+		},
+		{
+			"id": "wyvern_point",
+			"name": "Wyvern Point Rovers",
+			"league": "anchor",
+			"strength": 48,
+			"budget": "low",
+			"youth_intake_min": 16,
+			"crest": {
+				"shape": "shield",
+				"primary": "#4A148C",
+				"secondary": "#FFD54F",
+				"pattern": "halves"
+			},
+			"needs": [
+				{
+					"position": "DEF",
+					"min_rating": 45
+				},
+				{
+					"position": "MID",
+					"min_rating": 45
+				}
+			]
+		},
+		{
+			"id": "brightwater",
+			"name": "Brightwater City",
+			"league": "anchor",
+			"strength": 47,
+			"budget": "low",
+			"youth_intake_min": 16,
+			"crest": {
+				"shape": "hexagon",
+				"primary": "#0288D1",
+				"secondary": "#FFFFFF",
+				"pattern": "stripes"
+			},
+			"needs": [
+				{
+					"position": "GK",
+					"min_rating": 44
+				},
+				{
+					"position": "DEF",
+					"min_rating": 44
+				},
+				{
+					"position": "FWD",
+					"min_rating": 44
+				}
+			]
+		},
+		{
+			"id": "fernwick",
+			"name": "Fernwick Wanderers",
+			"league": "anchor",
+			"strength": 46,
+			"budget": "low",
+			"youth_intake_min": 15,
+			"crest": {
+				"shape": "diamond",
+				"primary": "#33691E",
+				"secondary": "#FFFFFF",
+				"pattern": "band"
+			},
+			"needs": [
+				{
+					"position": "MID",
+					"min_rating": 43
+				},
+				{
+					"position": "FWD",
+					"min_rating": 43
+				}
+			]
+		},
+		{
+			"id": "brambleton",
+			"name": "Brambleton Amateurs",
+			"league": "community",
+			"strength": 35,
+			"budget": "amateur",
+			"youth_intake_min": 1,
+			"crest": {
+				"shape": "circle",
+				"primary": "#795548",
+				"secondary": "#FFFFFF",
+				"pattern": "plain"
+			},
+			"needs": [
+				{
+					"position": "GK",
+					"min_rating": 1
+				},
+				{
+					"position": "DEF",
+					"min_rating": 1
+				},
+				{
+					"position": "MID",
+					"min_rating": 1
+				},
+				{
+					"position": "FWD",
+					"min_rating": 1
+				}
+			]
+		}
+	]
+}

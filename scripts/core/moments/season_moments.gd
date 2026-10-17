@@ -17,6 +17,7 @@ static func performance(
 	var with_moments := SeasonPerformance.create(
 		expected.matches_played, expected.average_rating + shift
 	)
+	with_moments.training_share = expected.training_share
 	with_moments.key_moments_played = results.size()
 	with_moments.key_moments_won = successes(results)
 	return with_moments

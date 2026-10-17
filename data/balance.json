@@ -34,6 +34,7 @@
 		"primary_decline_protection": 0.5,
 		"secondary_decline_protection": 0.3
 	},
+	"intensity": {"light": 0.8, "normal": 1.0, "intense": 1.2},
 	"headroom": {"exponent": 0.3, "floor": 0.3},
 	"performance": {"baseline_rating": 6.0, "gain_per_point": 1.3},
 	"expected_rating": {"neutral": 6.0, "per_overall_point": 0.05, "min": 4.0, "max": 8.0},

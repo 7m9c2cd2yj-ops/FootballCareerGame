@@ -4,12 +4,15 @@ extends RefCounted
 ##
 ## For each attribute, per season:
 ##   growth phase (age base_gain >= 0):
-##     change = (base_gain * focus + performance_bonus * used) * headroom
+##     change = (base_gain * focus * intensity * training_share
+##               + performance_bonus * used) * headroom
 ##   decline phase (age base_gain < 0):
 ##     change = base_gain * decline_weight * (1 - protection)
 ##              + performance_bonus * used * headroom
 ## where
 ##   focus            = training multiplier (primary / secondary / other)
+##   intensity        = training intensity multiplier (light / normal / intense)
+##   training_share   = share of training done (below 1 when injured)
 ##   protection       = training decline protection (primary / secondary / none)
 ##   headroom         = max(floor, ((max - value) / (max - min)) ^ exponent)
 ##   performance_bonus = max(0, rating - baseline) * gain_per_point * matches / season_matches
@@ -38,6 +41,7 @@ static func season_changes(
 	player: PlayerModel, plan: TrainingPlan, performance: SeasonPerformance, balance: Balance
 ) -> Dictionary[String, float]:
 	var base_gain := balance.base_gain_for_age(player.age)
+	var intensity: float = balance.intensity[plan.intensity] * performance.training_share
 	var bonus := performance_bonus(performance, balance.matches_for_age(player.age), balance)
 	var changes: Dictionary[String, float] = {}
 	for attribute: String in PlayerModel.ATTRIBUTES:
@@ -45,7 +49,7 @@ static func season_changes(
 		var used := 1.0 if balance.weight(player.position, attribute) > 0.0 else 0.0
 		var age_change := 0.0
 		if base_gain >= 0.0:
-			age_change = base_gain * _focus_multiplier(plan, attribute, balance) * room
+			age_change = base_gain * _focus_multiplier(plan, attribute, balance) * intensity * room
 		else:
 			var protection := _decline_protection(plan, attribute, balance)
 			age_change = base_gain * balance.decline_weights[attribute] * (1.0 - protection)

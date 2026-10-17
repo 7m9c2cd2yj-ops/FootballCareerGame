@@ -59,6 +59,15 @@ reload exactly.
 
 The other positions are within a few points. Run the report for the full table.
 
+## Career context
+
+The curves above use the age tables in `balance.json` throughout (one flat
+senior competition level). In a real career from age 18 the player faces
+their club's league strength, plays fewer matches when rotated or benched,
+and can be injured (see `docs/CAREER.md`).
+`tests/unit/career/test_career_simulation.gd` checks whole careers with
+all of that included.
+
 ## How to tune
 
 1. Edit `data/balance.json`.

@@ -45,7 +45,7 @@ func test_age_curve_overlap_is_rejected() -> void:
 func test_age_table_must_reach_max_age() -> void:
 	_assert_problem(
 		func(d: Dictionary) -> void: d["matches_per_season"][-1]["to_age"] = 35,
-		"matches_per_season must end exactly"
+		"matches_per_season must end exactly at age"
 	)
 
 

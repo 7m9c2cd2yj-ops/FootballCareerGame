@@ -37,3 +37,12 @@ func test_advisor_plan_is_always_valid() -> void:
 	for position: String in balance.positions():
 		var player := PlayerModel.create("Test", position, balance)
 		assert_eq(TrainingAdvisor.recommended_plan(player, balance).validate().size(), 0)
+
+
+func test_plan_rejects_unknown_intensity() -> void:
+	var problems := TrainingPlan.create("pace", "shooting", "extreme").validate()
+	assert_string_contains("\n".join(problems), "intensity")
+
+
+func test_plan_defaults_to_normal_intensity() -> void:
+	assert_eq(TrainingPlan.create("pace", "shooting").intensity, TrainingPlan.NORMAL)

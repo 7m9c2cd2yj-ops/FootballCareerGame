@@ -7,7 +7,7 @@ const Fixture := preload("res://tests/helpers/moment_fixture.gd")
 
 
 func before_each() -> void:
-	Session.career = CareerState.start("Test", "FWD", Session.balance)
+	Session.start_career("FWD")
 
 
 func after_each() -> void:

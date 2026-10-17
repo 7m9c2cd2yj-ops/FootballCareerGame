@@ -4,16 +4,24 @@ extends RefCounted
 ## has a result, `performance` gives the season's rating for SeasonLoop.
 
 var plan: TrainingPlan = null
+## The season's baseline (matches and expected rating) before moments.
+var expected: SeasonPerformance = null
 var moments: Array[MomentSpec] = []
 var results: Array[MomentResult] = []
 
 
+## `baseline` and `strength` come from the career context (SeasonContext).
 static func start(
-	career: CareerState, training: TrainingPlan, balance: Balance, tuning: MomentTuning
+	career: CareerState,
+	training: TrainingPlan,
+	baseline: SeasonPerformance,
+	strength: float,
+	balance: Balance,
+	tuning: MomentTuning
 ) -> SeasonInProgress:
 	var season := SeasonInProgress.new()
 	season.plan = training
-	var strength := balance.competition_strength_for_age(career.player.age)
+	season.expected = baseline
 	season.moments = MomentPlanner.plan_season(
 		career.player, career.next_season_number(), strength, balance, tuning
 	)
@@ -34,6 +42,5 @@ func record(result: MomentResult) -> void:
 		results.append(result)
 
 
-func performance(player: PlayerModel, balance: Balance, tuning: MomentTuning) -> SeasonPerformance:
-	var expected := SeasonPerformance.expected_for(player, balance)
+func performance(tuning: MomentTuning) -> SeasonPerformance:
 	return SeasonMoments.performance(expected, results, tuning)

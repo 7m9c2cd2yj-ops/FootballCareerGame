@@ -1,0 +1,50 @@
+{
+	"_readme": "Career rules: academy, trials, contracts, roles, transfers, fatigue/injuries, retirement and Hall of Fame. Deterministic: no randomness. Money is in thousands of credits per season (fictional). See docs/CAREER.md.",
+	"academy_club": "copperlake",
+	"fallback_club": "brambleton",
+	"trial_age": 16,
+	"senior_age": 18,
+	"trial": {"bonus_per_key_moment_won": 3.0},
+	"needs": {"open_share": 0.7},
+	"roles": {
+		"starter_margin": 0.0,
+		"rotation_margin": 8.0,
+		"match_share": {"starter": 1.0, "rotation": 0.6, "bench": 0.3}
+	},
+	"budgets": {
+		"high": {"wage_base": 900, "youth_wage": 40, "transfer_budget": 60000},
+		"medium": {"wage_base": 500, "youth_wage": 25, "transfer_budget": 25000},
+		"low": {"wage_base": 220, "youth_wage": 12, "transfer_budget": 8000},
+		"amateur": {"wage_base": 15, "youth_wage": 2, "transfer_budget": 0}
+	},
+	"contract": {
+		"wage_per_point_above_need": 0.06,
+		"release_clause_multiplier": 6.0,
+		"youth_years": 2,
+		"renewal_margin": 15.0
+	},
+	"contract_years": [
+		{"from_age": 16, "to_age": 23, "value": 4},
+		{"from_age": 24, "to_age": 29, "value": 3},
+		{"from_age": 30, "to_age": 33, "value": 2},
+		{"from_age": 34, "to_age": 40, "value": 1}
+	],
+	"fatigue": {
+		"carryover": 0.5,
+		"intensity_load": {"light": 5, "normal": 20, "intense": 45},
+		"match_load_at_full_share": 15,
+		"age_load_from": 30,
+		"age_load_per_year": 3,
+		"injury_threshold": 80,
+		"after_injury": 20,
+		"missed_match_share": 0.5
+	},
+	"retirement": {"min_age": 33},
+	"hall_of_fame": {
+		"min_peak_overall": 88,
+		"induction_score": 130,
+		"points_per_peak_overall": 1.0,
+		"points_per_top_tier_season": 2.0,
+		"points_per_key_moment_won": 0.5
+	}
+}

@@ -32,6 +32,9 @@ finds any.
   errors.
 - **Exact saves.** Floats that get stored are rounded with
   `Progression.round_value`, so a career survives a JSON round trip exactly.
+- **Saves evolve, never break.** `CareerState.FORMAT_VERSION` is bumped when
+  the save layout changes. `CareerMigration` upgrades older saves step by step
+  and is tested with a hand-written old save.
 - **Untrusted input.** Data loaded from disk (and later the network) goes
   through `validate_dict` before `from_dict`, which assumes valid data.
 - **Static typing.** Every variable, parameter and return value is typed.

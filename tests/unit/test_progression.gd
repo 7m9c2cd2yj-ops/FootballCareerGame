@@ -108,3 +108,23 @@ func test_apply_changes_clamps_and_rounds() -> void:
 	assert_eq(player.attributes["shooting"], _balance.attribute_max)
 	assert_eq(player.attributes["defending"], _balance.attribute_min)
 	assert_eq(player.attributes["pace"], 98.12)
+
+
+func test_intense_training_grows_faster_than_light() -> void:
+	var player := _player("MID", 16, 40.0)
+	var light := TrainingPlan.create("passing", "dribbling", TrainingPlan.LIGHT)
+	var intense := TrainingPlan.create("passing", "dribbling", TrainingPlan.INTENSE)
+	var slow := Progression.season_changes(player, light, _season(6.0, 16), _balance)
+	var fast := Progression.season_changes(player, intense, _season(6.0, 16), _balance)
+	assert_gt(fast["passing"], slow["passing"])
+
+
+func test_injury_cuts_training_growth() -> void:
+	var player := _player("MID", 16, 40.0)
+	var plan := TrainingPlan.create("passing", "dribbling")
+	var fit := _season(6.0, 16)
+	var injured := _season(6.0, 16)
+	injured.training_share = 0.5
+	var full := Progression.season_changes(player, plan, fit, _balance)
+	var half := Progression.season_changes(player, plan, injured, _balance)
+	assert_almost_eq(half["passing"], full["passing"] / 2.0, 1e-6)

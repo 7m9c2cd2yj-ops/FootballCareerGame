@@ -5,8 +5,13 @@ extends RefCounted
 var season_number: int = 0
 var age: int = 0
 var position: String = ""
+var club_id: String = ""
+## True if an injury (from last season's fatigue) cut this season short.
+var injured: bool = false
+var fatigue_after: float = 0.0
 var primary_focus: String = ""
 var secondary_focus: String = ""
+var intensity: String = TrainingPlan.NORMAL
 var matches_played: int = 0
 var average_rating: float = 0.0
 var key_moments_played: int = 0
@@ -22,8 +27,12 @@ func to_dict() -> Dictionary:
 		"season_number": season_number,
 		"age": age,
 		"position": position,
+		"club_id": club_id,
+		"injured": injured,
+		"fatigue_after": fatigue_after,
 		"primary_focus": primary_focus,
 		"secondary_focus": secondary_focus,
+		"intensity": intensity,
 		"matches_played": matches_played,
 		"average_rating": average_rating,
 		"key_moments_played": key_moments_played,
@@ -44,15 +53,18 @@ static func validate_dict(data: Dictionary) -> Array[String]:
 		"average_rating",
 		"key_moments_played",
 		"key_moments_won",
+		"fatigue_after",
 		"overall_before",
 		"overall_after"
 	]
 	for key: String in number_keys:
 		if typeof(data.get(key)) != TYPE_FLOAT and typeof(data.get(key)) != TYPE_INT:
 			problems.append("season.%s must be a number" % key)
-	for key: String in ["position", "primary_focus", "secondary_focus"]:
+	for key: String in ["position", "club_id", "primary_focus", "secondary_focus", "intensity"]:
 		if typeof(data.get(key)) != TYPE_STRING:
 			problems.append("season.%s must be a string" % key)
+	if typeof(data.get("injured")) != TYPE_BOOL:
+		problems.append("season.injured must be true or false")
 	if typeof(data.get("attribute_changes")) != TYPE_DICTIONARY:
 		problems.append("season.attribute_changes must be an object")
 	return problems
@@ -64,8 +76,12 @@ static func from_dict(data: Dictionary) -> SeasonRecord:
 	record.season_number = int(data["season_number"])
 	record.age = int(data["age"])
 	record.position = data["position"]
+	record.club_id = data["club_id"]
+	record.injured = data["injured"]
+	record.fatigue_after = float(data["fatigue_after"])
 	record.primary_focus = data["primary_focus"]
 	record.secondary_focus = data["secondary_focus"]
+	record.intensity = data["intensity"]
 	record.matches_played = int(data["matches_played"])
 	record.average_rating = float(data["average_rating"])
 	record.key_moments_played = int(data["key_moments_played"])

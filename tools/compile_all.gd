@@ -19,8 +19,9 @@ func _initialize() -> void:
 func _compile_folder(folder: String) -> void:
 	for file_name: String in DirAccess.get_files_at(folder):
 		var path := folder.path_join(file_name)
+		var own_script: Script = get_script()
 		# Reloading this running script would crash the engine, so skip it.
-		if file_name.ends_with(".gd") and path != (get_script() as Script).resource_path:
+		if file_name.ends_with(".gd") and path != own_script.resource_path:
 			var script := load(path) as GDScript
 			if script == null or not script.can_instantiate():
 				_failures.append(path)

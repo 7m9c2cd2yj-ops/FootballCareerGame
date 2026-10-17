@@ -7,7 +7,7 @@ const MENU_SCENE := preload("res://scenes/main/main_menu.tscn")
 
 
 func before_each() -> void:
-	Session.career = CareerState.start("Test", "MID", Session.balance)
+	Session.start_career("MID")
 
 
 func after_each() -> void:
@@ -67,6 +67,6 @@ func test_same_focus_twice_disables_play() -> void:
 func test_finished_career_disables_play() -> void:
 	Session.career.player.age = Session.balance.max_age
 	var screen: Control = add_child_autofree(SEASON_SCENE.instantiate())
-	var play: Button = screen.get_node("%PlayButton")
-	assert_true(play.disabled)
-	assert_eq(play.text, "Career complete")
+	assert_true((screen.get_node("%PlayButton") as Button).disabled)
+	var info := (screen.get_node("%SeasonInfoLabel") as Label).text
+	assert_eq(info, CareerSeason.blocker(Session.career, Session.balance, Session.rules))

@@ -45,13 +45,17 @@ manager). Press F5 to run. On desktop, mouse clicks emulate touch.
 ./tools/check_project.sh   # compiles every script, boots the game headless
 ```
 
-`run_tests.sh` passes extra arguments to GUT, e.g.
+`run_tests.sh` and `check_project.sh` also fail on GDScript warnings and on
+script errors outside tests, and never wait for keyboard input, so CI cannot
+pass by accident or hang. `run_tests.sh` passes extra arguments to GUT, e.g.
 `./tools/run_tests.sh -gselect=test_game_config.gd`.
 
 To tune progression, edit `data/balance.json` and run
 `./tools/balance_report.sh` to see whole-career rating curves. See `docs/BALANCE.md`.
 The 3D key moments (penalty, free kick, one-on-one, save) are described in
-`docs/MOMENTS.md`, with numbers in `data/moment_tuning.json`.
+`docs/MOMENTS.md`, with numbers in `data/moment_tuning.json`. Clubs, trials,
+contracts, transfers, injuries and retirement are in `docs/CAREER.md`
+(data: `data/clubs.json`, `data/career_rules.json`).
 The same three checks run in GitHub Actions (`.github/workflows/ci.yml`).
 
 ## Project layout
@@ -65,6 +69,7 @@ scenes/          .tscn scenes: display and input only
 scripts/app/     Autoloads (Session: data + active career; ScreenFit: UI scale)
 scripts/core/    Pure game logic (no nodes, no scene tree): unit tested
 scripts/core/moments/  Key-moment rules: resolvers, planner, season rating
+scripts/core/career/   Clubs, offers, contracts, trials, fatigue, Hall of Fame
 scripts/ui/      Scripts attached to scenes; thin layer over core
 scripts/ui/moments/    3D moment stage, HUD and touch controllers
 tests/unit/      GUT tests for core logic (files named test_*.gd)

@@ -12,6 +12,8 @@ var average_rating: float = 0.0
 ## Key moments (3D) played this season and how many went the player's way.
 var key_moments_played: int = 0
 var key_moments_won: int = 0
+## Share of the season's training the player could do (an injury halves it).
+var training_share: float = 1.0
 
 
 static func create(matches: int, rating: float) -> SeasonPerformance:

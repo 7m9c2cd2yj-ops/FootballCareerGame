@@ -21,6 +21,16 @@
 		"save": "Shot on goal",
 		"penalty_save": "Penalty against you"
 	},
+	"roles": {
+		"starter": "Starter",
+		"rotation": "Rotation",
+		"bench": "Bench"
+	},
+	"intensities": {
+		"light": "Light",
+		"normal": "Normal",
+		"intense": "Intense"
+	},
 	"outcomes": {
 		"goal": "GOAL!",
 		"saved": "Saved",

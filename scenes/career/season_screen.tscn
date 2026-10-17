@@ -48,6 +48,13 @@ layout_mode = 2
 horizontal_alignment = 1
 autowrap_mode = 3
 
+[node name="ClubLabel" type="Label" parent="Scroll/Margin/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+autowrap_mode = 3
+
 [node name="OverallLabel" type="Label" parent="Scroll/Margin/Layout"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -77,6 +84,21 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 88)
 layout_mode = 2
 
+[node name="IntensityHeading" type="Label" parent="Scroll/Margin/Layout"]
+layout_mode = 2
+text = "Training intensity"
+
+[node name="IntensityOption" type="OptionButton" parent="Scroll/Margin/Layout"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+
+[node name="FatigueLabel" type="Label" parent="Scroll/Margin/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 3
+
 [node name="SeasonInfoLabel" type="Label" parent="Scroll/Margin/Layout"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -95,6 +117,18 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 88)
 layout_mode = 2
 text = "Quick sim (no key moments)"
+
+[node name="ClubsButton" type="Button" parent="Scroll/Margin/Layout"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+text = "Clubs app"
+
+[node name="RetireButton" type="Button" parent="Scroll/Margin/Layout"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+text = "Retire"
 
 [node name="ResultLabel" type="Label" parent="Scroll/Margin/Layout"]
 unique_name_in_owner = true
