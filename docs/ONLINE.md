@@ -26,7 +26,7 @@
 ## Sync (when online)
 
 - **What sync does.** After each autosave, `Backend.background_sync` uploads
-  or downloads the slot. **Online & settings → Sync careers and rankings**
+  or downloads the slot. **Settings → Sync careers and rankings**
   does the same on demand.
 - **Who wins.** `SyncPolicy` keeps the **newest valid** save: the copy
   further along (more seasons), then the later save, then the higher
@@ -59,7 +59,7 @@
 
 ## Account deletion
 
-**Online & settings → Delete my account** (tap twice) calls
+**Settings → Delete my account** (tap twice) calls
 `delete_my_account()`. It deletes the anonymous user, which cascades to the
 profile, careers and rankings. Careers on the device stay, unless the player
 also ticks "Also delete careers on this device".

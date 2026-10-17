@@ -13,7 +13,7 @@
 	"position_weights": {
 		"GK": {"pace": 0.1, "shooting": 0.0, "passing": 0.1, "dribbling": 0.0, "defending": 0.1, "physical": 0.25, "goalkeeping": 0.45},
 		"DEF": {"pace": 0.15, "shooting": 0.0, "passing": 0.15, "dribbling": 0.05, "defending": 0.45, "physical": 0.2, "goalkeeping": 0.0},
-		"MID": {"pace": 0.1, "shooting": 0.15, "passing": 0.35, "dribbling": 0.2, "defending": 0.1, "physical": 0.1, "goalkeeping": 0.0},
+		"MID": {"pace": 0.1, "shooting": 0.1, "passing": 0.4, "dribbling": 0.25, "defending": 0.1, "physical": 0.05, "goalkeeping": 0.0},
 		"FWD": {"pace": 0.2, "shooting": 0.4, "passing": 0.1, "dribbling": 0.2, "defending": 0.0, "physical": 0.1, "goalkeeping": 0.0}
 	},
 	"age_curve": [

@@ -7,6 +7,12 @@ const MAIN_MENU_SCENE := "res://scenes/main/main_menu.tscn"
 const MOMENT_SCENE := "res://scenes/moments/moment_scene.tscn"
 const PHONE_SCENE := "res://scenes/phone/phone.tscn"
 const SUMMARY_SCENE := "res://scenes/career/career_summary.tscn"
+const FIRST_SEASON_GUIDE := (
+	"Coach: welcome to the academy! Training is already set to suit your position;"
+	+ " change it if you like. Tap Play season to play this season's moments"
+	+ " yourself: how you play them sets your season rating. Quick sim skips them"
+	+ " and gives your expected rating. No luck either way."
+)
 
 var _confirming_retirement: bool = false
 
@@ -38,6 +44,8 @@ func _ready() -> void:
 	_select_recommended_plan()
 	if Session.has_finished_moments():
 		_complete_season(Session.finish_season)
+	elif Session.career.history.is_empty():
+		_result_label.text = FIRST_SEASON_GUIDE
 	_refresh()
 
 

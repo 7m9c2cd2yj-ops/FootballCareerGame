@@ -20,7 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0784, 0.2471, 0.1451, 1)
 
-[node name="Scroll" type="ScrollContainer" parent="."]
+[node name="Scroll" type="ScrollContainer" parent="." groups=["safe_area"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -111,24 +111,28 @@ custom_minimum_size = Vector2(0, 112)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Play season"
+autowrap_mode = 3
 
 [node name="SimButton" type="Button" parent="Scroll/Margin/Layout"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 88)
 layout_mode = 2
 text = "Quick sim (no key moments)"
+autowrap_mode = 3
 
 [node name="PhoneButton" type="Button" parent="Scroll/Margin/Layout"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 88)
 layout_mode = 2
 text = "Phone"
+autowrap_mode = 3
 
 [node name="RetireButton" type="Button" parent="Scroll/Margin/Layout"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 88)
 layout_mode = 2
 text = "Retire"
+autowrap_mode = 3
 
 [node name="ResultLabel" type="Label" parent="Scroll/Margin/Layout"]
 unique_name_in_owner = true

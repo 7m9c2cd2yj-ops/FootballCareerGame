@@ -1,0 +1,44 @@
+{
+	"_readme": "Accessibility options shown in Settings. text_sizes scale the whole UI (Window.content_scale_factor). Each palette must define every colour role; 'colorblind' uses the Okabe-Ito colours, which stay distinct for the common kinds of colour blindness. Haptic pulses are in milliseconds.",
+	"text_sizes": [
+		{"id": "normal", "label": "Normal", "scale": 1.0},
+		{"id": "large", "label": "Large", "scale": 1.15},
+		{"id": "largest", "label": "Largest", "scale": 1.3}
+	],
+	"palettes": [
+		{
+			"id": "standard",
+			"label": "Standard",
+			"colors": {
+				"player_kit": "#2659d9",
+				"opponent_kit": "#d93333",
+				"keeper_kit": "#f2cc1a",
+				"aim": "#ffd900",
+				"power": "#4cd964",
+				"success": "#4cd964",
+				"failure": "#ff6b6b",
+				"badge": "#e62626",
+				"highlight": "#ffd94d"
+			}
+		},
+		{
+			"id": "colorblind",
+			"label": "Colour-blind safe",
+			"colors": {
+				"player_kit": "#0072b2",
+				"opponent_kit": "#d55e00",
+				"keeper_kit": "#f0e442",
+				"aim": "#e69f00",
+				"power": "#56b4e9",
+				"success": "#56b4e9",
+				"failure": "#e69f00",
+				"badge": "#d55e00",
+				"highlight": "#f0e442"
+			}
+		}
+	],
+	"haptics": {
+		"success_ms": 60,
+		"failure_ms": 25
+	}
+}

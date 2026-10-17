@@ -20,7 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0784, 0.2471, 0.1451, 1)
 
-[node name="Margin" type="MarginContainer" parent="."]
+[node name="Margin" type="MarginContainer" parent="." groups=["safe_area"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -66,11 +66,17 @@ custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
 text = "ARENA"
 
+[node name="LockerButton" type="Button" parent="Margin/Layout"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+text = "Locker & store"
+
 [node name="SettingsButton" type="Button" parent="Margin/Layout"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
-text = "Online & settings"
+text = "Settings"
 
 [node name="BottomSpacer" type="Control" parent="Margin/Layout"]
 layout_mode = 2

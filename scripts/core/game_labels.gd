@@ -5,7 +5,7 @@ extends RefCounted
 
 const DEFAULT_PATH := "res://data/labels.json"
 const SECTIONS: Array[String] = [
-	"attributes", "positions", "moments", "outcomes", "roles", "intensities"
+	"attributes", "positions", "moments", "outcomes", "roles", "intensities", "tips"
 ]
 
 var _attributes: Dictionary[String, String] = {}
@@ -14,6 +14,7 @@ var _moments: Dictionary[String, String] = {}
 var _outcomes: Dictionary[String, String] = {}
 var _roles: Dictionary[String, String] = {}
 var _intensities: Dictionary[String, String] = {}
+var _tips: Dictionary[String, String] = {}
 
 
 ## Loads and validates `path`. Returns null and appends to `errors` on failure.
@@ -34,6 +35,7 @@ static func load_file(path: String, errors: Array[String]) -> GameLabels:
 	labels._outcomes.assign(loaded.data["outcomes"])
 	labels._roles.assign(loaded.data["roles"])
 	labels._intensities.assign(loaded.data["intensities"])
+	labels._tips.assign(loaded.data["tips"])
 	return labels
 
 
@@ -53,6 +55,10 @@ static func validate(data: Dictionary) -> Array[String]:
 		for attribute: String in PlayerModel.ATTRIBUTES:
 			if not attribute_names.has(attribute):
 				problems.append("attributes is missing '%s'" % attribute)
+		var tips: Dictionary = data["tips"]
+		for moment_type: String in MomentSpec.TYPES:
+			if not tips.has(moment_type):
+				problems.append("tips is missing '%s'" % moment_type)
 	return problems
 
 
@@ -79,6 +85,11 @@ func role_name(role: String) -> String:
 
 func intensity_name(intensity: String) -> String:
 	return _intensities.get(intensity, intensity)
+
+
+## How to play a moment type, shown before the player's first one.
+func tip(moment_type: String) -> String:
+	return _tips.get(moment_type, "")
 
 
 func has_moment(moment_type: String) -> bool:

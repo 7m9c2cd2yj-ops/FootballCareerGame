@@ -20,7 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.09, 0.11, 0.16, 1)
 
-[node name="Layout" type="VBoxContainer" parent="."]
+[node name="Layout" type="VBoxContainer" parent="." groups=["safe_area"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

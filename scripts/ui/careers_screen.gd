@@ -24,7 +24,7 @@ func refresh() -> void:
 	for child: Node in _slot_list.get_children():
 		_slot_list.remove_child(child)
 		child.queue_free()
-	for slot: int in range(1, Session.config.free_save_slots + 1):
+	for slot: int in range(1, Store.slot_count() + 1):
 		_slot_list.add_child(_slot_row(slot))
 
 

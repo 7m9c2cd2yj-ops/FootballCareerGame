@@ -1,0 +1,62 @@
+{
+	"_readme": "Cosmetics and convenience purchases. Every product is a one-time (non-consumable) purchase with a fixed, listed content: no random rewards, no currencies, nothing that changes ratings, progression or moment results. platform_ids are PLACEHOLDERS: replace them with the IDs created in App Store Connect and the Google Play Console (see docs/STORE.md). There is no ad-free product because the game has no ads.",
+	"cosmetics": {
+		"boots": [
+			{"id": "boots_classic", "name": "Classic black", "color": "#1a1a1a"},
+			{"id": "boots_white", "name": "Clean white", "color": "#f2f2f2"},
+			{"id": "boots_neon", "name": "Neon lime", "color": "#b6f23a"},
+			{"id": "boots_sunset", "name": "Sunset orange", "color": "#ff8c1a"}
+		],
+		"celebrations": [
+			{"id": "celebration_fist", "name": "Fist pump", "style": "jump"},
+			{"id": "celebration_spin", "name": "Spin", "style": "spin"},
+			{"id": "celebration_slide", "name": "Knee slide", "style": "slide"},
+			{"id": "celebration_bow", "name": "Take a bow", "style": "bow"}
+		],
+		"kits": [
+			{"id": "kit_blue", "name": "Academy blue", "color": "palette"},
+			{"id": "kit_white", "name": "Snow white", "color": "#f5f5f5"},
+			{"id": "kit_black", "name": "Midnight black", "color": "#141414"},
+			{"id": "kit_purple", "name": "Royal purple", "color": "#6a2c91"}
+		]
+	},
+	"free_items": ["boots_classic", "boots_white", "celebration_fist", "kit_blue"],
+	"products": [
+		{
+			"id": "boots_pack",
+			"kind": "cosmetic",
+			"name": "Boot pack",
+			"description": "Neon lime and sunset orange boots.",
+			"platform_ids": {"ios": "com.example.kickofflegacy.boots_pack", "android": "boots_pack"},
+			"grants": ["boots_neon", "boots_sunset"],
+			"extra_save_slots": 0
+		},
+		{
+			"id": "celebration_pack",
+			"kind": "cosmetic",
+			"name": "Celebration pack",
+			"description": "Spin, knee slide and take a bow.",
+			"platform_ids": {"ios": "com.example.kickofflegacy.celebration_pack", "android": "celebration_pack"},
+			"grants": ["celebration_spin", "celebration_slide", "celebration_bow"],
+			"extra_save_slots": 0
+		},
+		{
+			"id": "kit_pack",
+			"kind": "cosmetic",
+			"name": "Kit colours",
+			"description": "White, black and purple kits for your player.",
+			"platform_ids": {"ios": "com.example.kickofflegacy.kit_pack", "android": "kit_pack"},
+			"grants": ["kit_white", "kit_black", "kit_purple"],
+			"extra_save_slots": 0
+		},
+		{
+			"id": "extra_save_slots",
+			"kind": "convenience",
+			"name": "Extra save slots",
+			"description": "Three more career slots.",
+			"platform_ids": {"ios": "com.example.kickofflegacy.extra_save_slots", "android": "extra_save_slots"},
+			"grants": [],
+			"extra_save_slots": 3
+		}
+	]
+}

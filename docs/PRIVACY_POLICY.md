@@ -17,8 +17,12 @@ against them.
   preset templates and preset fan names. Nothing is posted or received.
 - **Third parties:** Supabase (hosting and database). No ads or analytics SDKs
   in the first version.
-- **Deletion:** Online & settings → Delete my account removes the anonymous
+- **Deletion:** Settings → Delete my account removes the anonymous
   account, profile, online careers and rankings from the server. Careers on
   the device can be deleted at the same time or from the Careers screen.
-- **External links:** behind a parental gate.
+- **External links and purchases:** behind a parental gate.
+- **On the device only:** settings (text size, colours, haptics, the chosen
+  preset name, equipped cosmetics) and the list of bought products. None of
+  it is sent to our servers. Purchases go through Apple or Google, and we
+  never see payment details.
 - **Contact:** _to be added._

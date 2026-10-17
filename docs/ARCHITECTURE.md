@@ -6,7 +6,7 @@
 |-------|--------|---------|--------------|
 | Data | `data/` | JSON only | Logic |
 | Core logic | `scripts/core/` | `RefCounted`/`Resource`, `FileAccess`, `JSON`, math | `Node`, scene tree, `Input`, autoload singletons |
-| App state | `scripts/app/` | Autoload `Session`: loaded data and the active career | Game rules |
+| App state | `scripts/app/` | Autoloads: `Preferences` (device settings), `Session` (loaded data, active career), `ScreenFit` (UI scale, safe area), `Backend` (online), `Store` (the one purchase wrapper) | Game rules |
 | UI and 3D | `scenes/`, `scripts/ui/` | Everything; calls into core | Game rules (no balance numbers or formulas) |
 | Backend | `backend/` | Supabase SQL and edge functions | Trusting anything the client sends |
 
@@ -47,6 +47,9 @@ finds any.
 - **Offline first.** The whole career works without a network. Sync and the
   ARENA fail gracefully (M7).
 - **Never trust the client.** Rankings are validated server-side (M7).
+- **Purchases never touch play.** Store, entitlements and settings live in
+  `scripts/core/store/` and `scripts/core/settings/`. No other core script may
+  refer to them (tested). See `docs/STORE.md`.
 
 ## Error handling
 

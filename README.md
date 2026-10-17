@@ -43,6 +43,7 @@ manager). Press F5 to run. On desktop, mouse clicks emulate touch.
 ./tools/lint.sh            # gdformat --check + gdlint (use --fix to reformat)
 ./tools/run_tests.sh       # all GUT tests headless; exit code 0 = pass
 ./tools/check_project.sh   # compiles every script, boots the game headless
+./tools/check_export.sh    # exports the Android/iOS data packs, checks their contents
 ```
 
 Backend and online checks (Node 22+, local Postgres 15+):
@@ -69,7 +70,11 @@ contracts, transfers, injuries and retirement are in `docs/CAREER.md`
 agent Messages, the Kickfie feed, Cups) is in `docs/PHONE.md` (text:
 `data/text_templates.json`). Cups and the Golden Ball are in `docs/CUPS.md`
 (data: `data/nations.json`, `data/cups.json`).
-The same three checks run in GitHub Actions (`.github/workflows/ci.yml`).
+Accessibility settings, onboarding and the safe area are in
+`docs/ACCESSIBILITY.md`. The cosmetics store, parental gate and purchase rules
+are in `docs/STORE.md`. Building and signing are in `docs/RELEASE.md`. The
+submission checklist is `docs/STORE_CHECKLIST.md`.
+The same checks run in GitHub Actions (`.github/workflows/ci.yml`).
 
 ## Project layout
 
@@ -79,7 +84,7 @@ backend/         Supabase SQL migrations, edge function, SQL tests
 data/            JSON data: config, clubs, nations, balance, text templates
 docs/            Architecture, performance budget, privacy policy, checklists
 scenes/          .tscn scenes: display and input only
-scripts/app/     Autoloads (Session: data + active career; ScreenFit: UI scale)
+scripts/app/     Autoloads: Preferences, Session, ScreenFit, Backend, Store
 scripts/core/    Pure game logic (no nodes, no scene tree): unit tested
 scripts/core/moments/  Key-moment rules: resolvers, planner, season rating
 scripts/core/career/   Clubs, offers, contracts, trials, fatigue, Hall of Fame
@@ -87,6 +92,8 @@ scripts/core/news/     Career events, text templates, agent advice, content rule
 scripts/core/cups/     Nations, cup draws and simulation, Golden Ball
 scripts/core/save/     Save slots (current + backup, checksums), career envelopes
 scripts/core/online/   Supabase requests, sessions, backend config, sync policy
+scripts/core/settings/ Device settings, accessibility data, safe-area math
+scripts/core/store/    Store catalog, entitlements, parental gate
 scripts/ui/phone/      The in-game phone and its feed apps
 scripts/ui/      Scripts attached to scenes; thin layer over core
 scripts/ui/moments/    3D moment stage, HUD and touch controllers
@@ -104,5 +111,6 @@ to catch them.
 ## Roadmap
 
 M1 scaffold, M2 data and progression, M3 3D moments, M4 contracts and the
-Clubs app, M5 phone UI, M6 cups, M7 saves, backend and the ARENA, M8 polish.
+Clubs app, M5 phone UI, M6 cups, M7 saves, backend and the ARENA, M8 polish
+(onboarding, accessibility, cosmetics store, export presets).
 Open work is tracked in `TODO.md`.

@@ -79,7 +79,7 @@ static func _match_row(cup: CupDefinition, played: CupSim.Match, player_team: St
 	)
 	names.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	if played.home == player_team or played.away == player_team:
-		names.add_theme_color_override("font_color", Color(1, 0.85, 0.3))
+		names.add_theme_color_override("font_color", Preferences.color("highlight"))
 	row.add_child(names)
 	row.add_child(_team_badge(cup, played.away))
 	return row

@@ -63,3 +63,12 @@ func test_positions_are_fair_to_each_other() -> void:
 func test_careers_are_deterministic() -> void:
 	var first := CareerSim.overall_by_age("MID", 8.2, null, _balance)
 	assert_eq(CareerSim.overall_by_age("MID", 8.2, null, _balance), first)
+
+
+## No position should be a trap: same play, similar peak (M8 tuning pass).
+func test_positions_peak_within_four_points_of_each_other() -> void:
+	for rating: float in [7.5, CareerSim.EXPECTED_RATING]:
+		var peaks: Array[int] = []
+		for position: String in _balance.positions():
+			peaks.append(_peak(position, rating).y)
+		assert_lte(peaks.max() - peaks.min(), 4, "peaks %s at rating %s" % [peaks, rating])

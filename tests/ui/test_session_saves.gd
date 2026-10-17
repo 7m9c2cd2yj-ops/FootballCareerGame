@@ -15,7 +15,7 @@ func test_new_career_is_saved_and_loads_back() -> void:
 	Session.career = null
 	assert_eq(Session.load_career(2), "")
 	assert_eq(JSON.stringify(Session.career.to_dict()), saved)
-	assert_eq(Session.saves.summary(2)["seasons"], 1)
+	assert_eq(int(Session.saves.summary(2)["seasons"]), 1)
 
 
 func test_loading_an_empty_slot_explains_why() -> void:

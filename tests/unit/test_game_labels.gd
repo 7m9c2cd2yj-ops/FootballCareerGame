@@ -31,6 +31,7 @@ func test_missing_attribute_label_is_reported() -> void:
 		"outcomes": {},
 		"roles": {},
 		"intensities": {},
+		"tips": {},
 	}
 	var problems := GameLabels.validate(data)
 	assert_string_contains("\n".join(problems), "shooting")
@@ -38,3 +39,16 @@ func test_missing_attribute_label_is_reported() -> void:
 
 func test_unknown_code_falls_back_to_the_code() -> void:
 	assert_eq(_shipped().attribute_name("flair"), "flair")
+
+
+func test_every_moment_type_has_a_tip() -> void:
+	var labels := _shipped()
+	for moment_type: String in MomentSpec.TYPES:
+		assert_false(labels.tip(moment_type).is_empty(), moment_type)
+
+
+func test_missing_tip_is_reported() -> void:
+	var data: Dictionary = JsonLoader.load_dictionary(GameLabels.DEFAULT_PATH).data
+	var tips: Dictionary = data["tips"]
+	tips.erase(MomentSpec.SAVE)
+	assert_string_contains("\n".join(GameLabels.validate(data)), "tips is missing 'save'")

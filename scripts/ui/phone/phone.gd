@@ -4,7 +4,7 @@ extends Control
 
 const SEASON_SCENE := "res://scenes/career/season_screen.tscn"
 const CLUBS_APP := preload("res://scenes/career/clubs_app.tscn")
-const ICON_SIZE := Vector2(250, 210)
+const ICON_SIZE := Vector2(200, 180)
 const APPS: Array[String] = ["clubs", "news", "messages", "kickfie", "cups"]
 const APP_TITLES: Dictionary = {
 	"clubs": "Clubs", "news": "News", "messages": "Messages", "kickfie": "Kickfie", "cups": "Cups"
@@ -103,7 +103,7 @@ func _badge(count: int) -> Control:
 	badge.custom_minimum_size = Vector2(56, 56)
 	badge.position = Vector2(ICON_SIZE.x - 64, 8)
 	var style := StyleBoxFlat.new()
-	style.bg_color = Color(0.9, 0.15, 0.15)
+	style.bg_color = Preferences.color("badge")
 	style.set_corner_radius_all(28)
 	badge.add_theme_stylebox_override("normal", style)
 	return badge

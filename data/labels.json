@@ -37,5 +37,12 @@
 		"missed": "Missed",
 		"blocked": "Blocked by the wall",
 		"conceded": "They scored"
+	},
+	"tips": {
+		"penalty": "Drag on the goal to aim. Then hold anywhere and let go to shoot: the power bar sweeps up and down. Aim for the corners, and don't overhit or it flies over. Better shooting slows the bar and forgives small misses.",
+		"free_kick": "Drag on the goal to aim, then drag left or right to curl the ball round the wall. Hold and let go for power: softer shots lift over the wall. Better passing gives you more curl.",
+		"one_on_one": "You're through on goal and the keeper is rushing out. Tap the goal to shoot there, or press Chip (when the keeper is far out) or Round (at the right moment). Wait too long and the keeper smothers it.",
+		"save": "You're in goal. Watch the shooter, then tap where the ball is going: your keeper dives there the moment you tap. Better goalkeeping means a faster dive and safer hands.",
+		"penalty_save": "A penalty against you. Watch the run-up, then tap where the ball is going to dive there. Go too early or the wrong way and they score."
 	}
 }

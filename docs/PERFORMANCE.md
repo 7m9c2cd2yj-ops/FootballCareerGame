@@ -3,7 +3,7 @@
 Target: **stable 60 FPS** on a mid-range phone from the last four years
 (reference devices: Samsung Galaxy A52/A53 class, Snapdragon 720G–778G or
 equivalent, 4–6 GB RAM, and iPhone 11 / A13 or newer).
-These are targets. They must be measured on a real device in M8.
+These are targets. They still have to be measured on a real device; see the table below.
 
 ## Frame budget (16.6 ms)
 
@@ -24,7 +24,10 @@ These are targets. They must be measured on a real device in M8.
   low resolution, or blob shadows. No real-time GI, SSAO, SSR, glow or volumetrics.
 - Materials: vertex colors or one small atlas per object. Unshaded or simple
   lit shaders. No custom screen-space effects.
-- Optional 3D resolution scale of 0.8 or higher on weaker devices (setting in M8).
+- Optional 3D resolution scale of 0.8 or higher on weaker devices, if device
+  tests show it is needed (not added yet).
+- Player capsules use 20 radial segments and 4 rings (`MomentStage`), instead
+  of Godot's default 64, which cost about 4k triangles each.
 
 ## Textures and memory
 
@@ -45,7 +48,7 @@ cost almost nothing.
 - No continuous redraw when idle. Animations are short tweens only.
 - Lists of clubs, players and feed posts are built lazily, not all at once.
 
-## How to measure (M8)
+## How to measure
 
 Use the Godot remote debugger's Monitors tab (FPS, draw calls, video memory)
 on a device with a debug build. Record the results in the table below.
@@ -54,6 +57,15 @@ on a device with a debug build. Record the results in the table below.
 |--------|-------|---------|--------|------------|------|
 | _not measured on a device yet_ | | | | | |
 
-Rough desktop reading (Linux, OpenGL fallback renderer, 960×540; only indicative):
-3D moment scenes draw 19–24 draw calls and 7k–22k primitives per frame, far
-under the budget above.
+Rough desktop reading (Linux, OpenGL fallback renderer on a software
+rasterizer, 960×540; counts only, the frame times there mean nothing):
+
+| Moment | Draw calls | Primitives (M7 → M8) | Video memory |
+|--------|-----------|----------------------|--------------|
+| Penalty | 22 | 7.9k → 2.2k | 10.7 MB |
+| Free kick (with wall) | 24 | 21.4k → 4.2k | 10.8 MB |
+| One-on-one | 20 | 7.6k → 1.9k | 10.7 MB |
+| Save / penalty save | 24 | 7.8k → 2.1k | 10.7 MB |
+
+The M8 drop comes from the low-poly capsules. Equipped boots add 2 small
+boxes that share one material. Static memory stays about 45 MB.

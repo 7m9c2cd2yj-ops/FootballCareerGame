@@ -20,7 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.09, 0.11, 0.16, 1)
 
-[node name="Scroll" type="ScrollContainer" parent="."]
+[node name="Scroll" type="ScrollContainer" parent="." groups=["safe_area"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -45,8 +45,9 @@ theme_override_constants/separation = 20
 [node name="Heading" type="Label" parent="Scroll/Margin/Layout"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 44
-text = "Online & settings"
+text = "Settings"
 horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="StatusLabel" type="Label" parent="Scroll/Margin/Layout"]
 unique_name_in_owner = true
@@ -54,9 +55,56 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 24
 autowrap_mode = 3
 
+[node name="AccessHeading" type="Label" parent="Scroll/Margin/Layout"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "Accessibility"
+autowrap_mode = 3
+
+[node name="TextSizeHeading" type="Label" parent="Scroll/Margin/Layout"]
+layout_mode = 2
+text = "Text size"
+autowrap_mode = 3
+
+[node name="TextSizeOption" type="OptionButton" parent="Scroll/Margin/Layout"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+
+[node name="PaletteHeading" type="Label" parent="Scroll/Margin/Layout"]
+layout_mode = 2
+text = "Colours"
+autowrap_mode = 3
+
+[node name="PaletteOption" type="OptionButton" parent="Scroll/Margin/Layout"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+
+[node name="HapticsCheck" type="CheckButton" parent="Scroll/Margin/Layout"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+text = "Vibrate on key-moment results"
+autowrap_mode = 3
+
+[node name="TutorialButton" type="Button" parent="Scroll/Margin/Layout"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+text = "Show the tutorial again"
+autowrap_mode = 3
+
+[node name="OnlineHeading" type="Label" parent="Scroll/Margin/Layout"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "Online"
+autowrap_mode = 3
+
 [node name="NameHeading" type="Label" parent="Scroll/Margin/Layout"]
 layout_mode = 2
-text = "Your name online (pick one)"
+text = "Your name, for new careers and online (pick one)"
+autowrap_mode = 3
 
 [node name="NameOption" type="OptionButton" parent="Scroll/Margin/Layout"]
 unique_name_in_owner = true
@@ -66,6 +114,7 @@ layout_mode = 2
 [node name="ServerHeading" type="Label" parent="Scroll/Margin/Layout"]
 layout_mode = 2
 text = "Your ARENA server"
+autowrap_mode = 3
 
 [node name="ServerOption" type="OptionButton" parent="Scroll/Margin/Layout"]
 unique_name_in_owner = true
@@ -77,12 +126,14 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 88)
 layout_mode = 2
 text = "Save name and server"
+autowrap_mode = 3
 
 [node name="SyncButton" type="Button" parent="Scroll/Margin/Layout"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 88)
 layout_mode = 2
 text = "Sync careers and rankings"
+autowrap_mode = 3
 
 [node name="MessageLabel" type="Label" parent="Scroll/Margin/Layout"]
 unique_name_in_owner = true
@@ -94,12 +145,14 @@ autowrap_mode = 3
 [node name="DeleteHeading" type="Label" parent="Scroll/Margin/Layout"]
 layout_mode = 2
 text = "Delete your account"
+autowrap_mode = 3
 
 [node name="DeleteLocalCheck" type="CheckBox" parent="Scroll/Margin/Layout"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 text = "Also delete careers on this device"
+autowrap_mode = 3
 
 [node name="DeleteButton" type="Button" parent="Scroll/Margin/Layout"]
 unique_name_in_owner = true
@@ -107,9 +160,18 @@ custom_minimum_size = Vector2(0, 88)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.5, 0.5, 1)
 text = "Delete my account"
+autowrap_mode = 3
+
+[node name="PrivacyButton" type="Button" parent="Scroll/Margin/Layout"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+text = "Privacy policy (opens a website)"
+autowrap_mode = 3
 
 [node name="BackButton" type="Button" parent="Scroll/Margin/Layout"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
 text = "Back"
+autowrap_mode = 3

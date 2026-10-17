@@ -46,7 +46,7 @@ reload exactly.
 | Unremarkable (expected rating, no standout moments) | peaks 55–72 |
 | Perfect play at 18 | still below 85 (no teenage superstars) |
 | Good play at 36 | at least 4 below the career peak |
-| Position fairness | good-play peaks within 4 of each other |
+| Position fairness | good-play and expected peaks within 4 of each other |
 
 ## Current curves (`./tools/balance_report.sh`)
 
@@ -58,6 +58,16 @@ reload exactly.
 | FWD | expected | 23 | 35 | 46 | 55 | 62 | 63 | 53 | 64@30 |
 
 The other positions are within a few points. Run the report for the full table.
+
+### M8 tuning pass
+
+Midfielders trailed the other positions by 3–5 points at every play level
+(expected peak 61 against 64–67). Their two training focuses covered only 55%
+of their position weight, against 65–70% for the other positions. The midfield
+weights are now passing 0.40, dribbling 0.25, shooting 0.10, pace 0.10,
+defending 0.10 and physical 0.05. Two focuses now cover 65%, and the
+midfield expected peak is 65. The fairness test now covers the expected
+rating too, and it fails on the old weights.
 
 ## Career context
 

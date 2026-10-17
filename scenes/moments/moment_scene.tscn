@@ -15,6 +15,17 @@ border_width_right = 3
 border_width_bottom = 3
 border_color = Color(1, 1, 1, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tip"]
+content_margin_left = 32.0
+content_margin_top = 24.0
+content_margin_right = 32.0
+content_margin_bottom = 24.0
+bg_color = Color(0.07, 0.09, 0.13, 0.96)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
 [node name="MomentScene" type="Node"]
 script = ExtResource("1_scene")
 
@@ -23,7 +34,7 @@ script = ExtResource("2_stage")
 
 [node name="HudLayer" type="CanvasLayer" parent="."]
 
-[node name="Hud" type="Control" parent="HudLayer"]
+[node name="Hud" type="Control" parent="HudLayer" groups=["safe_area"]]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 15
@@ -164,3 +175,44 @@ custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "Continue"
+
+[node name="TipPanel" type="PanelContainer" parent="HudLayer/Hud"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -380.0
+offset_top = -170.0
+offset_right = 380.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tip")
+
+[node name="Layout" type="VBoxContainer" parent="HudLayer/Hud/TipPanel"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TipHeading" type="Label" parent="HudLayer/Hud/TipPanel/Layout"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "How to play"
+horizontal_alignment = 1
+
+[node name="TipLabel" type="Label" parent="HudLayer/Hud/TipPanel/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="TipButton" type="Button" parent="HudLayer/Hud/TipPanel/Layout"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "Got it"

@@ -1,10 +1,13 @@
 extends Control
-## Entry screen: title, version, legal disclaimer and the way to your careers.
+## Entry screen: title, version, legal disclaimer and the way to your careers,
+## the ARENA, the locker and settings.
 ## Display only; data comes from the Session autoload.
 
 const CAREERS_SCENE := "res://scenes/main/careers_screen.tscn"
 const ARENA_SCENE := "res://scenes/main/arena_screen.tscn"
 const SETTINGS_SCENE := "res://scenes/main/settings_screen.tscn"
+const ONBOARDING_SCENE := "res://scenes/main/onboarding.tscn"
+const LOCKER_SCENE := "res://scenes/main/locker_screen.tscn"
 
 @onready var _title_label: Label = %TitleLabel
 @onready var _version_label: Label = %VersionLabel
@@ -20,6 +23,9 @@ func _ready() -> void:
 	(%SettingsButton as Button).pressed.connect(
 		func() -> void: get_tree().change_scene_to_file(SETTINGS_SCENE)
 	)
+	(%LockerButton as Button).pressed.connect(
+		func() -> void: get_tree().change_scene_to_file(LOCKER_SCENE)
+	)
 	if not Session.is_ready():
 		_title_label.text = "Data error"
 		_disclaimer_label.text = "\n".join(Session.load_errors)
@@ -31,5 +37,7 @@ func _ready() -> void:
 	get_window().title = Session.config.title
 
 
+## First launch goes through onboarding before the careers screen.
 func _on_new_career_pressed() -> void:
-	get_tree().change_scene_to_file(CAREERS_SCENE)
+	var done := Preferences.settings.onboarding_done
+	get_tree().change_scene_to_file(CAREERS_SCENE if done else ONBOARDING_SCENE)

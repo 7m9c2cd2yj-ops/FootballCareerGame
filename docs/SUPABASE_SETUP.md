@@ -81,19 +81,19 @@ service-role key into the game, `.env`, or any file in this repository.
 ## 7. Check it works
 
 1. Run the game (`godot -e`, F5).
-2. Open **Online & settings**. The status should say online features are
+2. Open **Settings**. The status should say online features are
    available.
 3. Pick a name and server, then tap **Save name and server**. You should see
    "Profile saved."
 4. Start a career and play two or three seasons (quick sim is fine). Each
    autosave also syncs in the background.
-5. Back in **Online & settings**, tap **Sync careers and rankings**. Each slot
+5. Back in **Settings**, tap **Sync careers and rankings**. Each slot
    should say "up to date" or "uploaded", then "Ranking updated."
 6. Open **ARENA**. You should appear under **My server** and **Global**.
 7. In the dashboard **Table Editor**:
    - `careers` has your save, and `backup_envelope` fills from the second upload.
    - `rankings` has your row.
-8. **Account deletion:** in **Online & settings**, tap **Delete my account**
+8. **Account deletion:** in **Settings**, tap **Delete my account**
    twice. Your rows disappear from `profiles`, `careers` and `rankings`, and
    the anonymous user disappears from **Authentication → Users**.
 

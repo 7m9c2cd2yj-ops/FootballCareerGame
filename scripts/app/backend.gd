@@ -58,15 +58,26 @@ func is_configured() -> bool:
 
 ## Picks a preset display name and server; saved locally and on the server.
 func choose_identity(name_choice: String, server_choice: String) -> String:
-	if not preset_names.has(name_choice):
+	if not remember_identity(name_choice, server_choice):
 		return "Pick one of the preset names."
-	display_name = name_choice
-	server_id = server_choice
-	_write_json(_profile_path, {"display_name": display_name, "server_id": server_id})
 	if not await _signed_in():
 		return _offline_message()
 	var request := SupabaseRequests.save_profile(config, session, display_name, server_id)
 	return "Profile saved." if (await _send(request)).ok() else "Could not save your profile."
+
+
+## Stores a preset name and server on this device only; the server profile
+## is updated with the next online action. False if the choice is not allowed.
+func remember_identity(name_choice: String, server_choice: String) -> bool:
+	var known_server := servers.any(
+		func(server: Dictionary) -> bool: return server["id"] == server_choice
+	)
+	if not preset_names.has(name_choice) or not known_server:
+		return false
+	display_name = name_choice
+	server_id = server_choice
+	_write_json(_profile_path, {"display_name": display_name, "server_id": server_id})
+	return true
 
 
 func is_syncing() -> bool:

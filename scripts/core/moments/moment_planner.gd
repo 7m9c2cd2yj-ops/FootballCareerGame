@@ -27,15 +27,36 @@ static func plan_season(
 	var specs: Array[MomentSpec] = []
 	for index: int in moment_count(player, tuning):
 		var moment_type := schedule[(season_number - 1 + index) % schedule.size()]
-		var spec := MomentSpec.new()
-		spec.moment_type = moment_type
-		spec.index = index
-		spec.opponent_skill = clampf(competition_strength / balance.attribute_max, 0.0, 1.0)
-		for attribute: String in PlayerModel.ATTRIBUTES:
-			spec.skills[attribute] = player.attributes[attribute] / balance.attribute_max
+		var spec := _spec_for(player, moment_type, index, competition_strength, balance)
 		_stage(spec, season_number, tuning)
 		specs.append(spec)
 	return specs
+
+
+## A single moment for the tutorial, staged like a first-season moment. The
+## caller must not record its result.
+static func practice(
+	player: PlayerModel,
+	moment_type: String,
+	competition_strength: float,
+	balance: Balance,
+	tuning: MomentTuning
+) -> MomentSpec:
+	var spec := _spec_for(player, moment_type, 0, competition_strength, balance)
+	_stage(spec, 1, tuning)
+	return spec
+
+
+static func _spec_for(
+	player: PlayerModel, moment_type: String, index: int, strength: float, balance: Balance
+) -> MomentSpec:
+	var spec := MomentSpec.new()
+	spec.moment_type = moment_type
+	spec.index = index
+	spec.opponent_skill = clampf(strength / balance.attribute_max, 0.0, 1.0)
+	for attribute: String in PlayerModel.ATTRIBUTES:
+		spec.skills[attribute] = player.attributes[attribute] / balance.attribute_max
+	return spec
 
 
 static func _stage(spec: MomentSpec, season: int, tuning: MomentTuning) -> void:

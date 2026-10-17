@@ -8,11 +8,14 @@ const Fixture := preload("res://tests/helpers/moment_fixture.gd")
 
 func before_each() -> void:
 	Session.start_career("FWD")
+	Preferences.settings.tips_seen.assign(MomentSpec.TYPES)
 
 
 func after_each() -> void:
 	Session.career = null
 	Session.season_in_progress = null
+	Session.practice_moment = null
+	Preferences.reload()
 
 
 func _open(moment_type: String) -> Node:
@@ -66,3 +69,42 @@ func test_screen_to_goal_round_trips_through_the_camera() -> void:
 	var camera := get_viewport().get_camera_3d()
 	var screen := camera.unproject_position(Vector3(2.0, 1.2, 0.0))
 	assert_almost_eq(stage.screen_to_goal(screen), Vector2(2.0, 1.2), Vector2(0.01, 0.01))
+
+
+func test_first_moment_of_a_type_waits_behind_its_tip() -> void:
+	Preferences.settings.tips_seen.clear()
+	var scene := _open(MomentSpec.ONE_ON_ONE)
+	assert_true((scene.get_node("%TipPanel") as Control).visible)
+	assert_string_contains((scene.get_node("%TipLabel") as Label).text, "keeper is rushing out")
+	await wait_seconds(0.5)
+	var controller: OneOnOneController = scene.call("controller")
+	assert_false(controller.is_done(), "the run must not start while the tip is open")
+	(scene.get_node("%TipButton") as Button).pressed.emit()
+	assert_true(Preferences.settings.tips_seen.has(MomentSpec.ONE_ON_ONE))
+	assert_false(Preferences.needs_tip(MomentSpec.ONE_ON_ONE))
+
+
+func test_practice_penalty_is_never_recorded() -> void:
+	var season := SeasonInProgress.new()
+	season.plan = TrainingPlan.create("shooting", "pace")
+	season.moments.append(Fixture.spec(MomentSpec.PENALTY, 0.5, 0.5))
+	Session.season_in_progress = season
+	Session.start_practice(MomentSpec.PENALTY, "res://scenes/main/main_menu.tscn")
+	var scene: Node = add_child_autofree(MOMENT_SCENE.instantiate())
+	assert_string_contains((scene.get_node("%TitleLabel") as Label).text, "Practice")
+	var controller: ShotController = scene.call("controller")
+	controller.shoot(Vector2(3.3, 0.3), 0.0, 0.75)
+	await wait_for_signal(controller.resolved, 3.0)
+	assert_string_contains(_result_text(scene), "does not count")
+	assert_eq(season.results.size(), 0, "the real season gets no result")
+
+
+func test_result_text_uses_the_palette() -> void:
+	Preferences.settings.palette = "colorblind"
+	var scene := _open(MomentSpec.PENALTY)
+	var controller: ShotController = scene.call("controller")
+	controller.shoot(Vector2(3.3, 0.3), 0.0, 0.75)
+	await wait_for_signal(controller.resolved, 3.0)
+	var label: Label = scene.get_node("%ResultLabel")
+	assert_eq(label.get_theme_color("font_color"), Preferences.color("success"))
+	assert_eq(Preferences.color("success"), Color.html("#56b4e9"))

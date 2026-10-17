@@ -20,6 +20,9 @@ var pending_slot: int = 1
 var saves: SaveSlots = SaveSlots.new(SAVE_ROOT)
 ## The season whose key moments are being played, or null between seasons.
 var season_in_progress: SeasonInProgress = null
+## A tutorial moment being played (never recorded) and the screen to return to.
+var practice_moment: MomentSpec = null
+var practice_return_scene: String = ""
 ## Phone app -> how many of its items the player has already seen (this session).
 var phone_seen: Dictionary[String, int] = {}
 ## Problems found while loading data files; screens show these instead of crashing.
@@ -47,7 +50,8 @@ func is_ready() -> bool:
 
 ## Starts a new career in `career_slot` and saves it at once.
 func start_career(position: String, career_slot: int = 1) -> void:
-	career = CareerState.start(config.default_player_name, position, balance, rules.academy_club)
+	var player_name := Preferences.player_name(config.default_player_name)
+	career = CareerState.start(player_name, position, balance, rules.academy_club)
 	slot = career_slot
 	season_in_progress = null
 	phone_seen.clear()
@@ -100,6 +104,15 @@ func begin_season(plan: TrainingPlan) -> void:
 	season_in_progress = SeasonInProgress.start(
 		career, plan, expected_performance(), strength, balance, moment_tuning
 	)
+
+
+## Sets up a practice `moment_type` for an academy-age forward; the moment
+## scene plays it and returns to `return_scene` without recording anything.
+func start_practice(moment_type: String, return_scene: String) -> void:
+	var player := PlayerModel.create(config.default_player_name, "FWD", balance)
+	var strength := balance.competition_strength_for_age(player.age)
+	practice_moment = MomentPlanner.practice(player, moment_type, strength, balance, moment_tuning)
+	practice_return_scene = return_scene
 
 
 func current_moment() -> MomentSpec:
