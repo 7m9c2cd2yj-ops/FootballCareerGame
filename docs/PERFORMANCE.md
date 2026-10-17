@@ -52,4 +52,8 @@ on a device with a debug build. Record the results in the table below.
 
 | Device | Scene | Avg FPS | 1% low | Draw calls | VRAM |
 |--------|-------|---------|--------|------------|------|
-| _not measured yet_ | | | | | |
+| _not measured on a device yet_ | | | | | |
+
+Rough desktop reading (Linux, OpenGL fallback renderer, 960×540; only indicative):
+3D moment scenes draw 19–24 draw calls and 7k–22k primitives per frame, far
+under the budget above.

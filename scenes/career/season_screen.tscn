@@ -90,6 +90,12 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Play season"
 
+[node name="SimButton" type="Button" parent="Scroll/Margin/Layout"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+text = "Quick sim (no key moments)"
+
 [node name="ResultLabel" type="Label" parent="Scroll/Margin/Layout"]
 unique_name_in_owner = true
 layout_mode = 2

@@ -9,6 +9,8 @@ var primary_focus: String = ""
 var secondary_focus: String = ""
 var matches_played: int = 0
 var average_rating: float = 0.0
+var key_moments_played: int = 0
+var key_moments_won: int = 0
 var overall_before: int = 0
 var overall_after: int = 0
 ## Attribute -> change applied this season (after clamping).
@@ -24,6 +26,8 @@ func to_dict() -> Dictionary:
 		"secondary_focus": secondary_focus,
 		"matches_played": matches_played,
 		"average_rating": average_rating,
+		"key_moments_played": key_moments_played,
+		"key_moments_won": key_moments_won,
 		"overall_before": overall_before,
 		"overall_after": overall_after,
 		"attribute_changes": attribute_changes.duplicate(),
@@ -38,6 +42,8 @@ static func validate_dict(data: Dictionary) -> Array[String]:
 		"age",
 		"matches_played",
 		"average_rating",
+		"key_moments_played",
+		"key_moments_won",
 		"overall_before",
 		"overall_after"
 	]
@@ -62,6 +68,8 @@ static func from_dict(data: Dictionary) -> SeasonRecord:
 	record.secondary_focus = data["secondary_focus"]
 	record.matches_played = int(data["matches_played"])
 	record.average_rating = float(data["average_rating"])
+	record.key_moments_played = int(data["key_moments_played"])
+	record.key_moments_won = int(data["key_moments_won"])
 	record.overall_before = int(data["overall_before"])
 	record.overall_after = int(data["overall_after"])
 	var changes: Dictionary = data["attribute_changes"]

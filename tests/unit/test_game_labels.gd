@@ -17,8 +17,15 @@ func test_every_balance_position_has_a_label() -> void:
 		assert_true(labels.has_position(position), position)
 
 
+func test_every_moment_type_has_a_label() -> void:
+	var labels := _shipped()
+	for moment_type: String in MomentSpec.TYPES:
+		assert_true(labels.has_moment(moment_type), moment_type)
+
+
 func test_missing_attribute_label_is_reported() -> void:
-	var problems := GameLabels.validate({"attributes": {"pace": "Pace"}, "positions": {}})
+	var data := {"attributes": {"pace": "Pace"}, "positions": {}, "moments": {}, "outcomes": {}}
+	var problems := GameLabels.validate(data)
 	assert_string_contains("\n".join(problems), "shooting")
 
 

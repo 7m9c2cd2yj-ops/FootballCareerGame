@@ -7,6 +7,8 @@ const DEFAULT_PATH := "res://data/labels.json"
 
 var _attributes: Dictionary[String, String] = {}
 var _positions: Dictionary[String, String] = {}
+var _moments: Dictionary[String, String] = {}
+var _outcomes: Dictionary[String, String] = {}
 
 
 ## Loads and validates `path`. Returns null and appends to `errors` on failure.
@@ -23,13 +25,15 @@ static func load_file(path: String, errors: Array[String]) -> GameLabels:
 	var labels := GameLabels.new()
 	labels._attributes.assign(loaded.data["attributes"])
 	labels._positions.assign(loaded.data["positions"])
+	labels._moments.assign(loaded.data["moments"])
+	labels._outcomes.assign(loaded.data["outcomes"])
 	return labels
 
 
 ## Every attribute needs a name; positions must be an object of strings.
 static func validate(data: Dictionary) -> Array[String]:
 	var problems: Array[String] = []
-	for section: String in ["attributes", "positions"]:
+	for section: String in ["attributes", "positions", "moments", "outcomes"]:
 		if typeof(data.get(section)) != TYPE_DICTIONARY:
 			problems.append("%s must be an object" % section)
 			continue
@@ -52,6 +56,18 @@ func attribute_name(attribute: String) -> String:
 
 func position_name(position: String) -> String:
 	return _positions.get(position, position)
+
+
+func moment_name(moment_type: String) -> String:
+	return _moments.get(moment_type, moment_type)
+
+
+func outcome_name(outcome: String) -> String:
+	return _outcomes.get(outcome, outcome)
+
+
+func has_moment(moment_type: String) -> bool:
+	return _moments.has(moment_type)
 
 
 func has_position(position: String) -> bool:

@@ -15,10 +15,20 @@ const FORBIDDEN_PATTERNS: Array[String] = [
 
 func _core_script_paths() -> Array[String]:
 	var paths: Array[String] = []
-	for file_name: String in DirAccess.get_files_at(CORE_DIR):
-		if file_name.ends_with(".gd"):
-			paths.append(CORE_DIR + file_name)
+	_collect_scripts(CORE_DIR, paths)
 	return paths
+
+
+func _collect_scripts(folder: String, paths: Array[String]) -> void:
+	for file_name: String in DirAccess.get_files_at(folder):
+		if file_name.ends_with(".gd"):
+			paths.append(folder.path_join(file_name))
+	for sub_folder: String in DirAccess.get_directories_at(folder):
+		_collect_scripts(folder.path_join(sub_folder), paths)
+
+
+func test_core_subfolders_are_scanned() -> void:
+	assert_true(_core_script_paths().has("res://scripts/core/moments/penalty_resolver.gd"))
 
 
 func test_core_folder_has_scripts() -> void:

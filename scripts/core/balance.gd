@@ -64,7 +64,7 @@ static func load_file(path: String, errors: Array[String]) -> Balance:
 static func validate(data: Dictionary) -> Array[String]:
 	var problems: Array[String] = []
 	for key: String in ["start_age", "max_age", "attribute_min", "attribute_max"]:
-		_require_number(data, key, "", problems)
+		DataChecks.require_number(data, key, "", problems)
 	if not problems.is_empty():
 		return problems
 	var first_age := int(data["start_age"])
@@ -169,19 +169,6 @@ static func _to_brackets(rows: Array, value_key: String) -> Array[AgeBracket]:
 	return brackets
 
 
-static func _is_number(value: Variant) -> bool:
-	return typeof(value) == TYPE_FLOAT or typeof(value) == TYPE_INT
-
-
-static func _require_number(
-	data: Dictionary, key: String, prefix: String, problems: Array[String]
-) -> bool:
-	if not _is_number(data.get(key)):
-		problems.append("%s%s must be a number" % [prefix, key])
-		return false
-	return true
-
-
 ## `table` must be an object with a non-negative number for every attribute.
 static func _validate_attribute_table(
 	table: Variant, label: String, problems: Array[String]
@@ -191,7 +178,7 @@ static func _validate_attribute_table(
 		return
 	var values: Dictionary = table
 	for attribute: String in PlayerModel.ATTRIBUTES:
-		if not _is_number(values.get(attribute)):
+		if not DataChecks.is_number(values.get(attribute)):
 			problems.append("%s.%s must be a number" % [label, attribute])
 		elif float(values[attribute]) < 0.0:
 			problems.append("%s.%s must not be negative" % [label, attribute])
@@ -241,13 +228,7 @@ static func _validate_sections(data: Dictionary, problems: Array[String]) -> voi
 		"performance": ["baseline_rating", "gain_per_point"],
 		"expected_rating": ["neutral", "per_overall_point", "min", "max"],
 	}
-	for section: String in sections:
-		if typeof(data.get(section)) != TYPE_DICTIONARY:
-			problems.append("%s must be an object" % section)
-			continue
-		var values: Dictionary = data[section]
-		for key: String in sections[section]:
-			_require_number(values, key, section + ".", problems)
+	DataChecks.require_number_sections(data, sections, problems)
 	if not problems.is_empty():
 		return
 	if float(data["headroom"]["exponent"]) <= 0.0:
@@ -282,7 +263,7 @@ static func _validate_brackets(
 			return
 		var fields: Dictionary = row
 		for field: String in ["from_age", "to_age", value_key]:
-			if not _require_number(fields, field, key + ".", problems):
+			if not DataChecks.require_number(fields, field, key + ".", problems):
 				return
 		if int(fields["from_age"]) != next_age or int(fields["to_age"]) < next_age:
 			problems.append("%s has a gap or overlap at age %d" % [key, next_age])

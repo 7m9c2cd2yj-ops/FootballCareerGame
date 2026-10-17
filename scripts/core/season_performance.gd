@@ -1,14 +1,17 @@
 class_name SeasonPerformance
 extends RefCounted
 ## How the player performed over a season: appearances and average match rating (0-10).
-## Later milestones fill this from 3D moments and match simulation; until then
-## `expected_for` gives the deterministic baseline.
+## `expected_for` gives the deterministic baseline; SeasonMoments raises or
+## lowers it from the season's key-moment results.
 
 const MIN_RATING := 0.0
 const MAX_RATING := 10.0
 
 var matches_played: int = 0
 var average_rating: float = 0.0
+## Key moments (3D) played this season and how many went the player's way.
+var key_moments_played: int = 0
+var key_moments_won: int = 0
 
 
 static func create(matches: int, rating: float) -> SeasonPerformance:

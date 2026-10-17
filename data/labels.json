@@ -13,5 +13,19 @@
 		"DEF": "Defender",
 		"MID": "Midfielder",
 		"FWD": "Forward"
+	},
+	"moments": {
+		"penalty": "Penalty",
+		"free_kick": "Free kick",
+		"one_on_one": "One-on-one",
+		"save": "Shot on goal",
+		"penalty_save": "Penalty against you"
+	},
+	"outcomes": {
+		"goal": "GOAL!",
+		"saved": "Saved",
+		"missed": "Missed",
+		"blocked": "Blocked by the wall",
+		"conceded": "They scored"
 	}
 }

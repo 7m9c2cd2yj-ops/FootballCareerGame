@@ -12,6 +12,7 @@ func before_each() -> void:
 
 func after_each() -> void:
 	Session.career = null
+	Session.season_in_progress = null
 
 
 func test_session_loaded_all_data() -> void:
@@ -30,12 +31,28 @@ func test_setup_offers_every_position() -> void:
 	assert_eq(buttons, Session.balance.positions().size())
 
 
-func test_season_screen_plays_a_season() -> void:
+func test_season_screen_quick_sims_a_season() -> void:
 	var screen: Control = add_child_autofree(SEASON_SCENE.instantiate())
-	screen.call("play_season")
+	screen.call("sim_season")
 	assert_eq(Session.career.history.size(), 1)
 	assert_string_contains((screen.get_node("%HeaderLabel") as Label).text, "Age 9")
 	assert_string_contains((screen.get_node("%ResultLabel") as Label).text, "Season 1")
+
+
+func test_season_finishes_after_its_key_moments() -> void:
+	Session.begin_season(TrainingPlan.create("passing", "dribbling"))
+	while not Session.has_finished_moments():
+		var spec := Session.current_moment()
+		Session.record_moment(
+			MomentResult.create(spec, MomentResult.GOAL, 1.0, Vector2.ZERO, Vector2.ZERO)
+		)
+	var screen: Control = add_child_autofree(SEASON_SCENE.instantiate())
+	assert_null(Session.season_in_progress)
+	assert_eq(Session.career.history.size(), 1)
+	var record := Session.career.history[0]
+	assert_eq(record.key_moments_won, record.key_moments_played)
+	assert_eq(record.primary_focus, "passing")
+	assert_string_contains((screen.get_node("%ResultLabel") as Label).text, "Key moments")
 
 
 func test_same_focus_twice_disables_play() -> void:

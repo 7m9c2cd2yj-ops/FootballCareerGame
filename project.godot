@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Session="*res://scripts/app/session.gd"
+ScreenFit="*res://scripts/app/screen_fit.gd"
 
 [debug]
 

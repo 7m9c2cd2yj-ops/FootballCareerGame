@@ -21,6 +21,12 @@ finds any.
   performance in a 3D moment). Cup simulations that need variety derive it
   from deterministic inputs such as a career seed and the fixture, never
   from `randf()`.
+- **Variety without luck.** Staging that should differ between seasons (where
+  an opponent shoots, the free-kick spot) comes from `Variety`, a fixed
+  integer hash of the season and moment index. It never decides an outcome.
+- **Input in, verdict out.** A 3D moment's controller only turns touches into
+  numbers (aim point, power, timing). The resolver in `scripts/core/moments/`
+  decides the result and the stage animates it.
 - **Data over code.** Tunable numbers live in `data/*.json` and are loaded
   through `JsonLoader`. Loading code validates the data and reports readable
   errors.

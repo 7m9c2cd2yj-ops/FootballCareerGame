@@ -33,6 +33,8 @@ static func play_season(
 	record.secondary_focus = plan.secondary
 	record.matches_played = performance.matches_played
 	record.average_rating = Progression.round_value(performance.average_rating)
+	record.key_moments_played = performance.key_moments_played
+	record.key_moments_won = performance.key_moments_won
 	record.overall_before = before.overall_rating(balance)
 	record.overall_after = player.overall_rating(balance)
 	for attribute: String in PlayerModel.ATTRIBUTES:

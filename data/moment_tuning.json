@@ -1,0 +1,64 @@
+{
+	"_readme": "3D key-moment tuning. Results depend only on the player's input and ratings; no randomness. Distances in metres, speeds in m/s, times in seconds. Goal-plane coordinates: x = metres from goal centre (+ is right as seen by the shooter), y = height. Skills are attribute / 99 (0..1); 'opponent' is competition strength / 99. See docs/MOMENTS.md.",
+	"goal": {"half_width": 3.66, "height": 2.44, "ball_radius": 0.11},
+	"power": {"sweet_min": 0.6, "sweet_max": 0.85, "min_speed": 14.0, "max_speed": 30.0},
+	"power_bar": {"period_at_min_skill": 0.9, "period_at_max_skill": 1.8},
+	"overhit": {"lift_per_power": 6.0, "wide_per_power": 3.0, "skill_reduction": 0.6},
+	"aim_assist": {"max_distance": 0.3},
+	"keeper": {"body_radius": 0.9, "start_height": 1.0, "reaction_delay": 0.25, "min_dive_speed": 4.0, "max_dive_speed": 8.0},
+	"quality": {"span": 1.0},
+	"penalty": {"distance": 11.0},
+	"free_kick": {
+		"min_distance": 18.0,
+		"max_distance": 28.0,
+		"wall_distance": 9.15,
+		"wall_height": 1.85,
+		"wall_width": 2.4,
+		"wall_max_offset": 1.2,
+		"keeper_shift": 0.5,
+		"loft_per_softness": 2.5,
+		"curl_bend": 2.0,
+		"reaction_delay": 0.6
+	},
+	"one_on_one": {
+		"start_distance": 22.0,
+		"min_run_speed": 6.0,
+		"max_run_speed": 9.0,
+		"keeper_speed": 4.0,
+		"keeper_max_out": 7.0,
+		"smother_gap": 0.8,
+		"keeper_projected_size": 0.6,
+		"keeper_center_height": 0.9,
+		"finesse_reduction": 0.3,
+		"shot_speed": 25.0,
+		"chip_min_keeper_out": 5.5,
+		"chip_skill_bonus": 1.5,
+		"chip_min_gap": 2.0,
+		"round_min_gap": 1.5,
+		"round_window": 1.2,
+		"round_skill_bonus": 1.8
+	},
+	"save": {
+		"open_play_min_distance": 14.0,
+		"open_play_max_distance": 24.0,
+		"open_play_speed": 20.0,
+		"penalty_speed": 16.0,
+		"target_edge_margin": 0.3,
+		"min_dive_speed": 5.0,
+		"max_dive_speed": 9.0,
+		"catch_radius_min": 0.55,
+		"catch_radius_max": 0.95
+	},
+	"rating": {"success_min": 0.6, "success_max": 1.0, "failure": -0.3, "weight": 4.0},
+	"schedule": {
+		"academy_until_age": 15,
+		"academy_moments": 3,
+		"senior_moments": 4,
+		"by_position": {
+			"FWD": ["one_on_one", "penalty", "free_kick", "one_on_one"],
+			"MID": ["free_kick", "one_on_one", "penalty", "free_kick"],
+			"DEF": ["free_kick", "penalty", "one_on_one", "free_kick"],
+			"GK": ["save", "save", "penalty_save", "save"]
+		}
+	}
+}

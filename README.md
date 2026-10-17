@@ -50,6 +50,8 @@ manager). Press F5 to run. On desktop, mouse clicks emulate touch.
 
 To tune progression, edit `data/balance.json` and run
 `./tools/balance_report.sh` to see whole-career rating curves. See `docs/BALANCE.md`.
+The 3D key moments (penalty, free kick, one-on-one, save) are described in
+`docs/MOMENTS.md`, with numbers in `data/moment_tuning.json`.
 The same three checks run in GitHub Actions (`.github/workflows/ci.yml`).
 
 ## Project layout
@@ -60,9 +62,11 @@ backend/         Supabase SQL migrations and edge functions (M7)
 data/            JSON data: config, clubs, nations, balance, text templates
 docs/            Architecture, performance budget, privacy policy, checklists
 scenes/          .tscn scenes: display and input only
-scripts/app/     Autoloads (Session: loaded data + active career)
+scripts/app/     Autoloads (Session: data + active career; ScreenFit: UI scale)
 scripts/core/    Pure game logic (no nodes, no scene tree): unit tested
+scripts/core/moments/  Key-moment rules: resolvers, planner, season rating
 scripts/ui/      Scripts attached to scenes; thin layer over core
+scripts/ui/moments/    3D moment stage, HUD and touch controllers
 tests/unit/      GUT tests for core logic (files named test_*.gd)
 tests/ui/        GUT smoke tests that instance scenes
 tests/helpers/   Shared test code (career simulator, balance fixture)

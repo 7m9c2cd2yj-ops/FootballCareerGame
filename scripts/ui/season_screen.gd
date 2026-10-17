@@ -3,6 +3,7 @@ extends Control
 ## the season, then shows what changed. Rules live in SeasonLoop/Progression.
 
 const MAIN_MENU_SCENE := "res://scenes/main/main_menu.tscn"
+const MOMENT_SCENE := "res://scenes/moments/moment_scene.tscn"
 
 @onready var _header_label: Label = %HeaderLabel
 @onready var _overall_label: Label = %OverallLabel
@@ -11,6 +12,7 @@ const MAIN_MENU_SCENE := "res://scenes/main/main_menu.tscn"
 @onready var _secondary_option: OptionButton = %SecondaryOption
 @onready var _season_info_label: Label = %SeasonInfoLabel
 @onready var _play_button: Button = %PlayButton
+@onready var _sim_button: Button = %SimButton
 @onready var _result_label: Label = %ResultLabel
 
 
@@ -22,8 +24,11 @@ func _ready() -> void:
 		for attribute: String in PlayerModel.ATTRIBUTES:
 			option.add_item(Session.labels.attribute_name(attribute))
 		option.item_selected.connect(_on_focus_changed)
-	_play_button.pressed.connect(play_season)
+	_play_button.pressed.connect(play_key_moments)
+	_sim_button.pressed.connect(sim_season)
 	_select_recommended_plan()
+	if Session.has_finished_moments():
+		_complete_season(Session.finish_season)
 	_refresh()
 
 
@@ -41,19 +46,30 @@ func selected_plan() -> TrainingPlan:
 	)
 
 
-func play_season() -> void:
-	var player := Session.career.player
-	var performance := SeasonPerformance.expected_for(player, Session.balance)
-	var errors: Array[String] = []
-	var record := SeasonLoop.play_season(
-		Session.career, selected_plan(), performance, Session.balance, errors
+## Starts the season's key moments; the season finishes when they are done.
+func play_key_moments() -> void:
+	Session.begin_season(selected_plan())
+	get_tree().change_scene_to_file(MOMENT_SCENE)
+
+
+## Plays the season without key moments, at the expected rating.
+func sim_season() -> void:
+	var plan := selected_plan()
+	_complete_season(
+		func(errors: Array[String]) -> SeasonRecord: return Session.sim_season(plan, errors)
 	)
+	_refresh()
+
+
+## `play` takes an errors array and returns the finished season's record or null.
+func _complete_season(play: Callable) -> void:
+	var errors: Array[String] = []
+	var record: SeasonRecord = play.call(errors)
 	if record == null:
 		_result_label.text = "\n".join(errors)
 		return
 	_result_label.text = _describe(record)
 	_select_recommended_plan()
-	_refresh()
 
 
 func _on_focus_changed(_index: int) -> void:
@@ -72,6 +88,9 @@ func _refresh() -> void:
 	var finished := Session.career.is_finished(balance)
 	var plan_ok := selected_plan().validate().is_empty()
 	_play_button.disabled = finished or not plan_ok
+	_sim_button.disabled = _play_button.disabled
+	var moments := MomentPlanner.moment_count(player, Session.moment_tuning)
+	_play_button.text = "Play season · %d key moments" % moments
 	if finished:
 		_play_button.text = "Career complete"
 		_season_info_label.text = "No more seasons to play."
@@ -111,6 +130,15 @@ func _describe(record: SeasonRecord) -> String:
 			% [record.season_number, record.age, record.overall_before, record.overall_after]
 		)
 	]
+	if record.key_moments_played > 0:
+		lines.append(
+			(
+				"Key moments %d/%d · season rating %.1f"
+				% [record.key_moments_won, record.key_moments_played, record.average_rating]
+			)
+		)
+	else:
+		lines.append("Quick sim · season rating %.1f" % record.average_rating)
 	for attribute: String in PlayerModel.ATTRIBUTES:
 		var change := record.attribute_changes[attribute]
 		if absf(change) >= 0.05:
